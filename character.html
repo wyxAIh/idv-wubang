@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>角色详情 | 五榜</title>
+    <meta name="description" content="五榜角色详情页：第五人格角色数据、强度、优缺点与天赋建议。" />
+    <link rel="icon" href="assets/wubang-icon.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="详情页导航">
+        <a class="brand" href="updates.html" aria-label="打开五榜更新目录">
+          <span class="brand-mark"><img src="assets/wubang-icon.jpg" alt="" /></span>
+          <span>
+            <strong>五榜</strong>
+            <small>角色详情分析</small>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html#rankings">返回榜单</a>
+          <a href="index.html#model">评分模型</a>
+          <a href="index.html#environment">环境解读</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="section character-page">
+        <div class="section-heading">
+          <p class="eyebrow">Character report</p>
+          <h1 id="detailTitle">角色详情</h1>
+          <p id="detailIntro">正在读取当前赛季快照的全服数据、认知分、禁用率和版本校准信息。</p>
+        </div>
+        <div id="detailShell" class="detail-shell" aria-live="polite"></div>
+        <div class="detail-nav" id="detailNav"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>五榜是非官方数据分析页面。第五人格相关名称归其权利方所有。</p>
+    </footer>
+
+    <script src="archive-loader.js?v=20260806-season-detail-fix"></script>
+  </body>
+</html>

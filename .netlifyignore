@@ -1,0 +1,9 @@
+data/raw/
+scripts/
+.git/
+.netlify/
+.npm-cache/
+.npm-cache2/
+.npm-cache-deploy/
+.deploy-cli/
+netlify-publish/

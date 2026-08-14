@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>更新目录 | 五榜</title>
+    <link rel="icon" href="assets/wubang-icon.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="更新目录导航">
+        <a class="brand" href="updates.html" aria-label="五榜更新目录">
+          <span class="brand-mark"><img src="assets/wubang-icon.jpg" alt="" /></span>
+          <span><strong>五榜</strong><small>更新目录</small></span>
+        </a>
+        <div class="nav-links"><a href="index.html">当前榜单</a><a href="guide.html">版本指南</a><a href="assessment.html">环境测评</a></div>
+      </nav>
+    </header>
+    <main>
+      <section class="section update-hero">
+        <div class="section-heading">
+          <p class="eyebrow">Update archive</p>
+          <h1>版本更新目录</h1>
+          <p>每次数据更新都保留在这里。当前站点默认打开最新赛季，旧赛季用于回看、对比和交流。</p>
+        </div>
+        <div class="update-grid" id="updateGrid"></div>
+      </section>
+    </main>
+    <footer class="footer"><p>五榜只保留公开数据快照，强度结论仍需结合个人熟练度与地图。</p></footer>
+    <script src="data/characters-s43-20260615.js"></script>
+    <script>window.IDV_ARCHIVE = window.IDV_DATA; delete window.IDV_DATA;</script>
+    <script src="data/characters.js"></script>
+    <script src="updates.js"></script>
+  </body>
+</html>

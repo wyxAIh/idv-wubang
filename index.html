@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>五榜 | 第五人格角色推荐与战斗环境全解</title>
+    <meta
+      name="description"
+      content="五榜：基于第五人格全服真实数据的八段位角色强度榜单。"
+    />
+    <link rel="icon" href="assets/wubang-icon.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="主导航">
+        <a class="brand" href="updates.html" aria-label="五榜更新目录">
+          <span class="brand-mark"><img src="assets/wubang-icon.jpg" alt="" /></span>
+          <span>
+            <strong>五榜</strong>
+            <small>角色推荐与战斗环境全解</small>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="#model">评分模型</a>
+          <a href="#rankings">八段榜单</a>
+          <a href="#environment">环境解读</a>
+          <a href="guide.html">版本指南</a>
+          <a href="#assessment">环境测评</a>
+          <a href="#sources">数据来源</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-backdrop" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Season data-first analyzer</p>
+          <h1>五榜</h1>
+          <p class="hero-lead">
+            正在读取当前赛季快照的全服数据、八段位差异和版本信息。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#rankings">查看榜单</a>
+            <a class="ghost-action" href="#model">看评分规则</a>
+          </div>
+          <dl class="hero-stats" aria-label="站点分析维度">
+            <div>
+              <dt>8</dt>
+              <dd>段位榜单</dd>
+            </div>
+            <div>
+              <dt>87</dt>
+              <dd>角色覆盖</dd>
+            </div>
+            <div>
+              <dt>—</dt>
+              <dd>赛季数据</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="notice-band" aria-label="数据状态">
+        <div>
+          <strong>数据状态</strong>
+          <p id="dataNotice"></p>
+        </div>
+        <a href="#sources">查看来源</a>
+      </section>
+
+      <section id="model" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Scoring model</p>
+          <h2>八段位评分标准</h2>
+          <p>
+            每个榜单只比较同阵营、同段位角色。模型使用胜率、平率、出场率、禁用率、S/A/B/C
+            认知分和样本可信修正，关注绝对数值差距，不直接拿排名硬套强弱。
+          </p>
+        </div>
+        <div class="model-grid" id="modelGrid"></div>
+        <div class="definition-grid" aria-label="模型定义解释">
+          <article class="definition-card">
+            <h3>样本可信修正</h3>
+            <p>
+              主要看出场率是否足够支撑结论。出场太低时，胜率和认知分可能来自少量绝活或偶然环境，模型会降低它们对综合强度的影响；出场稳定时，数据可信度更高。
+            </p>
+          </article>
+          <article class="definition-card">
+            <h3>胜率贡献</h3>
+            <p>
+              不是直接把胜率当分数，而是把同阵营同段位内的胜率绝对差距标准化，再按当前段位权重计入。监管侧更代表终结能力，求生侧还要和保平、阵容功能一起看。
+            </p>
+          </article>
+          <article class="definition-card">
+            <h3>版本校准</h3>
+            <p>
+              巅峰七阶会额外参考当前快照对应赛季的版本校准，用来修正纯胜率无法体现的 BP 压力、操作上限、阵容价值与克制关系。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="rankings" class="section section-tight">
+        <div class="section-heading">
+          <p class="eyebrow">Tier board</p>
+          <h2>角色综合强度排名</h2>
+          <p>
+            一阶到巅峰七阶分别成榜。可以按综合强度、胜率、平率、出场率、禁用率或 C500 认知分排序。
+          </p>
+        </div>
+
+        <div class="toolbar" aria-label="榜单筛选">
+          <fieldset class="segmented-control" id="factionControl">
+            <legend>阵营</legend>
+            <label><input type="radio" name="faction" value="survivor" checked />求生者</label>
+            <label><input type="radio" name="faction" value="hunter" />监管者</label>
+          </fieldset>
+
+          <fieldset class="segmented-control part-control" id="partControl">
+            <legend>段位</legend>
+            <label><input type="radio" name="part" value="1" />一阶</label>
+            <label><input type="radio" name="part" value="2" />二阶</label>
+            <label><input type="radio" name="part" value="3" />三阶</label>
+            <label><input type="radio" name="part" value="4" />四阶</label>
+            <label><input type="radio" name="part" value="5" />五阶</label>
+            <label><input type="radio" name="part" value="6" />六阶</label>
+            <label><input type="radio" name="part" value="7" />七阶</label>
+            <label><input type="radio" name="part" value="8" checked />巅七</label>
+          </fieldset>
+
+          <label class="select-label">
+            排序
+            <select id="sortSelect">
+              <option value="rank">综合强度</option>
+              <option value="win">胜率</option>
+              <option value="draw">平率</option>
+              <option value="pick">出场率</option>
+              <option value="ban">禁用率</option>
+              <option value="s1">S1 认知分</option>
+              <option value="a100">A100 认知分</option>
+              <option value="b300">B300 认知分</option>
+              <option value="c500">C500 认知分</option>
+            </select>
+          </label>
+        </div>
+
+        <p class="rank-hint">点击任意角色头像卡，会进入独立角色详情页查看胜率、平率、认知分、禁用率、优缺点与天赋/监管策略。</p>
+        <div class="rank-summary" id="rankSummary"></div>
+        <div class="rank-list" id="rankList"></div>
+      </section>
+
+      <section id="environment" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Battle environment</p>
+          <h2>战斗环境解读</h2>
+          <p>
+            用全段位数据判断当前版本更偏监管、求生还是相对平衡；再把追击、守椅、控场、破译、牵制和天赋选择拆开看。
+          </p>
+        </div>
+
+        <div class="environment-overview" id="environmentOverview"></div>
+        <div class="insight-grid environment-grid">
+          <article class="insight-panel">
+            <h3>监管侧：追击、守椅、控场三段式</h3>
+            <p>
+              追击角色看首刀速度和转点惩罚，守椅角色看救援二次伤害，控场角色看能否同时压机与压人。高阶局不是单纯抓倒一个人就够，强监管通常要在第一挂后把密码机进度、救援路线和二次追击一起纳入计划。
+            </p>
+          </article>
+          <article class="insight-panel">
+            <h3>求生侧：破译、牵制、救援分工</h3>
+            <p>
+              求生不是四个人都拖得久就能赢。主牵制要会转强板窗和安全区，破译位要少吃无意义干扰，救援位要卡半救和二救节奏，辅助位要把保护给到真正能换机子进度的位置。
+            </p>
+          </article>
+          <article class="insight-panel">
+            <h3>天赋：回光返照与化险为夷</h3>
+            <p>
+              回光返照仍是排位通用核心，绝大多数求生者默认要带；化险为夷不建议全队无脑多个，通常 1-2 个稳定救援位携带即可。佣兵、前锋、守墓人、大副、记者、骑士、木偶师更适合承担搏命；纯破译或主牵制位优先保留牵制/转点天赋。
+            </p>
+          </article>
+          <article class="insight-panel wide-panel">
+            <h3>地图与牵制重心</h3>
+            <p>
+              军工厂、红教堂、圣心医院这类常规图，求生主要围绕强窗、二楼、医院内外和墓地区域做转点；湖景村、月亮河、公园类大图更看转点路线和队友补位；永眠镇、唐人街等多层或复杂街区要提前决定是否接通道、是否放弃弱区。监管侧则要判断开局是否抢首刀、是否守椅打二伤，还是利用控场角色先压密码机进度。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="assessment" class="section assessment-section">
+        <div class="section-heading">
+          <p class="eyebrow">Environment check</p>
+          <h2>三分钟环境测评</h2>
+          <p>回答几道排位决策题，获得适合你的当前版本上分建议。结果只保存在本地浏览器。</p>
+        </div>
+        <form id="assessmentForm" class="assessment-form">
+          <fieldset><legend>1. 开局遇到强压追击，你通常会：</legend><label><input type="radio" name="q1" value="3" required />主动规划转点，尽量让队伍破译不断档</label><label><input type="radio" name="q1" value="2" />先看监管者技能，再调整路线</label><label><input type="radio" name="q1" value="1" />只优先保命，尽量不吃第一刀</label></fieldset>
+          <fieldset><legend>2. 你选择角色时更看重：</legend><label><input type="radio" name="q2" value="3" required />稳定功能、队伍缺口和地图适配</label><label><input type="radio" name="q2" value="2" />个人上限和手感</label><label><input type="radio" name="q2" value="1" />简单直接、低失误</label></fieldset>
+          <fieldset><legend>3. 看到高禁用率角色时，你会：</legend><label><input type="radio" name="q3" value="3" required />拆解它为什么吃 ban，再准备替代方案</label><label><input type="radio" name="q3" value="2" />默认它就是版本答案</label><label><input type="radio" name="q3" value="1" />基本不看 ban 位</label></fieldset>
+          <fieldset><legend>4. 胜率高但出场率很低时，你会判断：</legend><label><input type="radio" name="q4" value="3" required />可能是绝活样本，结合认知和出场再看</label><label><input type="radio" name="q4" value="2" />说明角色一定强</label><label><input type="radio" name="q4" value="1" />说明角色冷门，不值得练</label></fieldset>
+          <fieldset><legend>5. 队伍缺救援位时，你会：</legend><label><input type="radio" name="q5" value="3" required />补救援或明确让队友承担救援节奏</label><label><input type="radio" name="q5" value="2" />选自己熟练的牵制位</label><label><input type="radio" name="q5" value="1" />默认后期随机应变</label></fieldset>
+          <fieldset><legend>6. 新角色刚进榜时，你会：</legend><label><input type="radio" name="q6" value="3" required />看机制、样本量、段位差异，再决定练度投入</label><label><input type="radio" name="q6" value="2" />只看巅七排名</label><label><input type="radio" name="q6" value="1" />完全按热度决定</label></fieldset>
+          <fieldset><legend>7. 地图不适合你的主练角色时，你会：</legend><label><input type="radio" name="q7" value="3" required />切同定位替代角色，保证阵容结构</label><label><input type="radio" name="q7" value="2" />继续拿主练角色，但调整打法</label><label><input type="radio" name="q7" value="1" />不考虑地图影响</label></fieldset>
+          <fieldset><legend>8. 监管者高阶 BP 的关键是：</legend><label><input type="radio" name="q8" value="3" required />追击效率、控场链条和被克制风险一起看</label><label><input type="radio" name="q8" value="2" />只看单局胜率</label><label><input type="radio" name="q8" value="1" />只看角色热度</label></fieldset>
+          <fieldset><legend>9. 连败时你通常会：</legend><label><input type="radio" name="q9" value="3" required />复盘失误来源，缩小角色池再打</label><label><input type="radio" name="q9" value="2" />换一个榜单更高的角色</label><label><input type="radio" name="q9" value="1" />继续排，靠手感找回来</label></fieldset>
+          <fieldset><legend>10. 看榜单时你最该优先匹配：</legend><label><input type="radio" name="q10" value="3" required />自己的段位、定位和队伍需求</label><label><input type="radio" name="q10" value="2" />最高段位排行</label><label><input type="radio" name="q10" value="1" />角色外观和热度</label></fieldset>
+          <button class="primary-action" type="submit">生成我的测评</button>
+        </form>
+        <div id="assessmentResult" class="assessment-result" aria-live="polite"></div>
+        <a class="text-link" href="assessment.html">打开独立测评页 →</a>
+      </section>
+
+      <section id="sources" class="section section-sources">
+        <div class="section-heading">
+          <p class="eyebrow">Sources</p>
+          <h2>数据与视频来源</h2>
+          <p>
+            正在读取当前赛季快照的数据来源、认知徽章和视频参考信息。
+          </p>
+        </div>
+        <div class="source-list" id="sourceList"></div>
+        <div class="insight-grid video-notes" id="videoNotes"></div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>五榜是非官方数据分析页面。第五人格相关名称归其权利方所有。</p>
+    </footer>
+
+    <script src="archive-loader.js?v=20260806-season-detail-fix"></script>
+  </body>
+</html>

@@ -1,0 +1,3375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>角色数据表格</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            position: relative;
+            background-color: #f5f5f5;
+        }
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 12px;
+        }
+
+        .header-top-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .header-bottom-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .nav-button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .nav-button:hover {
+            background-color: #0056b3;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* 切换按钮样式 */
+        .toggle-btn {
+            padding: 8px 16px;
+            background-color: #f1f1f1;
+            color: #333;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .toggle-btn:hover {
+            background-color: #e9ecef;
+            border-color: #ccc;
+        }
+
+        .toggle-btn.active {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border-color: #28a745;
+            box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+        }
+
+        .toggle-btn.active:hover {
+            background: linear-gradient(135deg, #218838 0%, #1ba87e 100%);
+            border-color: #218838;
+        }
+
+        .toggle-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background-color: #e9ecef;
+            border-color: #ddd;
+            color: #6c757d;
+        }
+
+        .toggle-btn .icon {
+            font-size: 14px;
+        }
+        .tabs {
+            margin-bottom: 15px;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 5px;
+            -webkit-overflow-scrolling: touch;
+            text-align: center;
+        }
+
+        #season-tabs-container,
+        #week-tabs-container,
+        #part-tabs-container {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 15px;
+        }
+        .tab-button {
+            padding: 8px 12px;
+            background-color: #f1f1f1;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 4px 4px 0 0;
+            font-size: 13px;
+            min-width: 60px;
+            display: inline-block;
+        }
+        .tab-button.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .season-tabs {
+            margin-bottom: 10px;
+        }
+        .season-tab-button {
+            padding: 6px 10px;
+            background-color: #e9ecef;
+            border: none;
+            cursor: pointer;
+            margin-right: 3px;
+            border-radius: 3px;
+            font-size: 12px;
+            min-width: 50px;
+        }
+        .season-tab-button.active {
+            background-color: #28a745;
+            color: white;
+        }
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1200px) {
+            .table-container {
+                max-width: 1000px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .table-container {
+                max-width: 100%;
+                margin: 0;
+            }
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 600px;
+            margin: 0;
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 10px 8px;
+            text-align: center;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        th {
+            background-color: #f8f9fa;
+            cursor: pointer;
+            position: relative;
+            font-weight: 600;
+        }
+        th:hover {
+            background-color: #e9ecef;
+        }
+        th.sort-asc::after {
+            content: " ▲";
+            font-size: 10px;
+        }
+        th.sort-desc::after {
+            content: " ▼";
+            font-size: 10px;
+        }
+        .change-positive {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .change-negative {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .change-neutral {
+            color: #6c757d;
+        }
+        .not-played {
+            color: #6c757d;
+            font-style: italic;
+        }
+        .character-link {
+            color: #007bff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .character-link:hover {
+            text-decoration: underline;
+        }
+        #loading {
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 16px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 0;
+        }
+        .no-data {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        .character-view #part-tabs-container {
+            display: none;
+        }
+        .usage-tip {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0;
+        }
+        .usage-tip h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .usage-tip ul {
+            text-align: left;
+            max-width: 600px;
+            margin: 20px auto;
+            padding-left: 20px;
+        }
+        .usage-tip li {
+            margin-bottom: 10px;
+        }
+        .usage-tip a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .usage-tip a:hover {
+            text-decoration: underline;
+        }
+        /* 弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .close:hover {
+            color: black;
+        }
+        .modal-data {
+            text-align: left;
+            margin-top: 15px;
+        }
+        .modal-data div {
+            margin-bottom: 8px;
+        }
+        .modal-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            table-layout: fixed;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            word-wrap: break-word;
+        }
+        .comparison-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+        .current-season {
+            background-color: #e3f2fd;
+        }
+        .previous-season {
+            background-color: #f3e5f5;
+        }
+        .change-cell {
+            font-weight: bold;
+        }
+        .positive-change {
+            color: #28a745;
+        }
+        .negative-change {
+            color: #dc3545;
+        }
+        /* 冻结第一列样式 */
+        .table-container.freeze-first-column {
+            overflow-x: auto;
+        }
+        .freeze-first-column table {
+            table-layout: fixed;
+        }
+        .freeze-first-column th:first-child,
+        .freeze-first-column td:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 2;
+            background-color: #f8f9fa;
+        }
+        .freeze-first-column td:first-child {
+            background-color: white;
+        }
+        .freeze-first-column tr:hover td:first-child {
+            background-color: #f8f9fa;
+        }
+        /* 阵营平均值样式 */
+        .camp-average-row {
+            background-color: #fff3cd;
+            font-weight: bold;
+        }
+        /* 折线图按钮 */
+        .chart-button {
+            padding: 8px 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .chart-button:hover {
+            background-color: #218838;
+        }
+        /* 平均值对比按钮 */
+        .average-button {
+            padding: 8px 16px;
+            background-color: #ffc107;
+            color: #212529;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .average-button:hover {
+            background-color: #e0a800;
+        }
+        /* 隐藏复选框 */
+        .hide-checkboxes .checkbox-group {
+            display: none;
+        }
+        /* 平均值对比阵营tab */
+        .average-camp-tabs {
+            margin-bottom: 15px;
+            max-width: 900px;
+            margin: 0 auto 15px;
+            text-align: center;
+        }
+        .average-camp-tab {
+            padding: 8px 12px;
+            background-color: #f1f1f1;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 4px 4px 0 0;
+            font-size: 13px;
+            min-width: 80px;
+            display: inline-block;
+        }
+        .average-camp-tab.active {
+            background-color: #007bff;
+            color: white;
+        }
+        /* 周数据相关样式 */
+        .week-tab-button {
+            padding: 4px 8px;
+            background-color: #e9ecef;
+            border: none;
+            cursor: pointer;
+            margin-right: 3px;
+            border-radius: 3px;
+            font-size: 11px;
+            min-width: 40px;
+        }
+        .week-tab-button.active {
+            background-color: #17a2b8;
+            color: white;
+        }
+        .week-tabs-container {
+            margin: 10px 0;
+            display: none;
+        }
+        .week-tabs-container.active {
+            display: block;
+        }
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .header-container {
+                gap: 10px;
+            }
+            .header-top-row, .header-bottom-row {
+                gap: 10px;
+            }
+            .nav-buttons {
+                justify-content: center;
+                margin-bottom: 0;
+            }
+            .nav-button, .chart-button, .average-button {
+                padding: 10px 15px;
+                font-size: 16px;
+                flex: 1;
+                text-align: center;
+            }
+            .section-title {
+                font-size: 18px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .checkbox-group {
+                justify-content: center;
+            }
+            .tab-button, .average-camp-tab {
+                padding: 6px 10px;
+                font-size: 12px;
+                min-width: 50px;
+            }
+            .season-tab-button {
+                padding: 5px 8px;
+                font-size: 11px;
+                min-width: 45px;
+            }
+            th, td {
+                padding: 8px 6px;
+                font-size: 13px;
+            }
+            .modal-content {
+                width: 95%;
+                margin: 5% auto;
+                padding: 15px;
+            }
+            .modal-title {
+                font-size: 16px;
+                padding-bottom: 8px;
+            }
+            .comparison-table th, .comparison-table td {
+                padding: 6px 4px;
+                font-size: 12px;
+            }
+            .comparison-table {
+                font-size: 12px;
+            }
+        }
+        @media (max-width: 480px) {
+            .nav-button, .chart-button, .average-button {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+            .tab-button, .average-camp-tab {
+                padding: 5px 8px;
+                font-size: 11px;
+                min-width: 45px;
+            }
+            th, td {
+                padding: 6px 4px;
+                font-size: 12px;
+            }
+            .modal-content {
+                padding: 10px;
+            }
+            .modal-title {
+                font-size: 15px;
+            }
+            .comparison-table th, .comparison-table td {
+                padding: 5px 3px;
+                font-size: 11px;
+            }
+            .comparison-table {
+                font-size: 11px;
+            }
+        }
+        /* 针对小屏幕的特殊优化 */
+        @media (max-width: 600px) {
+            .header-container {
+                gap: 5px;
+            }
+            .section-title {
+                font-size: 16px;
+            }
+            .checkbox-group {
+                gap: 10px;
+            }
+            .toggle-btn {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+            .toggle-btn .icon {
+                font-size: 12px;
+            }
+            .tab-button, .average-camp-tab {
+                padding: 4px 6px;
+                font-size: 12px;
+                min-width: 40px;
+            }
+            .season-tab-button {
+                padding: 4px 6px;
+                font-size: 12px;
+                min-width: 40px;
+            }
+            th, td {
+                padding: 5px 3px;
+                font-size: 11px;
+            }
+            .modal-content {
+                padding: 8px;
+                width: 96%;
+                margin: 3% auto;
+            }
+            .modal-title {
+                font-size: 14px;
+                padding-bottom: 6px;
+            }
+            .comparison-table th, .comparison-table td {
+                padding: 4px 2px;
+                font-size: 10px;
+            }
+            .comparison-table {
+                font-size: 10px;
+            }
+            /* 弹窗表格滚动优化 */
+            .modal-data {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .comparison-table {
+                min-width: 300px;
+            }
+        }
+        /* 超小屏幕优化 */
+        @media (max-width: 320px) {
+            body {
+                padding: 5px;
+            }
+            .nav-button, .chart-button, .average-button {
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+            .section-title {
+                font-size: 15px;
+            }
+            .tab-button, .average-camp-tab {
+                padding: 3px 5px;
+                font-size: 11px;
+                min-width: 35px;
+            }
+            .season-tab-button {
+                padding: 3px 5px;
+                font-size: 11px;
+                min-width: 35px;
+            }
+            th, td {
+                padding: 4px 2px;
+                font-size: 10px;
+            }
+            .modal-content {
+                padding: 6px;
+            }
+            .modal-title {
+                font-size: 13px;
+            }
+            .comparison-table th, .comparison-table td {
+                padding: 3px 1px;
+                font-size: 9px;
+            }
+            .comparison-table {
+                font-size: 9px;
+            }
+        }
+
+        .rank-tip {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* 截图按钮样式 */
+        .screenshot-btn {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(139, 92, 246, 0.3);
+            white-space: nowrap;
+            min-width: 90px;
+        }
+
+        .screenshot-btn:hover {
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(139, 92, 246, 0.4);
+        }
+
+        .screenshot-btn:active {
+            transform: translateY(0);
+        }
+
+        .screenshot-btn .icon {
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .screenshot-btn {
+                padding: 8px 16px;
+                font-size: 13px;
+                min-width: 80px;
+            }
+            .screenshot-btn .icon {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script src="./js/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="header-container">
+        <div class="header-top-row">
+            <div class="nav-buttons">
+                <a href="#求生者" class="nav-button">求生者整体</a>
+                <a href="#监管者" class="nav-button">监管者整体</a>
+            </div>
+            <div>
+                <a href="draw.html" class="chart-button">折线图绘制</a>
+                <a href="form_global.html#求生者" class="chart-button">国际服数据</a>
+                <button id="average-compare-button" class="average-button" style="display: none;">对比阵营平均</button>
+            </div>
+        </div>
+        <div class="section-title" id="page-title">角色数据统计表</div>
+        <div class="header-bottom-row">
+            <button class="screenshot-btn" onclick="takeScreenshot()">
+                <span class="icon">📷</span>
+                <span>截图</span>
+            </button>
+            <div class="checkbox-group">
+                <button type="button" class="toggle-btn" id="compare-btn" onclick="toggleCompare()">
+                    <span class="icon">📊</span>
+                    <span>比对上赛季</span>
+                </button>
+                <button type="button" class="toggle-btn" id="rank-btn" onclick="toggleRank()">
+                    <span class="icon">🏆</span>
+                    <span>查看排名</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="loading">正在加载赛季列表...</div>
+    
+    <div id="content-container" style="display: none;">
+        <!-- Season tabs -->
+        <div class="tabs season-tabs" id="season-tabs-container">
+            <!-- Season tabs will be generated dynamically -->
+        </div>
+        
+        <!-- Week tabs container -->
+        <div class="week-tabs-container" id="week-tabs-container">
+            <div class="tabs" id="week-tabs">
+                <!-- Week tabs will be generated dynamically -->
+            </div>
+        </div>
+        
+        <!-- Average compare camp tabs -->
+        <div class="tabs average-camp-tabs" id="average-camp-tabs-container" style="display: none;">
+            <button class="average-camp-tab active" data-camp="2">求生者数据</button>
+            <button class="average-camp-tab" data-camp="1">监管者数据</button>
+        </div>
+        
+        <!-- Part tabs for different parts (for camp view) -->
+        <div class="tabs" id="part-tabs-container">
+            <button class="tab-button" data-part="-127">全段位</button>
+            <button class="tab-button active" data-part="8">巅峰七阶</button>
+            <button class="tab-button" data-part="7">七阶</button>
+            <button class="tab-button" data-part="6">六阶</button>
+            <button class="tab-button" data-part="5">五阶</button>
+            <button class="tab-button" data-part="4">四阶</button>
+            <button class="tab-button" data-part="3">三阶</button>
+            <button class="tab-button" data-part="2">二阶</button>
+            <button class="tab-button" data-part="1">一阶</button>
+        </div>
+        
+        <div id="rank-tip-container" class="rank-tip" style="display: none;">
+            注：负率排名越高，负率越低
+        </div>
+
+        <!-- Table container with horizontal scroll -->
+        <div class="table-container" id="main-table-container">
+            <table id="character-table">
+                <thead>
+                    <tr id="table-header">
+                        <!-- Header will be generated dynamically -->
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Data will be generated dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div id="usage-tip" class="usage-tip" style="display: none;">
+        <h2>使用说明</h2>
+        <p>欢迎使用第五人格角色数据统计表！</p>
+        <ul>
+            <li>访问 <a href="#监管者">#监管者</a> 查看监管者数据</li>
+            <li>访问 <a href="#求生者">#求生者</a> 查看求生者数据</li>
+            <li>访问 <a href="#角色名">#角色名</a> 查看指定角色详细数据</li>
+            <li>如：<a href="#渔女">#渔女</a>、<a href="#园丁">#园丁</a> 等</li>
+            <li>可切换不同赛季和段位查看数据</li>
+            <li>右上角可勾选"比对上赛季"和"查看排名"</li>
+        </ul>
+        <p>请选择合适的URL参数开始使用！</p>
+    </div>
+    
+    <!-- 弹窗 -->
+    <div id="dataModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-title" id="modal-title">数据详情对比</div>
+            <div class="modal-data" id="modal-data">
+                <!-- 数据将在这里显示 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 全局变量
+        let allData = [];
+        let previousSeasonData = []; // 上赛季数据
+        let seasonList = {}; // 存储赛季列表
+        let currentSeasonFile = ''; // 当前赛季文件名
+        let currentSeasonName = ''; // 当前赛季名称
+        let currentFilter = 'all'; // '监管者', '求生者', or character name
+        let currentPart = 8; // 默认显示巅峰七阶
+        let showRank = false; // 是否显示排名
+        let comparePrevious = false; // 是否比对上赛季
+        let sortColumn = 1;
+        let sortDirection = 'desc';
+        let filterInfo = { type: 'all', value: 'all' }; // 初始化filterInfo
+        let hasHashChanged = false; // 标记是否发生过hash变化
+        let currentAverageCamp = 2; // 平均值对比页面当前阵营：1=监管者, 2=求生者
+
+        // 新增全局变量
+        let weekData = {}; // 存储周数据
+        let currentWeek = null; // 当前选择的周数据
+        let seasonWeeks = {}; // 存储赛季对应的周文件列表
+        let latestSeason = ''; // 最新赛季标识
+        let seasonFullData = [];  // 存储当前赛季的完整数据
+        let currentWeekData = null;  // 存储当前周的数据
+        let previousWeekData = []; // 存储上周数据
+        let currentWeekNum = null; // 当前周数
+
+        // 计算负率
+        function calculateLoseRate(winRate, pingRate) {
+            if (winRate === null || pingRate === null) return null;
+            return 1 - winRate - pingRate;
+        }
+
+        // 计算去平胜率
+        function calculateWinRateWithoutDraw(winRate, pingRate) {
+            if (winRate === null || pingRate === null) return null;
+            const loseRate = calculateLoseRate(winRate, pingRate);
+            if (loseRate === null) return null;
+            const total = winRate + loseRate;
+            return total > 0 ? (winRate / total) : 0;
+        }
+
+        // 格式化为百分比
+        function formatPercentage(value) {
+            if (value === null || value === undefined || isNaN(value)) {
+                return '暂无数据';
+            }
+            return (value * 100).toFixed(2) + '%';
+        }
+
+        // 格式化变化值
+        function formatChange(value, isPercentage = true) {
+            if (value === null || value === undefined || isNaN(value)) {
+                return '<span class="change-neutral">--</span>';
+            }
+            
+            let formattedValue;
+            if (isPercentage) {
+                formattedValue = (value * 100).toFixed(2) + '%';
+            } else {
+                // 排名变化显示为整数
+                formattedValue = Math.round(value);
+                if (formattedValue > 0) {
+                    formattedValue = '+' + formattedValue;
+                }
+            }
+            
+            if (value > 0) {
+                return `<span class="change-positive">${formattedValue}</span>`;
+            } else if (value < 0) {
+                return `<span class="change-negative">${formattedValue}</span>`;
+            } else {
+                return `<span class="change-neutral">${formattedValue}</span>`;
+            }
+        }
+
+        // 解析赛季名称为Sxx格式
+        function formatSeasonName(seasonName) {
+            // 匹配"第xx赛季"格式
+            const match = seasonName.match(/第(\d+)赛季/);
+            if (match) {
+                const seasonNumber = match[1];
+                return `S${seasonNumber.padStart(2, '0')}`;
+            }
+            
+            return seasonName;
+        }
+
+        // 解析URL hash
+        function parseHash() {
+            const hash = window.location.hash;
+            if (hash.startsWith('#')) {
+                const value = decodeURIComponent(hash.substring(1));
+                if (value === '监管者') {
+                    return { type: 'camp', value: 1 };
+                } else if (value === '求生者') {
+                    return { type: 'camp', value: 2 };
+                } else if (value === '平均值对比') {
+                    return { type: 'average', value: 'average' };
+                } else {
+                    return { type: 'character', value: value };
+                }
+            }
+            return { type: 'all', value: 'all' };
+        }
+
+        // 设置页面标题
+        function setPageTitle(filterInfo) {
+            const titleElement = document.getElementById('page-title');
+            if (filterInfo.type === 'camp') {
+                titleElement.textContent = filterInfo.value === 1 ? '监管者数据统计表' : '求生者数据统计表';
+            } else if (filterInfo.type === 'character') {
+                titleElement.textContent = `${filterInfo.value} 数据统计表`;
+            } else if (filterInfo.type === 'average') {
+                titleElement.textContent = '阵营平均值对比';
+            } else {
+                titleElement.textContent = '角色数据统计表';
+            }
+        }
+
+        // 过滤数据
+        function filterData(filterInfo, data = allData) {
+            if (filterInfo.type === 'camp') {
+                return data.filter(item => item.camp_id === filterInfo.value);
+            } else if (filterInfo.type === 'character') {
+                return data.filter(item => item.name === filterInfo.value);
+            } else if (filterInfo.type === 'average') {
+                // 平均值对比页面根据当前选择的阵营过滤数据
+                return data.filter(item => item.camp_id === currentAverageCamp);
+            } else {
+                return data;
+            }
+        }
+
+        // 获取表头
+        function getTableHeaders(filterInfo, showRank, comparePrevious) {
+            // 获取当前赛季和上赛季名称
+            let currentSeasonDisplay, previousSeasonDisplay;
+            
+            if (currentWeek) {
+                currentSeasonDisplay = `第${currentWeekNum}周(${currentWeek.month.toString().padStart(2, '0')}${currentWeek.day.toString().padStart(2, '0')})`;
+                
+                // 根据previousWeekData判断是周对比还是赛季对比
+                if (comparePrevious && previousWeekData.length > 0) {
+                    // 检查previousWeekData是否为周数据（通过week_num判断）
+                    const firstItem = previousWeekData[0];
+                    if (firstItem && firstItem.week_num !== undefined) {
+                        const prevWeekNum = parseInt(firstItem.week_num);
+                        if (prevWeekNum === currentWeekNum) {
+                            // 确实是周对周对比
+                            previousSeasonDisplay = `第${prevWeekNum}周`;
+                        } else {
+                            // 周数不匹配，说明是fallback到赛季数据但显示为周格式
+                            const prevSeasonName = getPreviousSeasonName(currentSeasonName);
+                            previousSeasonDisplay = `${formatSeasonName(prevSeasonName)}`;
+                        }
+                    } else {
+                        // 没有week_num字段，可能是赛季数据
+                        const prevSeasonName = getPreviousSeasonName(currentSeasonName);
+                        previousSeasonDisplay = `${formatSeasonName(prevSeasonName)}`;
+                    }
+                } else {
+                    // 没有previous数据或未启用对比
+                    const prevSeasonName = getPreviousSeasonName(currentSeasonName);
+                    previousSeasonDisplay = `${formatSeasonName(prevSeasonName)}`;
+                }
+            } else {
+                currentSeasonDisplay = formatSeasonName(currentSeasonName);
+                const prevSeasonName = getPreviousSeasonName(currentSeasonName);
+                previousSeasonDisplay = formatSeasonName(prevSeasonName);
+            }
+            
+            if (filterInfo.type === 'average') {
+                // 平均值对比页面表头
+                if (showRank) {
+                    return [
+                        { name: '角色名', sortable: true },
+                        { name: '去平胜率排名', sortable: true },
+                        { name: '胜率排名', sortable: true },
+                        { name: '平率排名', sortable: true },
+                        { name: '负率排名', sortable: true }
+                    ];
+                } else {
+                    return [
+                        { name: '角色名', sortable: true },
+                        { name: '去平胜率距平', sortable: true },
+                        { name: '胜率距平', sortable: true },
+                        { name: '平率距平', sortable: true },
+                        { name: '负率距平', sortable: true }
+                    ];
+                }
+            }
+            
+            if (comparePrevious) {
+                // 比对上赛季的表头
+                if (showRank) {
+                    // 显示排名变化
+                    if (filterInfo.type === 'character') {
+                        return [
+                            { name: '段位', sortable: true },
+                            { name: '去平胜率排名变化', sortable: true },
+                            { name: `本赛季排名`, sortable: true },
+                            { name: `上赛季排名`, sortable: true },
+                            { name: '胜率排名变化', sortable: true },
+                            { name: '平率排名变化', sortable: true },
+                            { name: '负率排名变化', sortable: true },
+                            { name: '使用率排名变化', sortable: true },
+                            { name: '禁用率排名变化', sortable: true }
+                        ];
+                    } else {
+                        return [
+                            { name: '角色名', sortable: true },
+                            { name: '去平胜率排名变化', sortable: true },
+                            { name: `本赛季排名`, sortable: true },
+                            { name: `上赛季排名`, sortable: true },
+                            { name: '胜率排名变化', sortable: true },
+                            { name: '平率排名变化', sortable: true },
+                            { name: '负率排名变化', sortable: true },
+                            { name: '使用率排名变化', sortable: true },
+                            { name: '禁用率排名变化', sortable: true }
+                        ];
+                    }
+                } else {
+                    // 显示数值变化
+                    if (filterInfo.type === 'character') {
+                        return [
+                            { name: '段位', sortable: true },
+                            { name: '去平胜率变化', sortable: true },
+                            { name: `${currentSeasonDisplay}去平胜率`, sortable: true },
+                            { name: `${previousSeasonDisplay}去平胜率`, sortable: true },
+                            { name: '胜率变化', sortable: true },
+                            { name: '平率变化', sortable: true },
+                            { name: '负率变化', sortable: true },
+                            { name: '使用率变化', sortable: true },
+                            { name: '禁用率变化', sortable: true }
+                        ];
+                    } else {
+                        return [
+                            { name: '角色名', sortable: true },
+                            { name: '去平胜率变化', sortable: true },
+                            { name: `本赛季胜率`, sortable: true },
+                            { name: `上赛季胜率`, sortable: true },
+                            { name: '胜率变化', sortable: true },
+                            { name: '平率变化', sortable: true },
+                            { name: '负率变化', sortable: true },
+                            { name: '使用率变化', sortable: true },
+                            { name: '禁用率变化', sortable: true }
+                        ];
+                    }
+                }
+            } else {
+                // 正常显示的表头
+                if (showRank) {
+                    // 显示排名的表头
+                    if (filterInfo.type === 'character') {
+                        return [
+                            { name: '段位', sortable: true },
+                            { name: '去平胜率排名', sortable: true },
+                            { name: '胜率排名', sortable: true },
+                            { name: '平率排名', sortable: true },
+                            { name: '负率排名', sortable: true },
+                            { name: '使用率排名', sortable: true },
+                            { name: '禁用率排名', sortable: true }
+                        ];
+                    } else {
+                        return [
+                            { name: '角色名', sortable: true },
+                            { name: '去平胜率排名', sortable: true },
+                            { name: '胜率排名', sortable: true },
+                            { name: '平率排名', sortable: true },
+                            { name: '负率排名', sortable: true },
+                            { name: '使用率排名', sortable: true },
+                            { name: '禁用率排名', sortable: true }
+                        ];
+                    }
+                } else {
+                    // 显示数据的表头
+                    if (filterInfo.type === 'character') {
+                        return [
+                            { name: '段位', sortable: true },
+                            { name: '去平胜率', sortable: true },
+                            { name: '胜率', sortable: true },
+                            { name: '平率', sortable: true },
+                            { name: '负率', sortable: true },
+                            { name: '使用率', sortable: true },
+                            { name: '禁用率', sortable: true }
+                        ];
+                    } else {
+                        return [
+                            { name: '角色名', sortable: true },
+                            { name: '去平胜率', sortable: true },
+                            { name: '胜率', sortable: true },
+                            { name: '平率', sortable: true },
+                            { name: '负率', sortable: true },
+                            { name: '使用率', sortable: true },
+                            { name: '禁用率', sortable: true }
+                        ];
+                    }
+                }
+            }
+        }
+
+        // 生成表头HTML
+        function generateTableHeader(headers) {
+            let headerHTML = '';
+            headers.forEach((header, index) => {
+                const sortableClass = header.sortable ? 'sortable' : '';
+                headerHTML += `<th class="${sortableClass}" data-column="${index}">${header.name}</th>`;
+            });
+            return headerHTML;
+        }
+
+        // 获取段位名称
+        function getPartName(part) {
+            const partMap = {
+                1: '一阶',
+                2: '二阶',
+                3: '三阶',
+                4: '四阶',
+                5: '五阶',
+                6: '六阶',
+                7: '七阶',
+                8: '巅峰七阶',
+                '-127': '全段位'
+            };
+            return partMap[part] || `段位${part}`;
+        }
+
+        // 计算排名
+        function calculateRanks(data, campId, part) {
+            // 筛选同一阵营同一段位的数据
+            const filteredData = data.filter(item => 
+                item.camp_id === campId && item.part === part
+            );
+            
+            // 为每种指标计算排名
+            const metrics = ['win_rate_without_draw', 'win_rate', 'ping_rate', 'lose_rate', 'use_rate', 'ban_rate'];
+            const rankings = {};
+            
+            metrics.forEach(metric => {
+                // 按指标排序
+                const sortedData = [...filteredData].sort((a, b) => {
+                    let aVal, bVal;
+                    switch(metric) {
+                        case 'win_rate_without_draw':
+                            aVal = calculateWinRateWithoutDraw(a.win_rate, a.ping_rate);
+                            bVal = calculateWinRateWithoutDraw(b.win_rate, b.ping_rate);
+                            // 去平胜率降序排列
+                            return (bVal || 0) - (aVal || 0);
+                        case 'win_rate':
+                            // 胜率降序排列
+                            return (b.win_rate || 0) - (a.win_rate || 0);
+                        case 'ping_rate':
+                            // 平率降序排列（平局率越高排名越高）
+                            return (b.ping_rate || 0) - (a.ping_rate || 0);
+                        case 'lose_rate':
+                            aVal = calculateLoseRate(a.win_rate, a.ping_rate);
+                            bVal = calculateLoseRate(b.win_rate, b.ping_rate);
+                            // 负率升序排列
+                            return (aVal || 0) - (bVal || 0);
+                        case 'use_rate':
+                            // 使用率降序排列
+                            return (b.use_rate || 0) - (a.use_rate || 0);
+                        case 'ban_rate':
+                            // 禁用率降序排列
+                            return (b.ban_rate || 0) - (a.ban_rate || 0);
+                        default:
+                            return 0;
+                    }
+                });
+                
+                // 分配排名
+                rankings[metric] = {};
+                sortedData.forEach((item, index) => {
+                    rankings[metric][item.name] = index + 1;
+                });
+            });
+            
+            return rankings;
+        }
+
+        // 获取上赛季名称
+        function getPreviousSeasonName(currentSeasonName) {
+            if (currentSeasonName.startsWith('第')) {
+                const match = currentSeasonName.match(/第(\d+)赛季/);
+                if (match) {
+                    const currentNum = parseInt(match[1]);
+                    if (currentNum >= 33) {
+                        const previousNum = currentNum - 1;
+                        const previousKey = `第${previousNum}赛季`;
+                        return previousKey;
+                    }
+                }
+            }
+            return '未知赛季';
+        }
+
+        // 获取上赛季数据
+        function getPreviousSeasonData(currentSeasonName, seasonList) {
+            if (currentSeasonName.startsWith('第')) {
+                const match = currentSeasonName.match(/第(\d+)赛季/);
+                if (match) {
+                    const currentNum = parseInt(match[1]);
+                    if (currentNum >= 33) {
+                        const previousNum = currentNum - 1;
+                        const previousKey = `第${previousNum}赛季`;
+                        return seasonList[previousKey] || null;
+                    }
+                }
+            }
+            return null;
+        }
+
+        // 加载上赛季数据
+        async function loadPreviousSeasonData() {
+            const previousSeasonFile = getPreviousSeasonData(currentSeasonName, seasonList);
+            if (!previousSeasonFile) {
+                previousSeasonData = [];
+                return;
+            }
+            
+            try {
+                const response = await fetch(`json/${previousSeasonFile}`);
+                const jsonData = await response.json();
+                previousSeasonData = jsonData.data || [];
+            } catch (error) {
+                console.error('加载上赛季数据失败:', error);
+                previousSeasonData = [];
+            }
+        }
+
+        // 获取角色在指定赛季指定段位的数据
+        function getCharacterDataByNameAndPart(data, name, part) {
+            return data.find(item => item.name === name && item.part === part);
+        }
+
+        // 计算阵营平均值
+        function calculateCampAverage(data, campId, part) {
+            // 筛选同一阵营同一段位的数据
+            const filteredData = data.filter(item => 
+                item.camp_id === campId && item.part === part
+            );
+            
+            if (filteredData.length === 0) return null;
+            
+            // 使用出场率进行加权平均
+            let totalUseRate = 0;
+            let weightedWinRate = 0;
+            let weightedPingRate = 0;
+            let weightedLoseRate = 0;
+            let weightedWinRateWithoutDraw = 0;
+            
+            filteredData.forEach(item => {
+                totalUseRate += item.use_rate || 0;
+            });
+            
+            if (totalUseRate === 0) return null;
+            
+            filteredData.forEach(item => {
+                const weight = (item.use_rate || 0) / totalUseRate;
+                weightedWinRate += (item.win_rate || 0) * weight;
+                weightedPingRate += (item.ping_rate || 0) * weight;
+                weightedLoseRate += (calculateLoseRate(item.win_rate, item.ping_rate) || 0) * weight;
+                weightedWinRateWithoutDraw += (calculateWinRateWithoutDraw(item.win_rate, item.ping_rate) || 0) * weight;
+            });
+            
+            return {
+                name: '阵营平均',
+                camp_id: campId,
+                part: part,
+                win_rate: weightedWinRate,
+                ping_rate: weightedPingRate,
+                lose_rate: weightedLoseRate,
+                win_rate_without_draw: weightedWinRateWithoutDraw,
+                use_rate: null, // 使用率显示为 -
+                ban_rate: null  // 禁用率显示为 -
+            };
+        }
+
+        // 显示数据弹窗（优化版）
+        function showDataModal(characterName, part, currentData, previousData, showRank) {
+            const modal = document.getElementById('dataModal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalData = document.getElementById('modal-data');
+            
+            // 获取当前赛季和对比赛季名称
+            let currentSeasonDisplay, previousSeasonDisplay;
+            
+            if (currentWeek) {
+                currentSeasonDisplay = `第${currentWeekNum}周(${currentWeek.month.toString().padStart(2, '0')}${currentWeek.day.toString().padStart(2, '0')})`;
+                
+                // 根据previousWeekData判断是周对比还是赛季对比
+                if (comparePrevious && previousWeekData.length > 0) {
+                    const firstItem = previousWeekData[0];
+                    if (firstItem && firstItem.week_num !== undefined) {
+                        const prevWeekNum = parseInt(firstItem.week_num);
+                        if (prevWeekNum === currentWeekNum) {
+                            previousSeasonDisplay = `第${prevWeekNum}周`;
+                        } else {
+                            const prevSeasonName = getPreviousSeasonName(currentSeasonName);
+                            previousSeasonDisplay = `${formatSeasonName(prevSeasonName)}`;
+                        }
+                    } else {
+                        const prevSeasonName = getPreviousSeasonName(currentSeasonName);
+                        previousSeasonDisplay = `${formatSeasonName(prevSeasonName)}`;
+                    }
+                } else {
+                    const prevSeasonName = getPreviousSeasonName(currentSeasonName);
+                    previousSeasonDisplay = `${formatSeasonName(prevSeasonName)}`;
+                }
+            } else {
+                currentSeasonDisplay = formatSeasonName(currentSeasonName);
+                const prevSeasonName = getPreviousSeasonName(currentSeasonName);
+                previousSeasonDisplay = formatSeasonName(prevSeasonName);
+            }
+            
+            modalTitle.textContent = `${characterName} - ${getPartName(part)} 数据对比`;
+            
+            // 创建对比表格
+            let html = '<table class="comparison-table">';
+            html += '<thead>';
+            html += '<tr>';
+            
+            if (showRank) {
+                // 显示排名变化
+                html += '<th style="width: 20%">数据项</th>';
+                html += `<th style="width: 20%" class="current-season">${currentSeasonDisplay}排名</th>`;
+                html += `<th style="width: 20%" class="previous-season">${previousSeasonDisplay}排名</th>`;
+                html += '<th style="width: 20%">排名变化</th>';
+                html += '<th style="width: 20%">当赛季数据</th>';
+            } else {
+                // 显示数值变化
+                html += '<th style="width: 20%">数据项</th>';
+                html += `<th style="width: 25%" class="current-season">${currentSeasonDisplay}</th>`;
+                html += `<th style="width: 25%" class="previous-season">${previousSeasonDisplay}</th>`;
+                html += '<th style="width: 30%">变化</th>';
+            }
+            
+            html += '</tr>';
+            html += '</thead>';
+            html += '<tbody>';
+            
+            // 获取阵营ID用于计算排名
+            const campId = currentData ? currentData.camp_id : (previousData ? previousData.camp_id : 1);
+            
+            // 根据是否是周数据选择相应的数据源
+            const isWeekComparison = currentWeek && comparePrevious;
+            const currentDataSource = isWeekComparison ? allData : allData;
+            const previousDataSource = isWeekComparison ? previousWeekData : previousSeasonData;
+            
+            // 计算当前和之前的排名
+            const currentRankings = calculateRanks(currentDataSource, campId, part);
+            const previousRankings = calculateRanks(previousDataSource, campId, part);
+            
+            // 去平胜率
+            const currentWinRateWithoutDraw = currentData ? calculateWinRateWithoutDraw(currentData.win_rate, currentData.ping_rate) : null;
+            const previousWinRateWithoutDraw = previousData ? calculateWinRateWithoutDraw(previousData.win_rate, previousData.ping_rate) : null;
+            const winRateWithoutDrawChange = (currentWinRateWithoutDraw !== null && previousWinRateWithoutDraw !== null) ? 
+                (currentWinRateWithoutDraw - previousWinRateWithoutDraw) : null;
+            
+            const currentWinRateRank = currentRankings.win_rate_without_draw?.[characterName] || '暂无';
+            const previousWinRateRank = previousRankings.win_rate_without_draw?.[characterName] || '暂无';
+            const winRateRankChange = (currentWinRateRank !== '暂无' && previousWinRateRank !== '暂无') ? 
+                (previousWinRateRank - currentWinRateRank) : '暂无';
+            
+            html += '<tr>';
+            html += '<td>去平胜率</td>';
+            if (showRank) {
+                html += `<td>${currentWinRateRank}</td>`;
+                html += `<td>${previousWinRateRank}</td>`;
+                html += `<td class="change-cell">${winRateRankChange !== '暂无' ? formatChange(winRateRankChange, false) : '<span class="change-neutral">--</span>'}</td>`;
+                html += `<td>${currentData ? formatPercentage(currentWinRateWithoutDraw) : '暂无数据'}</td>`;
+            } else {
+                html += `<td>${currentData ? formatPercentage(currentWinRateWithoutDraw) : '暂无数据'}</td>`;
+                html += `<td>${previousData ? formatPercentage(previousWinRateWithoutDraw) : (isWeekComparison ? '上周未登场' : '上赛季未登场')}</td>`;
+                html += `<td class="change-cell">${winRateWithoutDrawChange !== null ? formatChange(winRateWithoutDrawChange) : '<span class="change-neutral">--</span>'}</td>`;
+            }
+            html += '</tr>';
+            
+            // 胜率
+            const winRateChange = (currentData && previousData) ? 
+                (currentData.win_rate - previousData.win_rate) : null;
+            
+            const currentWinRank = currentRankings.win_rate?.[characterName] || '暂无';
+            const previousWinRank = previousRankings.win_rate?.[characterName] || '暂无';
+            const winRankChange = (currentWinRank !== '暂无' && previousWinRank !== '暂无') ? 
+                (previousWinRank - currentWinRank) : '暂无';
+            
+            html += '<tr>';
+            html += '<td>胜率</td>';
+            if (showRank) {
+                html += `<td>${currentWinRank}</td>`;
+                html += `<td>${previousWinRank}</td>`;
+                html += `<td class="change-cell">${winRankChange !== '暂无' ? formatChange(winRankChange, false) : '<span class="change-neutral">--</span>'}</td>`;
+                html += `<td>${currentData ? formatPercentage(currentData.win_rate) : '暂无数据'}</td>`;
+            } else {
+                html += `<td>${currentData ? formatPercentage(currentData.win_rate) : '暂无数据'}</td>`;
+                html += `<td>${previousData ? formatPercentage(previousData.win_rate) : (isWeekComparison ? '上周未登场' : '上赛季未登场')}</td>`;
+                html += `<td class="change-cell">${winRateChange !== null ? formatChange(winRateChange) : '<span class="change-neutral">--</span>'}</td>`;
+            }
+            html += '</tr>';
+            
+            // 平率
+            const pingRateChange = (currentData && previousData) ? 
+                (currentData.ping_rate - previousData.ping_rate) : null;
+            
+            const currentPingRank = currentRankings.ping_rate?.[characterName] || '暂无';
+            const previousPingRank = previousRankings.ping_rate?.[characterName] || '暂无';
+            const pingRankChange = (currentPingRank !== '暂无' && previousPingRank !== '暂无') ? 
+                (previousPingRank - currentPingRank) : '暂无';
+            
+            html += '<tr>';
+            html += '<td>平率</td>';
+            if (showRank) {
+                html += `<td>${currentPingRank}</td>`;
+                html += `<td>${previousPingRank}</td>`;
+                html += `<td class="change-cell">${pingRankChange !== '暂无' ? formatChange(pingRankChange, false) : '<span class="change-neutral">--</span>'}</td>`;
+                html += `<td>${currentData ? formatPercentage(currentData.ping_rate) : '暂无数据'}</td>`;
+            } else {
+                html += `<td>${currentData ? formatPercentage(currentData.ping_rate) : '暂无数据'}</td>`;
+                html += `<td>${previousData ? formatPercentage(previousData.ping_rate) : (isWeekComparison ? '上周未登场' : '上赛季未登场')}</td>`;
+                html += `<td class="change-cell">${pingRateChange !== null ? formatChange(pingRateChange) : '<span class="change-neutral">--</span>'}</td>`;
+            }
+            html += '</tr>';
+            
+            // 负率
+            const currentLoseRate = currentData ? calculateLoseRate(currentData.win_rate, currentData.ping_rate) : null;
+            const previousLoseRate = previousData ? calculateLoseRate(previousData.win_rate, previousData.ping_rate) : null;
+            const loseRateChange = (currentLoseRate !== null && previousLoseRate !== null) ? 
+                (currentLoseRate - previousLoseRate) : null;
+            
+            const currentLoseRank = currentRankings.lose_rate?.[characterName] || '暂无';
+            const previousLoseRank = previousRankings.lose_rate?.[characterName] || '暂无';
+            const loseRankChange = (currentLoseRank !== '暂无' && previousLoseRank !== '暂无') ? 
+                (previousLoseRank - currentLoseRank) : '暂无';
+            
+            html += `<tr>`;
+            html += `<td>负率</td>`;
+            if (showRank) {
+                html += `<td>${currentLoseRank}</td>`;
+                html += `<td>${previousLoseRank}</td>`;
+                html += `<td class="change-cell">${loseRankChange !== '暂无' ? formatChange(loseRankChange, false) : '<span class="change-neutral">--</span>'}</td>`;
+                html += `<td>${currentData ? formatPercentage(currentLoseRate) : '暂无数据'}</td>`;
+            } else {
+                html += `<td>${currentData ? formatPercentage(currentLoseRate) : '暂无数据'}</td>`;
+                html += `<td>${previousData ? formatPercentage(previousLoseRate) : (isWeekComparison ? '上周未登场' : '上赛季未登场')}</td>`;
+                html += `<td class="change-cell">${loseRateChange !== null ? formatChange(loseRateChange) : '<span class="change-neutral">--</span>'}</td>`;
+            }
+            html += '</tr>';
+            
+            // 使用率
+            const useRateChange = (currentData && previousData) ? 
+                (currentData.use_rate - previousData.use_rate) : null;
+            
+            const currentUseRank = currentRankings.use_rate?.[characterName] || '暂无';
+            const previousUseRank = previousRankings.use_rate?.[characterName] || '暂无';
+            const useRankChange = (currentUseRank !== '暂无' && previousUseRank !== '暂无') ? 
+                (previousUseRank - currentUseRank) : '暂无';
+            
+            html += '<tr>';
+            html += '<td>使用率</td>';
+            if (showRank) {
+                html += `<td>${currentUseRank}</td>`;
+                html += `<td>${previousUseRank}</td>`;
+                html += `<td class="change-cell">${useRankChange !== '暂无' ? formatChange(useRankChange, false) : '<span class="change-neutral">--</span>'}</td>`;
+                html += `<td>${currentData ? formatPercentage(currentData.use_rate) : '暂无数据'}</td>`;
+            } else {
+                html += `<td>${currentData ? formatPercentage(currentData.use_rate) : '暂无数据'}</td>`;
+                html += `<td>${previousData ? formatPercentage(previousData.use_rate) : (isWeekComparison ? '上周未登场' : '上赛季未登场')}</td>`;
+                html += `<td class="change-cell">${useRateChange !== null ? formatChange(useRateChange) : '<span class="change-neutral">--</span>'}</td>`;
+            }
+            html += '</tr>';
+            
+            // 禁用率
+            const banRateChange = (currentData && previousData) ? 
+                (currentData.ban_rate - previousData.ban_rate) : null;
+            
+            const currentBanRank = currentRankings.ban_rate?.[characterName] || '暂无';
+            const previousBanRank = previousRankings.ban_rate?.[characterName] || '暂无';
+            const banRankChange = (currentBanRank !== '暂无' && previousBanRank !== '暂无') ? 
+                (previousBanRank - currentBanRank) : '暂无';
+            
+            html += '<tr>';
+            html += '<td>禁用率</td>';
+            if (showRank) {
+                html += `<td>${currentBanRank}</td>`;
+                html += `<td>${previousBanRank}</td>`;
+                html += `<td class="change-cell">${banRankChange !== '暂无' ? formatChange(banRankChange, false) : '<span class="change-neutral">--</span>'}</td>`;
+                html += `<td>${currentData ? formatPercentage(currentData.ban_rate) : '暂无数据'}</td>`;
+            } else {
+                html += `<td>${currentData ? formatPercentage(currentData.ban_rate) : '暂无数据'}</td>`;
+                html += `<td>${previousData ? formatPercentage(previousData.ban_rate) : (isWeekComparison ? '上周未登场' : '上赛季未登场')}</td>`;
+                html += `<td class="change-cell">${banRateChange !== null ? formatChange(banRateChange) : '<span class="change-neutral">--</span>'}</td>`;
+            }
+            html += '</tr>';
+            
+            html += '</tbody>';
+            html += '</table>';
+            
+            modalData.innerHTML = html;
+            modal.style.display = 'block';
+        }
+
+        // 生成角色详情页面的对比排名行
+        function generateCharacterCompareRankRow(part, partName, currentRankings, previousRankings, characterName) {
+            const currentWinRateRank = currentRankings.win_rate_without_draw?.[characterName] || 999;
+            const previousWinRateRank = previousRankings.win_rate_without_draw?.[characterName];
+            let winRateRankChange = '暂无';
+            let previousWinRateRankDisplay = '暂无';
+            let isNotPlayed = false;
+            
+            if (previousWinRateRank !== undefined) {
+                winRateRankChange = previousWinRateRank - currentWinRateRank;
+                previousWinRateRankDisplay = previousWinRateRank;
+            } else {
+                previousWinRateRankDisplay = '<span class="not-played">此前赛季未登场</span>';
+                winRateRankChange = '<span class="not-played">此前赛季未登场</span>';
+                isNotPlayed = true;
+            }
+            
+            const currentWinRank = currentRankings.win_rate?.[characterName] || 999;
+            const previousWinRank = previousRankings.win_rate?.[characterName];
+            let winRankChange = '暂无';
+            if (previousWinRank !== undefined) {
+                winRankChange = previousWinRank - currentWinRank;
+            } else {
+                winRankChange = '<span class="not-played">此前赛季未登场</span>';
+            }
+            
+            const currentPingRank = currentRankings.ping_rate?.[characterName] || 999;
+            const previousPingRank = previousRankings.ping_rate?.[characterName];
+            let pingRankChange = '暂无';
+            if (previousPingRank !== undefined) {
+                pingRankChange = previousPingRank - currentPingRank;
+            } else {
+                pingRankChange = '<span class="not-played">此前赛季未登场</span>';
+            }
+            
+            const currentLoseRank = currentRankings.lose_rate?.[characterName] || 999;
+            const previousLoseRank = previousRankings.lose_rate?.[characterName];
+            let loseRankChange = '暂无';
+            if (previousLoseRank !== undefined) {
+                loseRankChange = previousLoseRank - currentLoseRank;
+            } else {
+                loseRankChange = '<span class="not-played">此前赛季未登场</span>';
+            }
+            
+            const currentUseRank = currentRankings.use_rate?.[characterName] || 999;
+            const previousUseRank = previousRankings.use_rate?.[characterName];
+            let useRankChange = '暂无';
+            if (previousUseRank !== undefined) {
+                useRankChange = previousUseRank - currentUseRank;
+            } else {
+                useRankChange = '<span class="not-played">此前赛季未登场</span>';
+            }
+            
+            const currentBanRank = currentRankings.ban_rate?.[characterName] || 999;
+            const previousBanRank = previousRankings.ban_rate?.[characterName];
+            let banRankChange = '暂无';
+            if (previousBanRank !== undefined) {
+                banRankChange = previousBanRank - currentBanRank;
+            } else {
+                banRankChange = '<span class="not-played">此前赛季未登场</span>';
+            }
+            
+            // 添加数据属性用于弹窗
+            const currentData = getCharacterDataByNameAndPart(allData, characterName, part);
+            const previousData = currentWeek ? 
+                getCharacterDataByNameAndPart(previousWeekData, characterName, part) :
+                getCharacterDataByNameAndPart(previousSeasonData, characterName, part);
+            const dataAttr = `data-character="${characterName}" data-part="${part}"`;
+            
+            return `
+                <tr ${dataAttr} class="data-row" ${isNotPlayed ? 'data-not-played="true"' : ''}>
+                    <td>${partName}</td>
+                    <td>${typeof winRateRankChange === 'string' ? winRateRankChange : formatChange(winRateRankChange, false)}</td>
+                    <td>${currentWinRateRank === 999 ? '暂无' : currentWinRateRank}</td>
+                    <td>${previousWinRateRankDisplay}</td>
+                    <td>${typeof winRankChange === 'string' ? winRankChange : formatChange(winRankChange, false)}</td>
+                    <td>${typeof pingRankChange === 'string' ? pingRankChange : formatChange(pingRankChange, false)}</td>
+                    <td>${typeof loseRankChange === 'string' ? loseRankChange : formatChange(loseRankChange, false)}</td>
+                    <td>${typeof useRankChange === 'string' ? useRankChange : formatChange(useRankChange, false)}</td>
+                    <td>${typeof banRankChange === 'string' ? banRankChange : formatChange(banRankChange, false)}</td>
+                </tr>
+            `;
+        }
+
+        // 生成角色详情页面的对比数据行
+        function generateCharacterCompareDataRow(part, partName, currentData, previousData, characterName) {
+            if (!currentData) {
+                return `
+                    <tr data-character="${characterName}" data-part="${part}" class="data-row" data-not-played="true">
+                        <td>${partName}</td>
+                        <td colspan="8" class="no-data">当前赛季暂无数据</td>
+                    </tr>
+                `;
+            }
+            
+            const currentLoseRate = calculateLoseRate(currentData.win_rate, currentData.ping_rate);
+            const currentWinRateWithoutDraw = calculateWinRateWithoutDraw(currentData.win_rate, currentData.ping_rate);
+            
+            let winRateChange = '暂无';
+            let pingRateChange = '暂无';
+            let loseRateChange = '暂无';
+            let useRateChange = '暂无';
+            let banRateChange = '暂无';
+            let winRateWithoutDrawChange = '暂无';
+            let previousWinRateWithoutDraw = '暂无';
+            let isNotPlayed = !previousData;
+            
+            if (previousData) {
+                const previousLoseRate = calculateLoseRate(previousData.win_rate, previousData.ping_rate);
+                const previousWinRateWithoutDrawValue = calculateWinRateWithoutDraw(previousData.win_rate, previousData.ping_rate);
+                
+                winRateChange = formatChange(currentData.win_rate - previousData.win_rate);
+                pingRateChange = formatChange(currentData.ping_rate - previousData.ping_rate);
+                loseRateChange = formatChange(currentLoseRate - previousLoseRate);
+                useRateChange = formatChange(currentData.use_rate - previousData.use_rate);
+                banRateChange = formatChange(currentData.ban_rate - previousData.ban_rate);
+                winRateWithoutDrawChange = formatChange(currentWinRateWithoutDraw - previousWinRateWithoutDrawValue);
+                previousWinRateWithoutDraw = formatPercentage(previousWinRateWithoutDrawValue);
+            } else {
+                previousWinRateWithoutDraw = '<span class="not-played">此前未登场</span>';
+                winRateChange = '<span class="not-played">此前未登场</span>';
+                pingRateChange = '<span class="not-played">此前未登场</span>';
+                loseRateChange = '<span class="not-played">此前未登场</span>';
+                useRateChange = '<span class="not-played">此前未登场</span>';
+                banRateChange = '<span class="not-played">此前未登场</span>';
+                winRateWithoutDrawChange = '<span class="not-played">此前未登场</span>';
+            }
+            
+            // 添加数据属性用于弹窗
+            const dataAttr = `data-character="${characterName}" data-part="${part}"`;
+            
+            return `
+                <tr ${dataAttr} class="data-row" ${isNotPlayed ? 'data-not-played="true"' : ''}>
+                    <td>${partName}</td>
+                    <td>${winRateWithoutDrawChange}</td>
+                    <td>${formatPercentage(currentWinRateWithoutDraw)}</td>
+                    <td>${previousWinRateWithoutDraw}</td>
+                    <td>${winRateChange}</td>
+                    <td>${pingRateChange}</td>
+                    <td>${loseRateChange}</td>
+                    <td>${useRateChange}</td>
+                    <td>${banRateChange}</td>
+                </tr>
+            `;
+        }
+
+        // 生成阵营页面的对比排名行
+        function generateCampCompareRankRow(item, currentRankings, previousRankings) {
+            const currentWinRateRank = currentRankings.win_rate_without_draw?.[item.name] || 999;
+            const previousWinRateRank = previousRankings.win_rate_without_draw?.[item.name];
+            let winRateRankChange = '暂无';
+            let previousWinRateRankDisplay = '暂无';
+            let isNotPlayed = false;
+            
+            if (previousWinRateRank !== undefined) {
+                winRateRankChange = previousWinRateRank - currentWinRateRank;
+                previousWinRateRankDisplay = previousWinRateRank;
+            } else {
+                previousWinRateRankDisplay = '<span class="not-played">此前赛季未登场</span>';
+                winRateRankChange = '<span class="not-played">此前赛季未登场</span>';
+                isNotPlayed = true;
+            }
+            
+            const currentWinRank = currentRankings.win_rate?.[item.name] || 999;
+            const previousWinRank = previousRankings.win_rate?.[item.name];
+            let winRankChange = '暂无';
+            if (previousWinRank !== undefined) {
+                winRankChange = previousWinRank - currentWinRank;
+            } else {
+                winRankChange = '<span class="not-played">此前赛季未登场</span>';
+            }
+            
+            const currentPingRank = currentRankings.ping_rate?.[item.name] || 999;
+            const previousPingRank = previousRankings.ping_rate?.[item.name];
+            let pingRankChange = '暂无';
+            if (previousPingRank !== undefined) {
+                pingRankChange = previousPingRank - currentPingRank;
+            } else {
+                pingRankChange = '<span class="not-played">此前赛季未登场</span>';
+            }
+            
+            const currentLoseRank = currentRankings.lose_rate?.[item.name] || 999;
+            const previousLoseRank = previousRankings.lose_rate?.[item.name];
+            let loseRankChange = '暂无';
+            if (previousLoseRank !== undefined) {
+                loseRankChange = previousLoseRank - currentLoseRank;
+            } else {
+                loseRankChange = '<span class="not-played">此前赛季未登场</span>';
+            }
+            
+            const currentUseRank = currentRankings.use_rate?.[item.name] || 999;
+            const previousUseRank = previousRankings.use_rate?.[item.name];
+            let useRankChange = '暂无';
+            if (previousUseRank !== undefined) {
+                useRankChange = previousUseRank - currentUseRank;
+            } else {
+                useRankChange = '<span class="not-played">此前赛季未登场</span>';
+            }
+            
+            const currentBanRank = currentRankings.ban_rate?.[item.name] || 999;
+            const previousBanRank = previousRankings.ban_rate?.[item.name];
+            let banRankChange = '暂无';
+            if (previousBanRank !== undefined) {
+                banRankChange = previousBanRank - currentBanRank;
+            } else {
+                banRankChange = '<span class="not-played">此前赛季未登场</span>';
+            }
+            
+            // 添加数据属性用于弹窗
+            const dataAttr = `data-character="${item.name}" data-part="${currentPart}"`;
+            
+            return `
+                <tr ${dataAttr} class="data-row" ${isNotPlayed ? 'data-not-played="true"' : ''}>
+                    <td><span class="character-link" onclick="location.hash='#${item.name}'">${item.name}</span></td>
+                    <td>${typeof winRateRankChange === 'string' ? winRateRankChange : formatChange(winRateRankChange, false)}</td>
+                    <td>${currentWinRateRank === 999 ? '暂无' : currentWinRateRank}</td>
+                    <td>${previousWinRateRankDisplay}</td>
+                    <td>${typeof winRankChange === 'string' ? winRankChange : formatChange(winRankChange, false)}</td>
+                    <td>${typeof pingRankChange === 'string' ? pingRankChange : formatChange(pingRankChange, false)}</td>
+                    <td>${typeof loseRankChange === 'string' ? loseRankChange : formatChange(loseRankChange, false)}</td>
+                    <td>${typeof useRankChange === 'string' ? useRankChange : formatChange(useRankChange, false)}</td>
+                    <td>${typeof banRankChange === 'string' ? banRankChange : formatChange(banRankChange, false)}</td>
+                </tr>
+            `;
+        }
+
+        // 生成阵营页面的对比数据行
+        function generateCampCompareDataRow(item, previousItem) {
+            const currentLoseRate = calculateLoseRate(item.win_rate, item.ping_rate);
+            const currentWinRateWithoutDraw = calculateWinRateWithoutDraw(item.win_rate, item.ping_rate);
+            
+            let winRateChange = '暂无';
+            let pingRateChange = '暂无';
+            let loseRateChange = '暂无';
+            let useRateChange = '暂无';
+            let banRateChange = '暂无';
+            let winRateWithoutDrawChange = '暂无';
+            let previousWinRateWithoutDraw = '暂无';
+            let isNotPlayed = !previousItem;
+            
+            if (previousItem) {
+                const previousLoseRate = calculateLoseRate(previousItem.win_rate, previousItem.ping_rate);
+                const previousWinRateWithoutDrawValue = calculateWinRateWithoutDraw(previousItem.win_rate, previousItem.ping_rate);
+                
+                winRateChange = formatChange(item.win_rate - previousItem.win_rate);
+                pingRateChange = formatChange(item.ping_rate - previousItem.ping_rate);
+                loseRateChange = formatChange(currentLoseRate - previousLoseRate);
+                useRateChange = formatChange(item.use_rate - previousItem.use_rate);
+                banRateChange = formatChange(item.ban_rate - previousItem.ban_rate);
+                winRateWithoutDrawChange = formatChange(currentWinRateWithoutDraw - previousWinRateWithoutDrawValue);
+                previousWinRateWithoutDraw = formatPercentage(previousWinRateWithoutDrawValue);
+            } else {
+                previousWinRateWithoutDraw = '<span class="not-played">此前未登场</span>';
+                winRateChange = '<span class="not-played">此前未登场</span>';
+                pingRateChange = '<span class="not-played">此前未登场</span>';
+                loseRateChange = '<span class="not-played">此前未登场</span>';
+                useRateChange = '<span class="not-played">此前未登场</span>';
+                banRateChange = '<span class="not-played">此前未登场</span>';
+                winRateWithoutDrawChange = '<span class="not-played">此前未登场</span>';
+            }
+            
+            // 添加数据属性用于弹窗
+            const dataAttr = `data-character="${item.name}" data-part="${currentPart}"`;
+            
+            return `
+                <tr ${dataAttr} class="data-row" ${isNotPlayed ? 'data-not-played="true"' : ''}>
+                    <td><span class="character-link" onclick="location.hash='#${item.name}'">${item.name}</span></td>
+                    <td>${winRateWithoutDrawChange}</td>
+                    <td>${formatPercentage(currentWinRateWithoutDraw)}</td>
+                    <td>${previousWinRateWithoutDraw}</td>
+                    <td>${winRateChange}</td>
+                    <td>${pingRateChange}</td>
+                    <td>${loseRateChange}</td>
+                    <td>${useRateChange}</td>
+                    <td>${banRateChange}</td>
+                </tr>
+            `;
+        }
+
+        // 生成角色详情页面的排名行
+        function generateCharacterRankRow(part, partName, rankings, characterName) {
+            const winRateRank = rankings.win_rate_without_draw?.[characterName] || '暂无';
+            const winRank = rankings.win_rate?.[characterName] || '暂无';
+            const pingRank = rankings.ping_rate?.[characterName] || '暂无';
+            const loseRank = rankings.lose_rate?.[characterName] || '暂无';
+            const useRank = rankings.use_rate?.[characterName] || '暂无';
+            const banRank = rankings.ban_rate?.[characterName] || '暂无';
+            
+            return `
+                <tr>
+                    <td>${partName}</td>
+                    <td>${winRateRank}</td>
+                    <td>${winRank}</td>
+                    <td>${pingRank}</td>
+                    <td>${loseRank}</td>
+                    <td>${useRank}</td>
+                    <td>${banRank}</td>
+                </tr>
+            `;
+        }
+
+        // 生成角色详情页面的数据行
+        function generateCharacterDataRow(partData) {
+            const loseRate = calculateLoseRate(partData.win_rate, partData.ping_rate);
+            const winRateWithoutDraw = calculateWinRateWithoutDraw(partData.win_rate, partData.ping_rate);
+            
+            return `
+                <tr>
+                    <td>${getPartName(partData.part)}</td>
+                    <td>${formatPercentage(winRateWithoutDraw)}</td>
+                    <td>${formatPercentage(partData.win_rate)}</td>
+                    <td>${formatPercentage(partData.ping_rate)}</td>
+                    <td>${formatPercentage(loseRate)}</td>
+                    <td>${partData.use_rate !== null ? formatPercentage(partData.use_rate) : '-'}</td>
+                    <td>${partData.ban_rate !== null ? formatPercentage(partData.ban_rate) : '-'}</td>
+                </tr>
+            `;
+        }
+
+        // 生成阵营页面的排名行
+        function generateCampRankRow(item, rankings) {
+            const winRateRank = rankings.win_rate_without_draw?.[item.name] || '暂无';
+            const winRank = rankings.win_rate?.[item.name] || '暂无';
+            const pingRank = rankings.ping_rate?.[item.name] || '暂无';
+            const loseRank = rankings.lose_rate?.[item.name] || '暂无';
+            const useRank = rankings.use_rate?.[item.name] || '暂无';
+            const banRank = rankings.ban_rate?.[item.name] || '暂无';
+            
+            return `
+                <tr>
+                    <td><span class="character-link" onclick="location.hash='#${item.name}'">${item.name}</span></td>
+                    <td>${winRateRank}</td>
+                    <td>${winRank}</td>
+                    <td>${pingRank}</td>
+                    <td>${loseRank}</td>
+                    <td>${useRank}</td>
+                    <td>${banRank}</td>
+                </tr>
+            `;
+        }
+
+        // 生成阵营页面的数据行
+        function generateCampDataRow(item) {
+            const loseRate = calculateLoseRate(item.win_rate, item.ping_rate);
+            const winRateWithoutDraw = calculateWinRateWithoutDraw(item.win_rate, item.ping_rate);
+            
+            return `
+                <tr>
+                    <td><span class="character-link" onclick="location.hash='#${item.name}'">${item.name}</span></td>
+                    <td>${formatPercentage(winRateWithoutDraw)}</td>
+                    <td>${formatPercentage(item.win_rate)}</td>
+                    <td>${formatPercentage(item.ping_rate)}</td>
+                    <td>${formatPercentage(loseRate)}</td>
+                    <td>${item.use_rate !== null ? formatPercentage(item.use_rate) : '-'}</td>
+                    <td>${item.ban_rate !== null ? formatPercentage(item.ban_rate) : '-'}</td>
+                </tr>
+            `;
+        }
+
+        // 生成阵营平均值行
+        function generateCampAverageRow(campAverage, rankings) {
+            if (!campAverage) return '';
+            
+            const winRateRank = rankings.win_rate_without_draw?.[campAverage.name] || '暂无';
+            const winRank = rankings.win_rate?.[campAverage.name] || '暂无';
+            const pingRank = rankings.ping_rate?.[campAverage.name] || '暂无';
+            const loseRank = rankings.lose_rate?.[campAverage.name] || '暂无';
+            
+            if (showRank) {
+                return `
+                    <tr class="camp-average-row">
+                        <td>${campAverage.name}</td>
+                        <td>${winRateRank}</td>
+                        <td>${winRank}</td>
+                        <td>${pingRank}</td>
+                        <td>${loseRank}</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                `;
+            } else {
+                const loseRate = calculateLoseRate(campAverage.win_rate, campAverage.ping_rate);
+                const winRateWithoutDraw = calculateWinRateWithoutDraw(campAverage.win_rate, campAverage.ping_rate);
+                
+                return `
+                    <tr class="camp-average-row">
+                        <td>${campAverage.name}</td>
+                        <td>${formatPercentage(winRateWithoutDraw)}</td>
+                        <td>${formatPercentage(campAverage.win_rate)}</td>
+                        <td>${formatPercentage(campAverage.ping_rate)}</td>
+                        <td>${formatPercentage(loseRate)}</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                `;
+            }
+        }
+
+        // 生成平均值对比页面的数据行
+        function generateAverageCompareRow(characterData, campAverage, showRank, rankings) {
+            if (!characterData || !campAverage) return '';
+            
+            const characterName = characterData.name;
+            const loseRate = calculateLoseRate(characterData.win_rate, characterData.ping_rate);
+            const winRateWithoutDraw = calculateWinRateWithoutDraw(characterData.win_rate, characterData.ping_rate);
+            
+            const campLoseRate = calculateLoseRate(campAverage.win_rate, campAverage.ping_rate);
+            const campWinRateWithoutDraw = calculateWinRateWithoutDraw(campAverage.win_rate, campAverage.ping_rate);
+            
+            if (showRank) {
+                const winRateRank = rankings.win_rate_without_draw?.[characterName] || '暂无';
+                const winRank = rankings.win_rate?.[characterName] || '暂无';
+                const pingRank = rankings.ping_rate?.[characterName] || '暂无';
+                const loseRank = rankings.lose_rate?.[characterName] || '暂无';
+                
+                return `
+                    <tr>
+                        <td>${characterName}</td>
+                        <td>${winRateRank}</td>
+                        <td>${winRank}</td>
+                        <td>${pingRank}</td>
+                        <td>${loseRank}</td>
+                    </tr>
+                `;
+            } else {
+                const winRateDiff = characterData.win_rate - campAverage.win_rate;
+                const pingRateDiff = characterData.ping_rate - campAverage.ping_rate;
+                const loseRateDiff = loseRate - campLoseRate;
+                const winRateWithoutDrawDiff = winRateWithoutDraw - campWinRateWithoutDraw;
+                
+                return `
+                    <tr>
+                        <td>${characterName}</td>
+                        <td>${formatChange(winRateWithoutDrawDiff)}</td>
+                        <td>${formatChange(winRateDiff)}</td>
+                        <td>${formatChange(pingRateDiff)}</td>
+                        <td>${formatChange(loseRateDiff)}</td>
+                    </tr>
+                `;
+            }
+        }
+
+        // 生成角色详情页面内容（修复版本）
+        function generateCharacterDetailContent(characterData, showRank, comparePrevious) {
+            const tableBody = document.getElementById('table-body');
+            
+            if (characterData.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="7" class="no-data">暂无数据</td></tr>';
+                return;
+            }
+            
+            // 获取角色名和阵营ID
+            const characterName = characterData[0].name;
+            const campId = characterData[0].camp_id;
+            
+            // 按指定顺序显示段位：全段位、巅峰七阶、七阶、六阶、五阶、四阶、三阶、二阶、一阶
+            const parts = [-127, 8, 7, 6, 5, 4, 3, 2, 1];
+            let rowsHTML = '';
+            let notPlayedRowsHTML = '';
+            
+            if (comparePrevious) {
+                // 比对上赛季
+                if (showRank) {
+                    // 显示排名变化 - 为每个段位单独计算排名
+                    parts.forEach(part => {
+                        const currentPartData = characterData.find(item => item.part === part);
+                        if (currentPartData) {
+                            // 为当前段位计算排名
+                            const currentRankings = calculateRanks(allData, campId, part);
+                            const previousRankings = currentWeek ? 
+                                calculateRanks(previousWeekData, campId, part) :
+                                calculateRanks(previousSeasonData, campId, part);
+                            const rowHTML = generateCharacterCompareRankRow(part, getPartName(part), currentRankings, previousRankings, characterName);
+                            // 检查是否为未登场
+                            if (rowHTML.includes('此前赛季未登场')) {
+                                notPlayedRowsHTML += rowHTML;
+                            } else {
+                                rowsHTML += rowHTML;
+                            }
+                        }
+                    });
+                } else {
+                    // 显示数值变化
+                    parts.forEach(part => {
+                        const currentPartData = characterData.find(item => item.part === part);
+                        const previousPartData = currentWeek ? 
+                            getCharacterDataByNameAndPart(previousWeekData, characterName, part) :
+                            getCharacterDataByNameAndPart(previousSeasonData, characterName, part);
+                        const rowHTML = generateCharacterCompareDataRow(part, getPartName(part), currentPartData, previousPartData, characterName);
+                        // 检查是否为未登场
+                        if (rowHTML.includes('此前未登场')) {
+                            notPlayedRowsHTML += rowHTML;
+                        } else {
+                            rowsHTML += rowHTML;
+                        }
+                    });
+                }
+            } else {
+                // 正常显示
+                if (showRank) {
+                    // 显示排名 - 为每个段位单独计算排名
+                    parts.forEach(part => {
+                        const partData = characterData.find(item => item.part === part);
+                        if (partData) {
+                            // 为当前段位计算排名
+                            const rankings = calculateRanks(allData, campId, part);
+                            rowsHTML += generateCharacterRankRow(part, getPartName(part), rankings, characterName);
+                        }
+                    });
+                } else {
+                    // 显示原始数据
+                    parts.forEach(part => {
+                        const partData = characterData.find(item => item.part === part);
+                        if (partData) {
+                            rowsHTML += generateCharacterDataRow(partData);
+                        }
+                    });
+                }
+            }
+            
+            // 将未登场的行放在最后
+            tableBody.innerHTML = (rowsHTML + notPlayedRowsHTML) || '<tr><td colspan="7" class="no-data">暂无数据</td></tr>';
+        }
+
+        // 生成阵营页面内容（修复排序问题）
+        function generateCampContent(campData, currentPart, showRank, comparePrevious) {
+            const tableBody = document.getElementById('table-body');
+            
+            // 获取当前段位的数据
+            const currentPartData = campData.filter(item => item.part === currentPart);
+            
+            if (currentPartData.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="7" class="no-data">暂无数据</td></tr>';
+                return;
+            }
+            
+            // 获取阵营ID
+            const campId = currentPartData[0].camp_id;
+            
+            let rowsHTML = '';
+            let notPlayedRowsHTML = '';
+            let averageRowHTML = '';
+            
+            // 计算阵营平均值（仅在非比对模式下显示）
+            if (!comparePrevious) {
+                const campAverage = calculateCampAverage(allData, campId, currentPart);
+                if (campAverage && !showRank) {
+                    const currentRankings = calculateRanks(allData, campId, currentPart);
+                    averageRowHTML = generateCampAverageRow(campAverage, currentRankings);
+                }
+            }
+            
+            if (comparePrevious) {
+                // 比对上赛季
+                const currentRankings = calculateRanks(allData, campId, currentPart);
+                const previousRankings = currentWeek ? 
+                    calculateRanks(previousWeekData, campId, currentPart) :
+                    calculateRanks(previousSeasonData, campId, currentPart);
+                
+                if (showRank) {
+                    // 显示排名变化，按去平胜率排名变化排序
+                    const sortedData = [...currentPartData].sort((a, b) => {
+                        const aCurrentRank = currentRankings.win_rate_without_draw?.[a.name] || 999;
+                        const aPreviousRank = previousRankings.win_rate_without_draw?.[a.name];
+                        const aChange = aPreviousRank !== undefined ? (aPreviousRank - aCurrentRank) : -9999;
+                        
+                        const bCurrentRank = currentRankings.win_rate_without_draw?.[b.name] || 999;
+                        const bPreviousRank = previousRankings.win_rate_without_draw?.[b.name];
+                        const bChange = bPreviousRank !== undefined ? (bPreviousRank - bCurrentRank) : -9999;
+                        
+                        // 未登场的排在最后
+                        if (aPreviousRank === undefined && bPreviousRank === undefined) return 0;
+                        if (aPreviousRank === undefined) return 1;
+                        if (bPreviousRank === undefined) return -1;
+                        
+                        // 按变化值降序排序（变化越大越靠前）
+                        return bChange - aChange;
+                    });
+                    
+                    sortedData.forEach(item => {
+                        const rowHTML = generateCampCompareRankRow(item, currentRankings, previousRankings);
+                        // 检查是否为未登场
+                        if (rowHTML.includes('此前赛季未登场')) {
+                            notPlayedRowsHTML += rowHTML;
+                        } else {
+                            rowsHTML += rowHTML;
+                        }
+                    });
+                } else {
+                    // 显示数值变化，按去平胜率变化排序
+                    const sortedData = [...currentPartData].sort((a, b) => {
+                        const aPreviousItem = currentWeek ? 
+                            getCharacterDataByNameAndPart(previousWeekData, a.name, currentPart) :
+                            getCharacterDataByNameAndPart(previousSeasonData, a.name, currentPart);
+                        const bPreviousItem = currentWeek ? 
+                            getCharacterDataByNameAndPart(previousWeekData, b.name, currentPart) :
+                            getCharacterDataByNameAndPart(previousSeasonData, b.name, currentPart);
+                        
+                        let aChange = 0;
+                        let bChange = 0;
+                        let aHasPrevious = false;
+                        let bHasPrevious = false;
+                        
+                        if (aPreviousItem) {
+                            const aCurrentWinRate = calculateWinRateWithoutDraw(a.win_rate, a.ping_rate);
+                            const aPreviousWinRate = calculateWinRateWithoutDraw(aPreviousItem.win_rate, aPreviousItem.ping_rate);
+                            aChange = aCurrentWinRate - aPreviousWinRate;
+                            aHasPrevious = true;
+                        }
+                        
+                        if (bPreviousItem) {
+                            const bCurrentWinRate = calculateWinRateWithoutDraw(b.win_rate, b.ping_rate);
+                            const bPreviousWinRate = calculateWinRateWithoutDraw(bPreviousItem.win_rate, bPreviousItem.ping_rate);
+                            bChange = bCurrentWinRate - bPreviousWinRate;
+                            bHasPrevious = true;
+                        }
+                        
+                        // 未登场的排在最后
+                        if (!aHasPrevious && !bHasPrevious) return 0;
+                        if (!aHasPrevious) return 1;
+                        if (!bHasPrevious) return -1;
+                        
+                        // 按变化值降序排序（变化越大越靠前）
+                        return bChange - aChange;
+                    });
+                    
+                    sortedData.forEach(item => {
+                        const previousItem = currentWeek ? 
+                            getCharacterDataByNameAndPart(previousWeekData, item.name, currentPart) :
+                            getCharacterDataByNameAndPart(previousSeasonData, item.name, currentPart);
+                        const rowHTML = generateCampCompareDataRow(item, previousItem);
+                        // 检查是否为未登场
+                        if (rowHTML.includes('此前未登场')) {
+                            notPlayedRowsHTML += rowHTML;
+                        } else {
+                            rowsHTML += rowHTML;
+                        }
+                    });
+                }
+            } else {
+                // 正常显示
+                const rankings = calculateRanks(allData, campId, currentPart);
+                
+                if (showRank) {
+                    // 显示排名，按去平胜率排名升序排序
+                    const sortedData = [...currentPartData].sort((a, b) => {
+                        const aRank = rankings.win_rate_without_draw?.[a.name] || 999;
+                        const bRank = rankings.win_rate_without_draw?.[b.name] || 999;
+                        return aRank - bRank; // 升序
+                    });
+                    
+                    sortedData.forEach(item => {
+                        rowsHTML += generateCampRankRow(item, rankings);
+                    });
+                } else {
+                    // 显示原始数据，按去平胜率降序排序
+                    const sortedData = [...currentPartData].sort((a, b) => {
+                        const aWinRate = calculateWinRateWithoutDraw(a.win_rate, a.ping_rate);
+                        const bWinRate = calculateWinRateWithoutDraw(b.win_rate, b.ping_rate);
+                        return (bWinRate || 0) - (aWinRate || 0); // 降序
+                    });
+                    
+                    sortedData.forEach(item => {
+                        rowsHTML += generateCampDataRow(item);
+                    });
+                }
+            }
+            
+            // 将阵营平均值行插入到正确位置（根据排序）
+            if (averageRowHTML) {
+                tableBody.innerHTML = averageRowHTML + rowsHTML + notPlayedRowsHTML;
+            } else {
+                // 将未登场的行放在最后
+                tableBody.innerHTML = (rowsHTML + notPlayedRowsHTML) || '<tr><td colspan="7" class="no-data">暂无数据</td></tr>';
+            }
+        }
+
+        // 生成平均值对比页面内容（修复默认排序问题）
+        function generateAverageCompareContent(campData, currentPart, showRank) {
+            const tableBody = document.getElementById('table-body');
+            
+            // 获取当前段位的数据
+            const currentPartData = campData.filter(item => item.part === currentPart);
+            
+            if (currentPartData.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="5" class="no-data">暂无数据</td></tr>';
+                return;
+            }
+            
+            // 获取阵营ID
+            const campId = currentPartData[0].camp_id;
+            
+            // 计算阵营平均值
+            const campAverage = calculateCampAverage(allData, campId, currentPart);
+            
+            if (!campAverage) {
+                tableBody.innerHTML = '<tr><td colspan="5" class="no-data">暂无数据</td></tr>';
+                return;
+            }
+            
+            // 计算排名
+            const rankings = calculateRanks(allData, campId, currentPart);
+            
+            let rowsHTML = '';
+            
+            // 为每个角色生成对比行
+            currentPartData.forEach(item => {
+                rowsHTML += generateAverageCompareRow(item, campAverage, showRank, rankings);
+            });
+            
+            tableBody.innerHTML = rowsHTML || '<tr><td colspan="5" class="no-data">暂无数据</td></tr>';
+            
+            // 在平均值对比页面默认按照去平胜率距平进行排序
+            if (!showRank) {
+                // 默认按照去平胜率距平降序排序（第2列）
+                sortColumn = 1;
+                sortDirection = 'desc';
+                sortTable(sortColumn);
+            }
+        }
+
+        // 生成表格内容
+        function generateTableContent(filteredData, filterInfo) {
+            const headers = getTableHeaders(filterInfo, showRank, comparePrevious);
+            
+            // 更新表头
+            document.getElementById('table-header').innerHTML = generateTableHeader(headers);
+            
+            // 控制提示显示/隐藏（新增部分）
+            const rankTipContainer = document.getElementById('rank-tip-container');
+            if (showRank) {
+                rankTipContainer.style.display = 'block';
+            } else {
+                rankTipContainer.style.display = 'none';
+            }
+            
+            // 设置页面样式
+            const body = document.body;
+            if (filterInfo.type === 'average') {
+                // 平均值对比页面隐藏复选框，显示阵营tab
+                body.classList.add('hide-checkboxes');
+                document.getElementById('average-camp-tabs-container').style.display = 'block';
+                document.getElementById('part-tabs-container').style.display = 'block';
+            } else if (filterInfo.type === 'character') {
+                body.classList.remove('hide-checkboxes');
+                body.classList.add('character-view');
+                document.getElementById('average-compare-button').style.display = 'inline-block';
+                document.getElementById('average-camp-tabs-container').style.display = 'none';
+            } else {
+                body.classList.remove('hide-checkboxes', 'character-view');
+                document.getElementById('average-compare-button').style.display = 'none';
+                document.getElementById('average-camp-tabs-container').style.display = 'none';
+            }
+            
+            if (filterInfo.type === 'average') {
+                // 平均值对比页面
+                generateAverageCompareContent(filteredData, currentPart, showRank);
+            } else if (filterInfo.type === 'character') {
+                // 角色详情页面
+                generateCharacterDetailContent(filteredData, showRank, comparePrevious);
+            } else {
+                // 阵营页面
+                generateCampContent(filteredData, currentPart, showRank, comparePrevious);
+            }
+            
+            // 绑定数据行点击事件
+            bindDataRowClickEvents();
+            
+            // 应用冻结第一列样式
+            applyFreezeFirstColumn();
+            
+            // 重新绑定排序事件
+            setupSorting();
+        }
+
+        // 应用冻结第一列样式
+        function applyFreezeFirstColumn() {
+            const tableContainer = document.getElementById('main-table-container');
+            // 移除之前的冻结样式
+            tableContainer.classList.remove('freeze-first-column');
+            // 添加冻结第一列样式
+            tableContainer.classList.add('freeze-first-column');
+        }
+
+        // 绑定数据行点击事件
+        function bindDataRowClickEvents() {
+            const dataRows = document.querySelectorAll('.data-row');
+            dataRows.forEach(row => {
+                row.addEventListener('click', function() {
+                    if (comparePrevious) {
+                        const characterName = this.getAttribute('data-character');
+                        const part = parseInt(this.getAttribute('data-part'));
+                        
+                        if (characterName && !isNaN(part)) {
+                            const currentData = getCharacterDataByNameAndPart(allData, characterName, part);
+                            const previousData = currentWeek ? 
+                                getCharacterDataByNameAndPart(previousWeekData, characterName, part) :
+                                getCharacterDataByNameAndPart(previousSeasonData, characterName, part);
+                            showDataModal(characterName, part, currentData, previousData, showRank);
+                        }
+                    }
+                });
+            });
+            
+            // 绑定角色链接点击事件
+            const characterLinks = document.querySelectorAll('.character-link');
+            characterLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.stopPropagation(); // 阻止事件冒泡到行点击事件
+                });
+            });
+        }
+
+        // 排序功能（修复对比模式下的排序）
+        function setupSorting() {
+            const headers = document.querySelectorAll('th.sortable');
+            headers.forEach(header => {
+                header.removeEventListener('click', headerClickHandler); // 移除旧的事件监听器
+                header.addEventListener('click', headerClickHandler); // 添加新的事件监听器
+            });
+        }
+
+        // 表头点击处理函数
+        function headerClickHandler() {
+            const column = parseInt(this.getAttribute('data-column'));
+            sortTable(column);
+        }
+
+        function sortTable(column) {
+            const headers = document.querySelectorAll('th.sortable');
+            headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+            
+            if (sortColumn === column) {
+                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+            } else {
+                sortColumn = column;
+                // 根据当前视图和列设置默认排序方向
+                if (showRank && column === 1 && !comparePrevious) {
+                    sortDirection = 'asc'; // 排名默认升序
+                } else if (!showRank && column === 1 && !comparePrevious) {
+                    sortDirection = 'desc'; // 去平胜率默认降序
+                } else if (comparePrevious && showRank && column === 1) {
+                    sortDirection = 'desc'; // 对比模式下排名变化默认降序
+                } else if (comparePrevious && !showRank && column === 1) {
+                    sortDirection = 'desc'; // 对比模式下去平胜率变化默认降序
+                } else if (filterInfo.type === 'average' && !showRank && column === 1) {
+                    sortDirection = 'desc'; // 平均值对比页面去平胜率距平默认降序
+                } else {
+                    sortDirection = 'asc';
+                }
+            }
+            
+            const currentHeader = document.querySelector(`th[data-column="${column}"]`);
+            currentHeader.classList.add(sortDirection === 'asc' ? 'sort-asc' : 'sort-desc');
+            
+            // 执行排序
+            const tbody = document.getElementById('table-body');
+            const rows = Array.from(tbody.querySelectorAll('tr:not(.camp-average-row):not([data-not-played="true"])')); // 排除阵营平均值行和未登场的行
+            const averageRows = Array.from(tbody.querySelectorAll('tr.camp-average-row')); // 阵营平均值行
+            const notPlayedRows = Array.from(tbody.querySelectorAll('tr[data-not-played="true"]')); // 未登场的行
+            
+            if (rows.length === 0 || rows[0].cells.length <= column) return;
+            
+            rows.sort((a, b) => {
+                const aText = a.cells[column].textContent.trim();
+                const bText = b.cells[column].textContent.trim();
+                
+                // 处理变化数据（包括各种变化列）
+                if (comparePrevious && !showRank) {
+                    // 提取变化值中的数字（包括正负号）
+                    const aMatch = aText.match(/[\+\-]?\d+\.?\d*/);
+                    const bMatch = bText.match(/[\+\-]?\d+\.?\d*/);
+                    
+                    if (aMatch && bMatch) {
+                        const aVal = parseFloat(aMatch[0]) || 0;
+                        const bVal = parseFloat(bMatch[0]) || 0;
+                        return sortDirection === 'asc' ? aVal - bVal : bVal - aVal;
+                    } else if (aText.includes('此前未登场')) {
+                        return sortDirection === 'asc' ? 1 : -1;
+                    } else if (bText.includes('此前未登场')) {
+                        return sortDirection === 'asc' ? -1 : 1;
+                    } else if (aText.includes('--')) {
+                        return sortDirection === 'asc' ? 1 : -1;
+                    } else if (bText.includes('--')) {
+                        return sortDirection === 'asc' ? -1 : 1;
+                    }
+                }
+                
+                // 处理排名数据
+                if (showRank && !comparePrevious) {
+                    if (aText === '暂无') return sortDirection === 'asc' ? 1 : -1;
+                    if (bText === '暂无') return sortDirection === 'asc' ? -1 : 1;
+                    const aVal = parseInt(aText) || 999;
+                    const bVal = parseInt(bText) || 999;
+                    return sortDirection === 'asc' ? aVal - bVal : bVal - aVal;
+                }
+                
+                // 处理百分比数据
+                let aVal = aText;
+                let bVal = bText;
+                
+                if (aText.endsWith('%') && bText.endsWith('%')) {
+                    aVal = parseFloat(aText) || 0;
+                    bVal = parseFloat(bText) || 0;
+                } else if (aText === '暂无数据' || aText === '暂无') {
+                    return sortDirection === 'asc' ? 1 : -1;
+                } else if (bText === '暂无数据' || bText === '暂无') {
+                    return sortDirection === 'asc' ? -1 : 1;
+                } else if (aText === '-') {
+                    return sortDirection === 'asc' ? 1 : -1;
+                } else if (bText === '-') {
+                    return sortDirection === 'asc' ? -1 : 1;
+                }
+                
+                if (sortDirection === 'asc') {
+                    return aVal > bVal ? 1 : -1;
+                } else {
+                    return aVal < bVal ? 1 : -1;
+                }
+            });
+            
+            // 重新插入排序后的行（阵营平均值行始终在最前，未登场的行始终在最后）
+            tbody.innerHTML = '';
+            averageRows.forEach(row => tbody.appendChild(row));
+            rows.forEach(row => tbody.appendChild(row));
+            notPlayedRows.forEach(row => tbody.appendChild(row));
+        }
+
+        // 解析周文件名获取周信息
+        function parseWeekFileName(fileName) {
+            const match = fileName.match(/Week_S(\d+)-(\d{2})(\d{2})(\d{2})\.json/);
+            if (match) {
+                const season = parseInt(match[1]);
+                const year = parseInt(match[2]);
+                const month = parseInt(match[3]);
+                const day = parseInt(match[4]);
+                return {
+                    season: season,
+                    year: year,
+                    month: month,
+                    day: day,
+                    fileName: fileName
+                };
+            }
+            return null;
+        }
+        
+        // 格式化周显示名称
+        function formatWeekName(weekInfo) {
+            return `${weekInfo.year}${weekInfo.month.toString().padStart(2, '0')}${weekInfo.day.toString().padStart(2, '0')}`;
+        }
+        
+        // 生成周tabs
+        function generateWeekTabs(seasonName) {
+            const weekTabsContainer = document.getElementById('week-tabs');
+            weekTabsContainer.innerHTML = '';
+        
+            // 判断是否有完整赛季数据
+            const hasCompleteData = !!seasonList[seasonName];
+        
+            // 只有有完整赛季数据时才添加"全赛季"tab
+            if (hasCompleteData) {
+                const allSeasonTab = document.createElement('button');
+                allSeasonTab.className = 'week-tab-button active';
+                allSeasonTab.textContent = '全赛季';
+                allSeasonTab.dataset.week = 'all';
+                allSeasonTab.addEventListener('click', async function () {
+                    document.querySelectorAll('.week-tab-button').forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    currentWeek = null;
+                    currentWeekNum = null;
+                    // 切换回完整赛季数据
+                    allData = [...seasonFullData];
+                    
+                    // 如果启用了比对上赛季，加载上赛季数据
+                    if (comparePrevious) {
+                        await loadPreviousSeasonData();
+                    }
+                    
+                    // 重新生成表格
+                    const filterInfo = parseHash();
+                    const filteredData = filterData(filterInfo);
+                    generateTableContent(filteredData, filterInfo);
+                });
+                weekTabsContainer.appendChild(allSeasonTab);
+            }
+        
+            // 添加周 tabs（如果有的话）
+            if (seasonWeeks[seasonName] && seasonWeeks[seasonName].length > 0) {
+                // 解析并排序周文件名
+                const parsedWeeks = seasonWeeks[seasonName]
+                    .map((week, index) => {
+                        const weekInfo = parseWeekFileName(week.fileName);
+                        if (weekInfo) {
+                            weekInfo.weekNum = index + 1; // 添加周数信息
+                        }
+                        return weekInfo;
+                    })
+                    .filter(week => week !== null)
+                    .sort((a, b) => {
+                        const dateA = new Date(`20${a.year}`, a.month - 1, a.day);
+                        const dateB = new Date(`20${b.year}`, b.month - 1, b.day);
+                        return dateA - dateB;
+                    });
+
+                // 预加载所有周数据以获取准确的周数
+                Promise.all(parsedWeeks.map(async (weekInfo, index) => {
+                    try {
+                        const response = await fetch(`json/${weekInfo.fileName}`);
+                        const jsonData = await response.json();
+                        const weekData = jsonData.data || [];
+                        if (weekData.length > 0 && weekData[0].week_num !== undefined) {
+                            weekInfo.weekNum = parseInt(weekData[0].week_num);
+                        } else {
+                            weekInfo.weekNum = index + 1; // 回退到索引方式
+                        }
+                        return weekInfo;
+                    } catch (error) {
+                        console.error(`加载周数据失败: ${weekInfo.fileName}`, error);
+                        weekInfo.weekNum = index + 1; // 回退到索引方式
+                        return weekInfo;
+                    }
+                })).then(updatedWeeks => {
+                    updatedWeeks.forEach((weekInfo, index) => {
+                        const weekTab = document.createElement('button');
+                        weekTab.className = 'week-tab-button';
+                        if (!hasCompleteData && index === 0 && currentWeek === null) {
+                            weekTab.classList.add('active'); // 没有完整数据时默认选中第一周
+                        }
+                        weekTab.textContent = `第${weekInfo.weekNum}周(${weekInfo.month.toString().padStart(2, '0')}${weekInfo.day.toString().padStart(2, '0')})`;
+                        weekTab.dataset.week = `${weekInfo.year}${weekInfo.month.toString().padStart(2, '0')}${weekInfo.day.toString().padStart(2, '0')}`;
+                        weekTab.dataset.fileName = weekInfo.fileName;
+                        weekTab.addEventListener('click', async function () {
+                            document.querySelectorAll('.week-tab-button').forEach(btn => btn.classList.remove('active'));
+                            this.classList.add('active');
+                            currentWeek = weekInfo;
+                            currentWeekNum = weekInfo.weekNum;
+                            
+                            // 加载周数据
+                            await loadWeekData(weekInfo.fileName);
+                            
+                            // 如果启用了比对上赛季，同时加载上赛季对应周的数据
+                            if (comparePrevious) {
+                                await loadPreviousWeekData();
+                                // 重新生成表格以反映对比数据
+                                const filterInfo = parseHash();
+                                const filteredData = filterData(filterInfo);
+                                generateTableContent(filteredData, filterInfo);
+                            }
+                        });
+                        weekTabsContainer.appendChild(weekTab);
+
+                        // 没有完整数据时默认加载第一周数据
+                        if (!hasCompleteData && index === 0 && currentWeek === null) {
+                            currentWeek = weekInfo;
+                            currentWeekNum = weekInfo.weekNum;
+                            loadWeekData(weekInfo.fileName);
+                        }
+                    });
+                });
+            } else {
+                // 如果没有周数据，但仍需显示提示
+                if (!hasCompleteData) {
+                    const noDataTab = document.createElement('button');
+                    noDataTab.className = 'week-tab-button active';
+                    noDataTab.textContent = '暂无周数据';
+                    noDataTab.disabled = true;
+                    weekTabsContainer.appendChild(noDataTab);
+                }
+            }
+        }
+  
+        // 加载周数据
+        async function loadWeekData(weekFile) {
+            try {
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('content-container').style.display = 'none';
+                document.getElementById('loading').textContent = '正在加载周数据...';
+        
+                const response = await fetch(`json/${weekFile}`);
+                const jsonData = await response.json();
+                currentWeekData = jsonData.data || [];
+                allData = [...currentWeekData];  // 用周数据替换 allData
+
+                // 从数据中提取 week_num 信息
+                if (currentWeekData.length > 0 && currentWeekData[0].week_num !== undefined) {
+                    currentWeekNum = parseInt(currentWeekData[0].week_num);
+                    // 更新当前活动标签页的文本
+                    const activeTab = document.querySelector('.week-tab-button.active');
+                    if (activeTab && currentWeek) {
+                        activeTab.textContent = `第${currentWeekNum}周(${currentWeek.month.toString().padStart(2, '0')}${currentWeek.day.toString().padStart(2, '0')})`;
+                    }
+                }
+
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content-container').style.display = 'block';
+
+                // 如果启用了对比上赛季，并且当前是周数据，则加载上周数据
+                if (comparePrevious && currentWeek) {
+                    await loadPreviousWeekData();
+                }
+
+                // 重新生成表格
+                const filterInfo = parseHash();
+                const filteredData = filterData(filterInfo);
+                generateTableContent(filteredData, filterInfo);
+        
+            } catch (error) {
+                document.getElementById('loading').innerHTML = '周数据加载失败: ' + error.message;
+            }
+        }
+
+        // 加载上周数据（修改版 - 实现fallback逻辑）
+        async function loadPreviousWeekData() {
+            if (!currentWeek || currentWeekNum === null) return;
+
+            try {
+                // 获取当前赛季名称
+                const currentSeasonName = getCurrentActiveSeason();
+                
+                // 获取上赛季名称
+                const previousSeasonName = getPreviousSeasonName(currentSeasonName);
+                if (previousSeasonName === '未知赛季') {
+                    previousWeekData = [];
+                    return;
+                }
+                
+                // 首先尝试查找上赛季对应的周数据
+                if (seasonWeeks[previousSeasonName] && seasonWeeks[previousSeasonName].length > 0) {
+                    // 解析并排序上赛季的周文件
+                    const parsedPreviousWeeks = seasonWeeks[previousSeasonName]
+                        .map(week => parseWeekFileName(week.fileName))
+                        .filter(week => week !== null)
+                        .sort((a, b) => {
+                            const dateA = new Date(`20${a.year}`, a.month - 1, a.day);
+                            const dateB = new Date(`20${b.year}`, b.month - 1, b.day);
+                            return dateA - dateB;
+                        });
+                    
+                    // 查找对应周数的数据（使用相同的周数索引）
+                    if (parsedPreviousWeeks.length >= currentWeekNum) {
+                        const previousWeekInfo = parsedPreviousWeeks[currentWeekNum - 1];
+                        if (previousWeekInfo) {
+                            const response = await fetch(`json/${previousWeekInfo.fileName}`);
+                            const jsonData = await response.json();
+                            previousWeekData = jsonData.data || [];
+                            return;
+                        }
+                    }
+                }
+                
+                // 如果上赛季没有对应周数据，则fallback到加载上赛季完整赛季数据
+                const previousSeasonFile = getPreviousSeasonData(currentSeasonName, seasonList);
+                if (previousSeasonFile) {
+                    const response = await fetch(`json/${previousSeasonFile}`);
+                    const jsonData = await response.json();
+                    previousWeekData = jsonData.data || [];
+                } else {
+                    previousWeekData = [];
+                }
+                
+            } catch (error) {
+                console.error('加载上周数据失败，尝试fallback到赛季数据:', error);
+                try {
+                    // 出错时也尝试fallback到上赛季完整数据
+                    const currentSeasonName = getCurrentActiveSeason();
+                    const previousSeasonName = getPreviousSeasonName(currentSeasonName);
+                    const previousSeasonFile = getPreviousSeasonData(currentSeasonName, seasonList);
+                    if (previousSeasonFile) {
+                        const response = await fetch(`json/${previousSeasonFile}`);
+                        const jsonData = await response.json();
+                        previousWeekData = jsonData.data || [];
+                    } else {
+                        previousWeekData = [];
+                    }
+                } catch (fallbackError) {
+                    console.error('Fallback加载失败:', fallbackError);
+                    previousWeekData = [];
+                }
+            }
+        }
+        
+        // 获取当前激活赛季的辅助函数
+        function getCurrentActiveSeason() {
+            const activeSeasonTab = document.querySelector('.season-tab-button.active');
+            if (activeSeasonTab) {
+                return activeSeasonTab.getAttribute('data-season-name');
+            }
+            return currentSeasonName;
+        }
+        
+        // 设置赛季Tab切换功能
+        function setupSeasonTabs() {
+            const seasonTabsContainer = document.getElementById('season-tabs-container');
+            let seasonTabsHTML = '';
+            
+            // 所有赛季 keys，按编号降序排列
+            const sortedSeasons = Object.keys(seasonList).sort((a, b) => {
+                const numA = parseInt(a.match(/第(\d+)赛季/)[1]);
+                const numB = parseInt(b.match(/第(\d+)赛季/)[1]);
+                return numB - numA;
+            });
+            
+            // 添加最新赛季（即使没有完整数据）
+            if (latestSeason && !seasonList[latestSeason]) {
+                seasonTabsHTML += `<button class="season-tab-button" data-season-name="${latestSeason}">${latestSeason}</button>`;
+            }
+            
+            sortedSeasons.forEach(key => {
+                const fileName = seasonList[key];
+                seasonTabsHTML += `<button class="season-tab-button" data-season-file="${fileName}" data-season-name="${key}">${key}</button>`;
+            });
+            
+            seasonTabsContainer.innerHTML = seasonTabsHTML;
+            
+            // 绑定事件
+            const seasonTabButtons = document.querySelectorAll('.season-tab-button');
+            seasonTabButtons.forEach(button => {
+                button.addEventListener('click', async function () {
+                    // 更新激活状态
+                    seasonTabButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    // 获取选中的赛季信息
+                    currentSeasonName = this.getAttribute('data-season-name');
+                    currentSeasonFile = this.getAttribute('data-season-file') || '';
+                    // 更新比对复选框状态
+                    updateCompareCheckboxState();
+                    // 生成周 tabs
+                    generateWeekTabs(currentSeasonName);
+                    // 显示周 tabs 容器
+                    document.getElementById('week-tabs-container').classList.add('active');
+                    // 重置周选择
+                    currentWeek = null;
+                    currentWeekNum = null;
+                    // 判断是否有完整赛季数据
+                    const hasCompleteData = !!this.getAttribute('data-season-file');
+                    if (hasCompleteData) {
+                        // 有完整赛季数据，加载赛季数据
+                        document.querySelectorAll('.week-tab-button').forEach(btn => btn.classList.remove('active'));
+                        if (document.querySelector('.week-tab-button[data-week="all"]')) {
+                            document.querySelector('.week-tab-button[data-week="all"]').classList.add('active');
+                        }
+                        await loadSeasonData(currentSeasonFile);
+                    } else {
+                        // 没有完整赛季数据，在 generateWeekTabs 中处理周数据加载
+                    }
+                    // 如果启用了比对，加载上赛季数据
+                    if (comparePrevious) {
+                        await loadPreviousSeasonData();
+                    }
+                    // 重新生成表格
+                    const filterInfo = parseHash();
+                    const filteredData = filterData(filterInfo);
+                    generateTableContent(filteredData, filterInfo);
+                });
+            });
+            // 默认激活最新的赛季
+            if (seasonTabButtons.length > 0) {
+                seasonTabButtons[0].click();
+            }
+        }
+
+        // 更新比对复选框状态
+        function updateCompareCheckboxState() {
+            const compareBtn = document.getElementById('compare-btn');
+
+            // 检查是否可以比对上赛季
+            let canCompare = false;
+
+            if (currentSeasonName.startsWith('第')) {
+                const match = currentSeasonName.match(/第(\d+)赛季/);
+                if (match) {
+                    const seasonNum = parseInt(match[1]);
+                    canCompare = seasonNum >= 33; // 第33赛季及以上才能比对
+                }
+            }
+
+            if (canCompare) {
+                compareBtn.disabled = false;
+                compareBtn.style.opacity = '1';
+                compareBtn.style.cursor = 'pointer';
+            } else {
+                compareBtn.disabled = true;
+                compareBtn.classList.remove('active');
+                compareBtn.style.opacity = '0.5';
+                compareBtn.style.cursor = 'not-allowed';
+                comparePrevious = false;
+            }
+        }
+
+        // 设置段位Tab切换功能
+        function setupPartTabs() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 更新激活状态
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 更新当前段位
+                    currentPart = parseInt(this.getAttribute('data-part'));
+                    
+                    // 重新生成表格
+                    const filterInfo = parseHash();
+                    const filteredData = filterData(filterInfo);
+                    generateTableContent(filteredData, filterInfo);
+                });
+            });
+        }
+
+        // 设置平均值对比页面阵营Tab切换功能
+        function setupAverageCampTabs() {
+            const tabButtons = document.querySelectorAll('.average-camp-tab');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 更新激活状态
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 更新当前阵营
+                    currentAverageCamp = parseInt(this.getAttribute('data-camp'));
+                    
+                    // 重新生成表格
+                    const filterInfo = parseHash();
+                    const filteredData = filterData(filterInfo);
+                    generateTableContent(filteredData, filterInfo);
+                });
+            });
+        }
+
+        // 切换排名显示
+        function toggleRank() {
+            showRank = !showRank;
+            const btn = document.getElementById('rank-btn');
+
+            // 更新按钮样式
+            if (showRank) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+
+            // 控制提示显示/隐藏
+            const rankTipContainer = document.getElementById('rank-tip-container');
+            if (showRank) {
+                rankTipContainer.style.display = 'block';
+            } else {
+                rankTipContainer.style.display = 'none';
+            }
+
+            // 重新生成表格
+            const filterInfo = parseHash();
+            const filteredData = filterData(filterInfo);
+            generateTableContent(filteredData, filterInfo);
+        }
+
+        // 切换比对上赛季
+        async function toggleCompare() {
+            comparePrevious = !comparePrevious;
+            const btn = document.getElementById('compare-btn');
+
+            // 更新按钮样式
+            if (comparePrevious) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+
+            // 如果启用比对
+            if (comparePrevious) {
+                if (currentWeek) {
+                    // 如果当前是周数据，加载上赛季对应周数据
+                    await loadPreviousWeekData();
+                } else {
+                    // 如果当前是赛季数据，加载上赛季数据
+                    await loadPreviousSeasonData();
+                }
+            }
+
+            // 重新生成表格
+            const filterInfo = parseHash();
+            const filteredData = filterData(filterInfo);
+            generateTableContent(filteredData, filterInfo);
+        }
+
+        // 设置排名复选框（已废弃，保留兼容）
+        function setupRankCheckbox() {
+            // 按钮样式初始化
+            const btn = document.getElementById('rank-btn');
+            if (showRank) {
+                btn.classList.add('active');
+            }
+        }
+
+        // 设置比对上赛季复选框（已废弃，保留兼容）
+        function setupCompareCheckbox() {
+            // 按钮样式初始化
+            const btn = document.getElementById('compare-btn');
+            if (comparePrevious) {
+                btn.classList.add('active');
+            }
+        }
+
+        // 设置平均值对比按钮
+        function setupAverageCompareButton() {
+            const button = document.getElementById('average-compare-button');
+            button.addEventListener('click', function() {
+                // 跳转到平均值对比页面
+                window.location.hash = '#平均值对比';
+            });
+        }
+
+        // 加载赛季数据
+        async function loadSeasonData(seasonFile) {
+            try {
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('content-container').style.display = 'none';
+                document.getElementById('loading').textContent = '正在加载赛季数据...';
+                
+                // 如果没有赛季文件，说明只有周数据
+                if (!seasonFile) {
+                    allData = [];
+                    seasonFullData = [];
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('content-container').style.display = 'block';
+                    return;
+                }
+                
+                const response = await fetch(`json/${seasonFile}`);
+                const jsonData = await response.json();
+                allData = jsonData.data || [];
+                seasonFullData = [...allData];
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content-container').style.display = 'block';
+            } catch (error) {
+                document.getElementById('loading').innerHTML = '赛季数据加载失败: ' + error.message;
+            }
+        }
+
+        // 加载赛季列表
+        async function loadSeasonList() {
+            try {
+                // 加载赛季列表
+                const seasonResponse = await fetch('js/season.js');
+                const seasonContent = await seasonResponse.text();
+                
+                // 创建一个函数来安全地执行JavaScript代码并提取变量
+                function extractVariables(content) {
+                    const vars = {};
+                    try {
+                        // 创建一个安全的执行环境
+                        const script = new Function(`
+                            ${content}
+                            return { seasonList, latestSeason, weekList };
+                        `);
+                        Object.assign(vars, script());
+                    } catch (e) {
+                        console.error('解析JavaScript变量时出错:', e);
+                    }
+                    return vars;
+                }
+                
+                const extractedVars = extractVariables(seasonContent);
+                
+                if (extractedVars.seasonList) {
+                    seasonList = extractedVars.seasonList;
+                } else {
+                    throw new Error('无法解析seasonList变量');
+                }
+                
+                if (extractedVars.latestSeason) {
+                    latestSeason = extractedVars.latestSeason;
+                }
+                
+                if (extractedVars.weekList) {
+                    seasonWeeks = extractedVars.weekList;
+                } else {
+                    console.warn('无法解析weekList变量');
+                }
+                
+                // 生成赛季tabs
+                setupSeasonTabs();
+                
+                // 更新比对复选框状态
+                updateCompareCheckboxState();
+                
+                // 检查URL hash
+                filterInfo = parseHash();
+                if (filterInfo.type === 'all' && !hasHashChanged) {
+                    // 直接访问不显示表格，显示使用提示
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('usage-tip').style.display = 'block';
+                    return;
+                }
+                
+                setPageTitle(filterInfo);
+                
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content-container').style.display = 'block';
+                
+                setupPartTabs();
+                setupRankCheckbox();
+                setupCompareCheckbox();
+                setupAverageCompareButton();
+                setupAverageCampTabs(); // 设置平均值对比页面阵营tab
+                
+            } catch (error) {
+                document.getElementById('loading').innerHTML = '赛季列表加载失败: ' + error.message;
+            }
+        }
+
+        // 关闭弹窗
+        function closeModal() {
+            document.getElementById('dataModal').style.display = 'none';
+        }
+
+        // 主函数
+        async function init() {
+            await loadSeasonList();
+            
+            // 绑定弹窗关闭事件
+            document.querySelector('.close').addEventListener('click', closeModal);
+            window.addEventListener('click', function(event) {
+                const modal = document.getElementById('dataModal');
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+
+        // 页面加载完成后执行
+        window.addEventListener('load', init);
+        
+        // 监听hash变化
+        window.addEventListener('hashchange', function() {
+            hasHashChanged = true;
+            // 隐藏使用提示
+            document.getElementById('usage-tip').style.display = 'none';
+            
+            filterInfo = parseHash();
+            setPageTitle(filterInfo);
+            
+            const filteredData = filterData(filterInfo);
+            generateTableContent(filteredData, filterInfo);
+        });
+        
+        // 处理移动端横向滚动
+        document.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 1) {
+                const tableContainer = document.querySelector('.table-container');
+                if (tableContainer && tableContainer.scrollWidth > tableContainer.clientWidth) {
+                    // 允许表格横向滚动
+                    e.stopPropagation();
+                }
+            }
+        }, { passive: true });
+
+        // 添加全局变量跟踪小数点位数
+        let decimalPlaces = 2; // 默认2位小数
+        
+        // 修改格式化为百分比函数，支持不同小数位数
+        function formatPercentage(value) {
+            if (value === null || value === undefined || isNaN(value)) {
+                return '暂无数据';
+            }
+            return (value * 100).toFixed(decimalPlaces) + '%';
+        }
+        
+        // 修改格式化变化值函数，支持不同小数位数
+        function formatChange(value, isPercentage = true) {
+            if (value === null || value === undefined || isNaN(value)) {
+                return '<span class="change-neutral">--</span>';
+            }
+            
+            let formattedValue;
+            if (isPercentage) {
+                formattedValue = (value * 100).toFixed(decimalPlaces) + '%';
+            } else {
+                // 排名变化显示为整数
+                formattedValue = Math.round(value);
+                if (formattedValue > 0) {
+                    formattedValue = '+' + formattedValue;
+                }
+            }
+            
+            if (value > 0) {
+                return `<span class="change-positive">${formattedValue}</span>`;
+            } else if (value < 0) {
+                return `<span class="change-negative">${formattedValue}</span>`;
+            } else {
+                return `<span class="change-neutral">${formattedValue}</span>`;
+            }
+        }
+        
+        // 添加双击标题切换小数点位数的函数
+        function toggleDecimalPlaces() {
+            // 循环切换：2 -> 4 -> 1 -> 2
+            if (decimalPlaces === 2) {
+                decimalPlaces = 4;
+            } else if (decimalPlaces === 4) {
+                decimalPlaces = 1;
+            } else {
+                decimalPlaces = 2;
+            }
+            
+            // 重新生成表格内容以应用新的小数位数
+            const filterInfo = parseHash();
+            const filteredData = filterData(filterInfo);
+            generateTableContent(filteredData, filterInfo);
+        }
+        
+        // 修改setupSorting函数，在其中添加双击事件
+        function setupSorting() {
+            const headers = document.querySelectorAll('th.sortable');
+            headers.forEach(header => {
+                header.removeEventListener('click', headerClickHandler);
+                header.addEventListener('click', headerClickHandler);
+                
+                // 添加双击事件监听器
+                header.removeEventListener('dblclick', toggleDecimalPlaces);
+                header.addEventListener('dblclick', toggleDecimalPlaces);
+            });
+        }
+
+        // 获取段位名称（简化版）
+        function getPartNameForScreenshot(part) {
+            const partMap = {
+                1: '一阶',
+                2: '二阶',
+                3: '三阶',
+                4: '四阶',
+                5: '五阶',
+                6: '六阶',
+                7: '七阶',
+                8: '巅七',
+                '-127': '全段位'
+            };
+            return partMap[part] || `段位${part}`;
+        }
+
+        // 获取赛季号
+        function getSeasonNumber(seasonName) {
+            const match = seasonName.match(/第(\d+)赛季/);
+            if (match) {
+                return match[1];
+            }
+            return seasonName;
+        }
+
+        // 一键截图功能
+        async function takeScreenshot() {
+            const btn = document.querySelector('.screenshot-btn');
+            const originalText = btn.innerHTML;
+            const tableContainer = document.querySelector('.table-container');
+
+            // 保存原始样式
+            const originalTableOverflow = tableContainer ? tableContainer.style.overflow : '';
+
+            try {
+                // 显示加载状态
+                btn.innerHTML = '<span class="icon">⏳</span><span>截图中...</span>';
+                btn.disabled = true;
+
+                // 构建副标题信息：第43赛季·第1周·巅七 或 第43赛季·全赛季·巅七
+                let subtitleText = '';
+                if (currentSeasonName) {
+                    const seasonNum = getSeasonNumber(currentSeasonName);
+                    const partName = getPartNameForScreenshot(currentPart);
+                    
+                    if (currentWeek && currentWeekNum) {
+                        // 周数据模式：第43赛季·第1周·巅七
+                        subtitleText = `第${seasonNum}赛季·第${currentWeekNum}周·${partName}`;
+                    } else {
+                        // 赛季数据模式（无周数）：第43赛季·全赛季·巅七
+                        subtitleText = `第${seasonNum}赛季·全赛季·${partName}`;
+                    }
+                } else {
+                    subtitleText = getPartNameForScreenshot(currentPart);
+                }
+
+                // 构建主标题
+                let mainTitle = document.getElementById('page-title').textContent;
+                const suffixes = [];
+                if (comparePrevious) suffixes.push('比对上赛季');
+                if (showRank) suffixes.push('查看排名');
+                if (suffixes.length > 0) {
+                    mainTitle += ` (${suffixes.join(' + ')})`;
+                }
+
+                // 创建截图专用容器
+                const screenshotContainer = document.createElement('div');
+                screenshotContainer.id = 'screenshot-container';
+                screenshotContainer.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: auto;
+                    min-width: 600px;
+                    max-width: 1000px;
+                    min-height: 100vh;
+                    background: #f5f5f5;
+                    z-index: 9999;
+                    padding: 20px;
+                    box-sizing: border-box;
+                `;
+
+                // 创建标题区域
+                const titleArea = document.createElement('div');
+                titleArea.style.cssText = `
+                    text-align: center;
+                    margin-bottom: 20px;
+                    padding: 20px 30px;
+                    background: white;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    width: fit-content;
+                    min-width: 500px;
+                    margin-left: auto;
+                    margin-right: auto;
+                `;
+
+                // 主标题
+                const mainTitleEl = document.createElement('h1');
+                mainTitleEl.textContent = mainTitle;
+                mainTitleEl.style.cssText = `
+                    font-size: 28px;
+                    font-weight: bold;
+                    color: #333;
+                    margin: 0 0 10px 0;
+                    white-space: nowrap;
+                `;
+
+                // 副标题
+                const subTitleEl = document.createElement('div');
+                subTitleEl.textContent = subtitleText;
+                subTitleEl.style.cssText = `
+                    font-size: 18px;
+                    color: #666;
+                    margin: 0;
+                    white-space: nowrap;
+                `;
+
+                titleArea.appendChild(mainTitleEl);
+                titleArea.appendChild(subTitleEl);
+                screenshotContainer.appendChild(titleArea);
+
+                // 克隆表格容器
+                const tableClone = tableContainer.cloneNode(true);
+                tableClone.style.cssText = `
+                    overflow: visible;
+                    background: white;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    width: fit-content;
+                    min-width: 500px;
+                    max-width: 900px;
+                    margin: 0 auto;
+                    font-size: 14px;
+                `;
+                screenshotContainer.appendChild(tableClone);
+
+                // 添加到页面
+                document.body.appendChild(screenshotContainer);
+
+                // 临时调整表格样式以确保完整显示并增大字体
+                const table = tableClone.querySelector('table');
+                if (table) {
+                    table.style.minWidth = 'auto';
+                    table.style.width = '100%';
+                    table.style.fontSize = '14px';
+                }
+                
+                // 增大表格内所有文字
+                const allCells = tableClone.querySelectorAll('th, td');
+                allCells.forEach(cell => {
+                    cell.style.fontSize = '14px';
+                    cell.style.padding = '12px 10px';
+                });
+                
+                // 增大表头文字
+                const headers = tableClone.querySelectorAll('th');
+                headers.forEach(header => {
+                    header.style.fontSize = '15px';
+                    header.style.fontWeight = '600';
+                });
+
+                // 使用 html2canvas 截图
+                const canvas = await html2canvas(screenshotContainer, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#f5f5f5',
+                    logging: false,
+                    scrollX: 0,
+                    scrollY: 0,
+                    width: screenshotContainer.scrollWidth,
+                    height: screenshotContainer.scrollHeight
+                });
+
+                // 移除截图容器
+                document.body.removeChild(screenshotContainer);
+
+                // 恢复原始样式
+                if (tableContainer) {
+                    tableContainer.style.overflow = originalTableOverflow;
+                }
+
+                // 将 canvas 转换为图片并下载
+                const link = document.createElement('a');
+                const dateStr = new Date().toISOString().slice(0,10).replace(/-/g, '');
+                link.download = `第五人格数据_${dateStr}_${mainTitle.replace(/\s+/g, '_')}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+
+                // 恢复按钮状态
+                btn.innerHTML = '<span class="icon">✅</span><span>截图成功</span>';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }, 2000);
+
+            } catch (error) {
+                console.error('截图失败:', error);
+
+                // 恢复原始样式
+                if (tableContainer) {
+                    tableContainer.style.overflow = originalTableOverflow;
+                }
+
+                // 如果截图容器还在，移除它
+                const screenshotContainer = document.getElementById('screenshot-container');
+                if (screenshotContainer) {
+                    document.body.removeChild(screenshotContainer);
+                }
+
+                btn.innerHTML = '<span class="icon">❌</span><span>截图失败</span>';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }, 2000);
+                alert('截图失败，请重试');
+            }
+        }
+    </script>
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "62e43870cf924b439a3cb3db57a0b799"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>

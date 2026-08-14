@@ -1,0 +1,5576 @@
+{
+  "status": true,
+  "success": true,
+  "code": 200,
+  "msg": "成功",
+  "data": [
+    {
+      "score": "13464",
+      "hero_name": "厂长",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "1",
+      "rn": "1"
+    },
+    {
+      "score": "12957",
+      "hero_name": "厂长",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "1",
+      "rn": "10"
+    },
+    {
+      "score": "12934",
+      "hero_name": "厂长",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "1",
+      "rn": "11"
+    },
+    {
+      "score": "11848",
+      "hero_name": "厂长",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "1",
+      "rn": "100"
+    },
+    {
+      "score": "11843",
+      "hero_name": "厂长",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "1",
+      "rn": "101"
+    },
+    {
+      "score": "10715",
+      "hero_name": "厂长",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "1",
+      "rn": "300"
+    },
+    {
+      "score": "10713",
+      "hero_name": "厂长",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "1",
+      "rn": "301"
+    },
+    {
+      "score": "9917",
+      "hero_name": "厂长",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "1",
+      "rn": "500"
+    },
+    {
+      "score": "12915",
+      "hero_name": "昆虫学者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "100",
+      "rn": "1"
+    },
+    {
+      "score": "11447",
+      "hero_name": "昆虫学者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "100",
+      "rn": "10"
+    },
+    {
+      "score": "11418",
+      "hero_name": "昆虫学者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "100",
+      "rn": "11"
+    },
+    {
+      "score": "10039",
+      "hero_name": "昆虫学者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "100",
+      "rn": "100"
+    },
+    {
+      "score": "10038",
+      "hero_name": "昆虫学者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "100",
+      "rn": "101"
+    },
+    {
+      "score": "8699",
+      "hero_name": "昆虫学者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "100",
+      "rn": "300"
+    },
+    {
+      "score": "8694",
+      "hero_name": "昆虫学者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "100",
+      "rn": "301"
+    },
+    {
+      "score": "7991",
+      "hero_name": "昆虫学者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "100",
+      "rn": "500"
+    },
+    {
+      "score": "14261",
+      "hero_name": "雕刻家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "101",
+      "rn": "1"
+    },
+    {
+      "score": "13260",
+      "hero_name": "雕刻家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "101",
+      "rn": "10"
+    },
+    {
+      "score": "13249",
+      "hero_name": "雕刻家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "101",
+      "rn": "11"
+    },
+    {
+      "score": "12038",
+      "hero_name": "雕刻家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "101",
+      "rn": "100"
+    },
+    {
+      "score": "12025",
+      "hero_name": "雕刻家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "101",
+      "rn": "101"
+    },
+    {
+      "score": "10701",
+      "hero_name": "雕刻家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "101",
+      "rn": "300"
+    },
+    {
+      "score": "10691",
+      "hero_name": "雕刻家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "101",
+      "rn": "301"
+    },
+    {
+      "score": "9822",
+      "hero_name": "雕刻家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "101",
+      "rn": "500"
+    },
+    {
+      "score": "13754",
+      "hero_name": "破轮",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "102",
+      "rn": "1"
+    },
+    {
+      "score": "13327",
+      "hero_name": "破轮",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "102",
+      "rn": "10"
+    },
+    {
+      "score": "13317",
+      "hero_name": "破轮",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "102",
+      "rn": "11"
+    },
+    {
+      "score": "12638",
+      "hero_name": "破轮",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "102",
+      "rn": "100"
+    },
+    {
+      "score": "12637",
+      "hero_name": "破轮",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "102",
+      "rn": "101"
+    },
+    {
+      "score": "11815",
+      "hero_name": "破轮",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "102",
+      "rn": "300"
+    },
+    {
+      "score": "11802",
+      "hero_name": "破轮",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "102",
+      "rn": "301"
+    },
+    {
+      "score": "11240",
+      "hero_name": "破轮",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "102",
+      "rn": "500"
+    },
+    {
+      "score": "19312",
+      "hero_name": "画家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "104",
+      "rn": "1"
+    },
+    {
+      "score": "11953",
+      "hero_name": "画家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "104",
+      "rn": "10"
+    },
+    {
+      "score": "11844",
+      "hero_name": "画家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "104",
+      "rn": "11"
+    },
+    {
+      "score": "10334",
+      "hero_name": "画家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "104",
+      "rn": "100"
+    },
+    {
+      "score": "10332",
+      "hero_name": "画家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "104",
+      "rn": "101"
+    },
+    {
+      "score": "9169",
+      "hero_name": "画家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "104",
+      "rn": "300"
+    },
+    {
+      "score": "9160",
+      "hero_name": "画家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "104",
+      "rn": "301"
+    },
+    {
+      "score": "8370",
+      "hero_name": "画家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "104",
+      "rn": "500"
+    },
+    {
+      "score": "13992",
+      "hero_name": "博士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "105",
+      "rn": "1"
+    },
+    {
+      "score": "13389",
+      "hero_name": "博士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "105",
+      "rn": "10"
+    },
+    {
+      "score": "13376",
+      "hero_name": "博士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "105",
+      "rn": "11"
+    },
+    {
+      "score": "12356",
+      "hero_name": "博士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "105",
+      "rn": "100"
+    },
+    {
+      "score": "12353",
+      "hero_name": "博士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "105",
+      "rn": "101"
+    },
+    {
+      "score": "11180",
+      "hero_name": "博士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "105",
+      "rn": "300"
+    },
+    {
+      "score": "11175",
+      "hero_name": "博士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "105",
+      "rn": "301"
+    },
+    {
+      "score": "10401",
+      "hero_name": "博士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "105",
+      "rn": "500"
+    },
+    {
+      "score": "18387",
+      "hero_name": "击球手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "106",
+      "rn": "1"
+    },
+    {
+      "score": "11798",
+      "hero_name": "击球手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "106",
+      "rn": "10"
+    },
+    {
+      "score": "11789",
+      "hero_name": "击球手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "106",
+      "rn": "11"
+    },
+    {
+      "score": "10216",
+      "hero_name": "击球手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "106",
+      "rn": "100"
+    },
+    {
+      "score": "10216",
+      "hero_name": "击球手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "106",
+      "rn": "101"
+    },
+    {
+      "score": "9412",
+      "hero_name": "击球手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "106",
+      "rn": "300"
+    },
+    {
+      "score": "9405",
+      "hero_name": "击球手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "106",
+      "rn": "301"
+    },
+    {
+      "score": "8917",
+      "hero_name": "击球手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "106",
+      "rn": "500"
+    },
+    {
+      "score": "14235",
+      "hero_name": "玩具商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "107",
+      "rn": "1"
+    },
+    {
+      "score": "11775",
+      "hero_name": "玩具商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "107",
+      "rn": "10"
+    },
+    {
+      "score": "11699",
+      "hero_name": "玩具商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "107",
+      "rn": "11"
+    },
+    {
+      "score": "10026",
+      "hero_name": "玩具商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "107",
+      "rn": "100"
+    },
+    {
+      "score": "10017",
+      "hero_name": "玩具商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "107",
+      "rn": "101"
+    },
+    {
+      "score": "8623",
+      "hero_name": "玩具商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "107",
+      "rn": "300"
+    },
+    {
+      "score": "8617",
+      "hero_name": "玩具商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "107",
+      "rn": "301"
+    },
+    {
+      "score": "8000",
+      "hero_name": "玩具商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "107",
+      "rn": "500"
+    },
+    {
+      "score": "11924",
+      "hero_name": "病患",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "108",
+      "rn": "1"
+    },
+    {
+      "score": "11345",
+      "hero_name": "病患",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "108",
+      "rn": "10"
+    },
+    {
+      "score": "11315",
+      "hero_name": "病患",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "108",
+      "rn": "11"
+    },
+    {
+      "score": "9538",
+      "hero_name": "病患",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "108",
+      "rn": "100"
+    },
+    {
+      "score": "9537",
+      "hero_name": "病患",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "108",
+      "rn": "101"
+    },
+    {
+      "score": "8043",
+      "hero_name": "病患",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "108",
+      "rn": "300"
+    },
+    {
+      "score": "8037",
+      "hero_name": "病患",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "108",
+      "rn": "301"
+    },
+    {
+      "score": "7460",
+      "hero_name": "病患",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "108",
+      "rn": "500"
+    },
+    {
+      "score": "14207",
+      "hero_name": "渔女",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "109",
+      "rn": "1"
+    },
+    {
+      "score": "13257",
+      "hero_name": "渔女",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "109",
+      "rn": "10"
+    },
+    {
+      "score": "13254",
+      "hero_name": "渔女",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "109",
+      "rn": "11"
+    },
+    {
+      "score": "12266",
+      "hero_name": "渔女",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "109",
+      "rn": "100"
+    },
+    {
+      "score": "12251",
+      "hero_name": "渔女",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "109",
+      "rn": "101"
+    },
+    {
+      "score": "11355",
+      "hero_name": "渔女",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "109",
+      "rn": "300"
+    },
+    {
+      "score": "11354",
+      "hero_name": "渔女",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "109",
+      "rn": "301"
+    },
+    {
+      "score": "10857",
+      "hero_name": "渔女",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "109",
+      "rn": "500"
+    },
+    {
+      "score": "13171",
+      "hero_name": "心理学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "110",
+      "rn": "1"
+    },
+    {
+      "score": "11686",
+      "hero_name": "心理学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "110",
+      "rn": "10"
+    },
+    {
+      "score": "11649",
+      "hero_name": "心理学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "110",
+      "rn": "11"
+    },
+    {
+      "score": "10254",
+      "hero_name": "心理学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "110",
+      "rn": "100"
+    },
+    {
+      "score": "10250",
+      "hero_name": "心理学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "110",
+      "rn": "101"
+    },
+    {
+      "score": "9301",
+      "hero_name": "心理学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "110",
+      "rn": "300"
+    },
+    {
+      "score": "9300",
+      "hero_name": "心理学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "110",
+      "rn": "301"
+    },
+    {
+      "score": "8849",
+      "hero_name": "心理学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "110",
+      "rn": "500"
+    },
+    {
+      "score": "17088",
+      "hero_name": "小女孩",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "111",
+      "rn": "1"
+    },
+    {
+      "score": "11982",
+      "hero_name": "小女孩",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "111",
+      "rn": "10"
+    },
+    {
+      "score": "11878",
+      "hero_name": "小女孩",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "111",
+      "rn": "11"
+    },
+    {
+      "score": "10053",
+      "hero_name": "小女孩",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "111",
+      "rn": "100"
+    },
+    {
+      "score": "10052",
+      "hero_name": "小女孩",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "111",
+      "rn": "101"
+    },
+    {
+      "score": "9104",
+      "hero_name": "小女孩",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "111",
+      "rn": "300"
+    },
+    {
+      "score": "9102",
+      "hero_name": "小女孩",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "111",
+      "rn": "301"
+    },
+    {
+      "score": "8527",
+      "hero_name": "小女孩",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "111",
+      "rn": "500"
+    },
+    {
+      "score": "13990",
+      "hero_name": "蜡像师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "112",
+      "rn": "1"
+    },
+    {
+      "score": "13514",
+      "hero_name": "蜡像师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "112",
+      "rn": "10"
+    },
+    {
+      "score": "13436",
+      "hero_name": "蜡像师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "112",
+      "rn": "11"
+    },
+    {
+      "score": "12456",
+      "hero_name": "蜡像师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "112",
+      "rn": "100"
+    },
+    {
+      "score": "12455",
+      "hero_name": "蜡像师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "112",
+      "rn": "101"
+    },
+    {
+      "score": "11110",
+      "hero_name": "蜡像师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "112",
+      "rn": "300"
+    },
+    {
+      "score": "11110",
+      "hero_name": "蜡像师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "112",
+      "rn": "301"
+    },
+    {
+      "score": "10158",
+      "hero_name": "蜡像师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "112",
+      "rn": "500"
+    },
+    {
+      "score": "14297",
+      "hero_name": "小说家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "113",
+      "rn": "1"
+    },
+    {
+      "score": "11986",
+      "hero_name": "小说家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "113",
+      "rn": "10"
+    },
+    {
+      "score": "11917",
+      "hero_name": "小说家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "113",
+      "rn": "11"
+    },
+    {
+      "score": "10283",
+      "hero_name": "小说家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "113",
+      "rn": "100"
+    },
+    {
+      "score": "10274",
+      "hero_name": "小说家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "113",
+      "rn": "101"
+    },
+    {
+      "score": "9235",
+      "hero_name": "小说家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "113",
+      "rn": "300"
+    },
+    {
+      "score": "9235",
+      "hero_name": "小说家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "113",
+      "rn": "301"
+    },
+    {
+      "score": "8573",
+      "hero_name": "小说家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "113",
+      "rn": "500"
+    },
+    {
+      "score": "17383",
+      "hero_name": "作曲家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "114",
+      "rn": "1"
+    },
+    {
+      "score": "11978",
+      "hero_name": "作曲家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "114",
+      "rn": "10"
+    },
+    {
+      "score": "11957",
+      "hero_name": "作曲家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "114",
+      "rn": "11"
+    },
+    {
+      "score": "10156",
+      "hero_name": "作曲家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "114",
+      "rn": "100"
+    },
+    {
+      "score": "10142",
+      "hero_name": "作曲家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "114",
+      "rn": "101"
+    },
+    {
+      "score": "8772",
+      "hero_name": "作曲家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "114",
+      "rn": "300"
+    },
+    {
+      "score": "8769",
+      "hero_name": "作曲家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "114",
+      "rn": "301"
+    },
+    {
+      "score": "7991",
+      "hero_name": "作曲家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "114",
+      "rn": "500"
+    },
+    {
+      "score": "13396",
+      "hero_name": "哭泣小丑",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "115",
+      "rn": "1"
+    },
+    {
+      "score": "11357",
+      "hero_name": "哭泣小丑",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "115",
+      "rn": "10"
+    },
+    {
+      "score": "11226",
+      "hero_name": "哭泣小丑",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "115",
+      "rn": "11"
+    },
+    {
+      "score": "9697",
+      "hero_name": "哭泣小丑",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "115",
+      "rn": "100"
+    },
+    {
+      "score": "9670",
+      "hero_name": "哭泣小丑",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "115",
+      "rn": "101"
+    },
+    {
+      "score": "8117",
+      "hero_name": "哭泣小丑",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "115",
+      "rn": "300"
+    },
+    {
+      "score": "8111",
+      "hero_name": "哭泣小丑",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "115",
+      "rn": "301"
+    },
+    {
+      "score": "7361",
+      "hero_name": "哭泣小丑",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "115",
+      "rn": "500"
+    },
+    {
+      "score": "13795",
+      "hero_name": "记录员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "116",
+      "rn": "1"
+    },
+    {
+      "score": "13301",
+      "hero_name": "记录员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "116",
+      "rn": "10"
+    },
+    {
+      "score": "13283",
+      "hero_name": "记录员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "116",
+      "rn": "11"
+    },
+    {
+      "score": "12373",
+      "hero_name": "记录员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "116",
+      "rn": "100"
+    },
+    {
+      "score": "12369",
+      "hero_name": "记录员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "116",
+      "rn": "101"
+    },
+    {
+      "score": "11074",
+      "hero_name": "记录员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "116",
+      "rn": "300"
+    },
+    {
+      "score": "11072",
+      "hero_name": "记录员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "116",
+      "rn": "301"
+    },
+    {
+      "score": "10068",
+      "hero_name": "记录员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "116",
+      "rn": "500"
+    },
+    {
+      "score": "13390",
+      "hero_name": "噩梦",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "117",
+      "rn": "1"
+    },
+    {
+      "score": "12985",
+      "hero_name": "噩梦",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "117",
+      "rn": "10"
+    },
+    {
+      "score": "12971",
+      "hero_name": "噩梦",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "117",
+      "rn": "11"
+    },
+    {
+      "score": "11990",
+      "hero_name": "噩梦",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "117",
+      "rn": "100"
+    },
+    {
+      "score": "11970",
+      "hero_name": "噩梦",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "117",
+      "rn": "101"
+    },
+    {
+      "score": "10742",
+      "hero_name": "噩梦",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "117",
+      "rn": "300"
+    },
+    {
+      "score": "10737",
+      "hero_name": "噩梦",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "117",
+      "rn": "301"
+    },
+    {
+      "score": "10090",
+      "hero_name": "噩梦",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "117",
+      "rn": "500"
+    },
+    {
+      "score": "17968",
+      "hero_name": "古董商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "121",
+      "rn": "1"
+    },
+    {
+      "score": "12678",
+      "hero_name": "古董商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "121",
+      "rn": "10"
+    },
+    {
+      "score": "12639",
+      "hero_name": "古董商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "121",
+      "rn": "11"
+    },
+    {
+      "score": "10729",
+      "hero_name": "古董商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "121",
+      "rn": "100"
+    },
+    {
+      "score": "10722",
+      "hero_name": "古董商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "121",
+      "rn": "101"
+    },
+    {
+      "score": "9766",
+      "hero_name": "古董商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "121",
+      "rn": "300"
+    },
+    {
+      "score": "9761",
+      "hero_name": "古董商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "121",
+      "rn": "301"
+    },
+    {
+      "score": "9206",
+      "hero_name": "古董商",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "121",
+      "rn": "500"
+    },
+    {
+      "score": "13144",
+      "hero_name": "教授",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "122",
+      "rn": "1"
+    },
+    {
+      "score": "11286",
+      "hero_name": "教授",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "122",
+      "rn": "10"
+    },
+    {
+      "score": "11153",
+      "hero_name": "教授",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "122",
+      "rn": "11"
+    },
+    {
+      "score": "9882",
+      "hero_name": "教授",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "122",
+      "rn": "100"
+    },
+    {
+      "score": "9878",
+      "hero_name": "教授",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "122",
+      "rn": "101"
+    },
+    {
+      "score": "8241",
+      "hero_name": "教授",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "122",
+      "rn": "300"
+    },
+    {
+      "score": "8237",
+      "hero_name": "教授",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "122",
+      "rn": "301"
+    },
+    {
+      "score": "7532",
+      "hero_name": "教授",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "122",
+      "rn": "500"
+    },
+    {
+      "score": "14965",
+      "hero_name": "飞行家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "123",
+      "rn": "1"
+    },
+    {
+      "score": "11562",
+      "hero_name": "飞行家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "123",
+      "rn": "10"
+    },
+    {
+      "score": "11534",
+      "hero_name": "飞行家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "123",
+      "rn": "11"
+    },
+    {
+      "score": "9369",
+      "hero_name": "飞行家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "123",
+      "rn": "100"
+    },
+    {
+      "score": "9366",
+      "hero_name": "飞行家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "123",
+      "rn": "101"
+    },
+    {
+      "score": "7725",
+      "hero_name": "飞行家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "123",
+      "rn": "300"
+    },
+    {
+      "score": "7721",
+      "hero_name": "飞行家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "123",
+      "rn": "301"
+    },
+    {
+      "score": "6721",
+      "hero_name": "飞行家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "123",
+      "rn": "500"
+    },
+    {
+      "score": "17933",
+      "hero_name": "记者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "124",
+      "rn": "1"
+    },
+    {
+      "score": "11690",
+      "hero_name": "记者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "124",
+      "rn": "10"
+    },
+    {
+      "score": "11634",
+      "hero_name": "记者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "124",
+      "rn": "11"
+    },
+    {
+      "score": "10424",
+      "hero_name": "记者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "124",
+      "rn": "100"
+    },
+    {
+      "score": "10424",
+      "hero_name": "记者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "124",
+      "rn": "101"
+    },
+    {
+      "score": "9546",
+      "hero_name": "记者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "124",
+      "rn": "300"
+    },
+    {
+      "score": "9546",
+      "hero_name": "记者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "124",
+      "rn": "301"
+    },
+    {
+      "score": "8960",
+      "hero_name": "记者",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "124",
+      "rn": "500"
+    },
+    {
+      "score": "14051",
+      "hero_name": "守夜人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "126",
+      "rn": "1"
+    },
+    {
+      "score": "13586",
+      "hero_name": "守夜人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "126",
+      "rn": "10"
+    },
+    {
+      "score": "13552",
+      "hero_name": "守夜人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "126",
+      "rn": "11"
+    },
+    {
+      "score": "12357",
+      "hero_name": "守夜人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "126",
+      "rn": "100"
+    },
+    {
+      "score": "12357",
+      "hero_name": "守夜人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "126",
+      "rn": "101"
+    },
+    {
+      "score": "11182",
+      "hero_name": "守夜人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "126",
+      "rn": "300"
+    },
+    {
+      "score": "11180",
+      "hero_name": "守夜人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "126",
+      "rn": "301"
+    },
+    {
+      "score": "10492",
+      "hero_name": "守夜人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "126",
+      "rn": "500"
+    },
+    {
+      "score": "14052",
+      "hero_name": "隐士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "127",
+      "rn": "1"
+    },
+    {
+      "score": "13409",
+      "hero_name": "隐士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "127",
+      "rn": "10"
+    },
+    {
+      "score": "13352",
+      "hero_name": "隐士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "127",
+      "rn": "11"
+    },
+    {
+      "score": "12137",
+      "hero_name": "隐士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "127",
+      "rn": "100"
+    },
+    {
+      "score": "12130",
+      "hero_name": "隐士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "127",
+      "rn": "101"
+    },
+    {
+      "score": "10379",
+      "hero_name": "隐士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "127",
+      "rn": "300"
+    },
+    {
+      "score": "10377",
+      "hero_name": "隐士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "127",
+      "rn": "301"
+    },
+    {
+      "score": "9400",
+      "hero_name": "隐士",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "127",
+      "rn": "500"
+    },
+    {
+      "score": "13843",
+      "hero_name": "歌剧演员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "129",
+      "rn": "1"
+    },
+    {
+      "score": "13316",
+      "hero_name": "歌剧演员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "129",
+      "rn": "10"
+    },
+    {
+      "score": "13295",
+      "hero_name": "歌剧演员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "129",
+      "rn": "11"
+    },
+    {
+      "score": "12224",
+      "hero_name": "歌剧演员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "129",
+      "rn": "100"
+    },
+    {
+      "score": "12203",
+      "hero_name": "歌剧演员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "129",
+      "rn": "101"
+    },
+    {
+      "score": "10847",
+      "hero_name": "歌剧演员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "129",
+      "rn": "300"
+    },
+    {
+      "score": "10847",
+      "hero_name": "歌剧演员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "129",
+      "rn": "301"
+    },
+    {
+      "score": "10104",
+      "hero_name": "歌剧演员",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "129",
+      "rn": "500"
+    },
+    {
+      "score": "18857",
+      "hero_name": "拉拉队员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "131",
+      "rn": "1"
+    },
+    {
+      "score": "12571",
+      "hero_name": "拉拉队员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "131",
+      "rn": "10"
+    },
+    {
+      "score": "12449",
+      "hero_name": "拉拉队员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "131",
+      "rn": "11"
+    },
+    {
+      "score": "10196",
+      "hero_name": "拉拉队员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "131",
+      "rn": "100"
+    },
+    {
+      "score": "10189",
+      "hero_name": "拉拉队员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "131",
+      "rn": "101"
+    },
+    {
+      "score": "9219",
+      "hero_name": "拉拉队员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "131",
+      "rn": "300"
+    },
+    {
+      "score": "9217",
+      "hero_name": "拉拉队员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "131",
+      "rn": "301"
+    },
+    {
+      "score": "8721",
+      "hero_name": "拉拉队员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "131",
+      "rn": "500"
+    },
+    {
+      "score": "14062",
+      "hero_name": "愚人金",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "133",
+      "rn": "1"
+    },
+    {
+      "score": "13555",
+      "hero_name": "愚人金",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "133",
+      "rn": "10"
+    },
+    {
+      "score": "13513",
+      "hero_name": "愚人金",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "133",
+      "rn": "11"
+    },
+    {
+      "score": "12389",
+      "hero_name": "愚人金",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "133",
+      "rn": "100"
+    },
+    {
+      "score": "12383",
+      "hero_name": "愚人金",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "133",
+      "rn": "101"
+    },
+    {
+      "score": "11238",
+      "hero_name": "愚人金",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "133",
+      "rn": "300"
+    },
+    {
+      "score": "11234",
+      "hero_name": "愚人金",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "133",
+      "rn": "301"
+    },
+    {
+      "score": "10709",
+      "hero_name": "愚人金",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "133",
+      "rn": "500"
+    },
+    {
+      "score": "16252",
+      "hero_name": "木偶师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "134",
+      "rn": "1"
+    },
+    {
+      "score": "12337",
+      "hero_name": "木偶师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "134",
+      "rn": "10"
+    },
+    {
+      "score": "12304",
+      "hero_name": "木偶师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "134",
+      "rn": "11"
+    },
+    {
+      "score": "10319",
+      "hero_name": "木偶师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "134",
+      "rn": "100"
+    },
+    {
+      "score": "10316",
+      "hero_name": "木偶师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "134",
+      "rn": "101"
+    },
+    {
+      "score": "9325",
+      "hero_name": "木偶师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "134",
+      "rn": "300"
+    },
+    {
+      "score": "9321",
+      "hero_name": "木偶师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "134",
+      "rn": "301"
+    },
+    {
+      "score": "8658",
+      "hero_name": "木偶师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "134",
+      "rn": "500"
+    },
+    {
+      "score": "12695",
+      "hero_name": "法罗女士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "135",
+      "rn": "1"
+    },
+    {
+      "score": "11593",
+      "hero_name": "法罗女士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "135",
+      "rn": "10"
+    },
+    {
+      "score": "11564",
+      "hero_name": "法罗女士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "135",
+      "rn": "11"
+    },
+    {
+      "score": "10196",
+      "hero_name": "法罗女士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "135",
+      "rn": "100"
+    },
+    {
+      "score": "10185",
+      "hero_name": "法罗女士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "135",
+      "rn": "101"
+    },
+    {
+      "score": "9219",
+      "hero_name": "法罗女士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "135",
+      "rn": "300"
+    },
+    {
+      "score": "9218",
+      "hero_name": "法罗女士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "135",
+      "rn": "301"
+    },
+    {
+      "score": "8677",
+      "hero_name": "法罗女士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "135",
+      "rn": "500"
+    },
+    {
+      "score": "13730",
+      "hero_name": "时空之影",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "136",
+      "rn": "1"
+    },
+    {
+      "score": "11916",
+      "hero_name": "时空之影",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "136",
+      "rn": "10"
+    },
+    {
+      "score": "11861",
+      "hero_name": "时空之影",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "136",
+      "rn": "11"
+    },
+    {
+      "score": "10429",
+      "hero_name": "时空之影",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "136",
+      "rn": "100"
+    },
+    {
+      "score": "10429",
+      "hero_name": "时空之影",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "136",
+      "rn": "101"
+    },
+    {
+      "score": "9380",
+      "hero_name": "时空之影",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "136",
+      "rn": "300"
+    },
+    {
+      "score": "9377",
+      "hero_name": "时空之影",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "136",
+      "rn": "301"
+    },
+    {
+      "score": "8772",
+      "hero_name": "时空之影",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "136",
+      "rn": "500"
+    },
+    {
+      "score": "12474",
+      "hero_name": "火灾调查员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "139",
+      "rn": "1"
+    },
+    {
+      "score": "11376",
+      "hero_name": "火灾调查员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "139",
+      "rn": "10"
+    },
+    {
+      "score": "11352",
+      "hero_name": "火灾调查员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "139",
+      "rn": "11"
+    },
+    {
+      "score": "9470",
+      "hero_name": "火灾调查员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "139",
+      "rn": "100"
+    },
+    {
+      "score": "9468",
+      "hero_name": "火灾调查员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "139",
+      "rn": "101"
+    },
+    {
+      "score": "8054",
+      "hero_name": "火灾调查员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "139",
+      "rn": "300"
+    },
+    {
+      "score": "8049",
+      "hero_name": "火灾调查员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "139",
+      "rn": "301"
+    },
+    {
+      "score": "7520",
+      "hero_name": "火灾调查员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "139",
+      "rn": "500"
+    },
+    {
+      "score": "16640",
+      "hero_name": "医生",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "14",
+      "rn": "1"
+    },
+    {
+      "score": "11237",
+      "hero_name": "医生",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "14",
+      "rn": "10"
+    },
+    {
+      "score": "11236",
+      "hero_name": "医生",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "14",
+      "rn": "11"
+    },
+    {
+      "score": "9758",
+      "hero_name": "医生",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "14",
+      "rn": "100"
+    },
+    {
+      "score": "9757",
+      "hero_name": "医生",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "14",
+      "rn": "101"
+    },
+    {
+      "score": "8563",
+      "hero_name": "医生",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "14",
+      "rn": "300"
+    },
+    {
+      "score": "8559",
+      "hero_name": "医生",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "14",
+      "rn": "301"
+    },
+    {
+      "score": "7863",
+      "hero_name": "医生",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "14",
+      "rn": "500"
+    },
+    {
+      "score": "13315",
+      "hero_name": "跛脚羊",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "140",
+      "rn": "1"
+    },
+    {
+      "score": "12918",
+      "hero_name": "跛脚羊",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "140",
+      "rn": "10"
+    },
+    {
+      "score": "12910",
+      "hero_name": "跛脚羊",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "140",
+      "rn": "11"
+    },
+    {
+      "score": "11690",
+      "hero_name": "跛脚羊",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "140",
+      "rn": "100"
+    },
+    {
+      "score": "11683",
+      "hero_name": "跛脚羊",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "140",
+      "rn": "101"
+    },
+    {
+      "score": "9994",
+      "hero_name": "跛脚羊",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "140",
+      "rn": "300"
+    },
+    {
+      "score": "9994",
+      "hero_name": "跛脚羊",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "140",
+      "rn": "301"
+    },
+    {
+      "score": "8834",
+      "hero_name": "跛脚羊",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "140",
+      "rn": "500"
+    },
+    {
+      "score": "19032",
+      "hero_name": "骑士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "141",
+      "rn": "1"
+    },
+    {
+      "score": "12616",
+      "hero_name": "骑士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "141",
+      "rn": "10"
+    },
+    {
+      "score": "12593",
+      "hero_name": "骑士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "141",
+      "rn": "11"
+    },
+    {
+      "score": "10503",
+      "hero_name": "骑士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "141",
+      "rn": "100"
+    },
+    {
+      "score": "10502",
+      "hero_name": "骑士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "141",
+      "rn": "101"
+    },
+    {
+      "score": "9414",
+      "hero_name": "骑士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "141",
+      "rn": "300"
+    },
+    {
+      "score": "9403",
+      "hero_name": "骑士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "141",
+      "rn": "301"
+    },
+    {
+      "score": "8714",
+      "hero_name": "骑士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "141",
+      "rn": "500"
+    },
+    {
+      "score": "15217",
+      "hero_name": "气象学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "142",
+      "rn": "1"
+    },
+    {
+      "score": "11979",
+      "hero_name": "气象学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "142",
+      "rn": "10"
+    },
+    {
+      "score": "11795",
+      "hero_name": "气象学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "142",
+      "rn": "11"
+    },
+    {
+      "score": "10224",
+      "hero_name": "气象学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "142",
+      "rn": "100"
+    },
+    {
+      "score": "10223",
+      "hero_name": "气象学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "142",
+      "rn": "101"
+    },
+    {
+      "score": "9002",
+      "hero_name": "气象学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "142",
+      "rn": "300"
+    },
+    {
+      "score": "8989",
+      "hero_name": "气象学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "142",
+      "rn": "301"
+    },
+    {
+      "score": "8324",
+      "hero_name": "气象学家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "142",
+      "rn": "500"
+    },
+    {
+      "score": "13722",
+      "hero_name": "喧嚣",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "143",
+      "rn": "1"
+    },
+    {
+      "score": "13373",
+      "hero_name": "喧嚣",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "143",
+      "rn": "10"
+    },
+    {
+      "score": "13346",
+      "hero_name": "喧嚣",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "143",
+      "rn": "11"
+    },
+    {
+      "score": "12279",
+      "hero_name": "喧嚣",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "143",
+      "rn": "100"
+    },
+    {
+      "score": "12269",
+      "hero_name": "喧嚣",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "143",
+      "rn": "101"
+    },
+    {
+      "score": "10824",
+      "hero_name": "喧嚣",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "143",
+      "rn": "300"
+    },
+    {
+      "score": "10812",
+      "hero_name": "喧嚣",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "143",
+      "rn": "301"
+    },
+    {
+      "score": "9892",
+      "hero_name": "喧嚣",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "143",
+      "rn": "500"
+    },
+    {
+      "score": "16722",
+      "hero_name": "弓箭手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "144",
+      "rn": "1"
+    },
+    {
+      "score": "12697",
+      "hero_name": "弓箭手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "144",
+      "rn": "10"
+    },
+    {
+      "score": "12587",
+      "hero_name": "弓箭手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "144",
+      "rn": "11"
+    },
+    {
+      "score": "10627",
+      "hero_name": "弓箭手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "144",
+      "rn": "100"
+    },
+    {
+      "score": "10621",
+      "hero_name": "弓箭手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "144",
+      "rn": "101"
+    },
+    {
+      "score": "9689",
+      "hero_name": "弓箭手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "144",
+      "rn": "300"
+    },
+    {
+      "score": "9689",
+      "hero_name": "弓箭手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "144",
+      "rn": "301"
+    },
+    {
+      "score": "9147",
+      "hero_name": "弓箭手",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "144",
+      "rn": "500"
+    },
+    {
+      "score": "13730",
+      "hero_name": "杂货商",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "145",
+      "rn": "1"
+    },
+    {
+      "score": "12989",
+      "hero_name": "杂货商",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "145",
+      "rn": "10"
+    },
+    {
+      "score": "12956",
+      "hero_name": "杂货商",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "145",
+      "rn": "11"
+    },
+    {
+      "score": "11133",
+      "hero_name": "杂货商",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "145",
+      "rn": "100"
+    },
+    {
+      "score": "11121",
+      "hero_name": "杂货商",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "145",
+      "rn": "101"
+    },
+    {
+      "score": "9307",
+      "hero_name": "杂货商",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "145",
+      "rn": "300"
+    },
+    {
+      "score": "9306",
+      "hero_name": "杂货商",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "145",
+      "rn": "301"
+    },
+    {
+      "score": "8266",
+      "hero_name": "杂货商",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "145",
+      "rn": "500"
+    },
+    {
+      "score": "13630",
+      "hero_name": "逃脱大师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "146",
+      "rn": "1"
+    },
+    {
+      "score": "11226",
+      "hero_name": "逃脱大师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "146",
+      "rn": "10"
+    },
+    {
+      "score": "11138",
+      "hero_name": "逃脱大师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "146",
+      "rn": "11"
+    },
+    {
+      "score": "9397",
+      "hero_name": "逃脱大师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "146",
+      "rn": "100"
+    },
+    {
+      "score": "9384",
+      "hero_name": "逃脱大师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "146",
+      "rn": "101"
+    },
+    {
+      "score": "7839",
+      "hero_name": "逃脱大师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "146",
+      "rn": "300"
+    },
+    {
+      "score": "7838",
+      "hero_name": "逃脱大师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "146",
+      "rn": "301"
+    },
+    {
+      "score": "7035",
+      "hero_name": "逃脱大师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "146",
+      "rn": "500"
+    },
+    {
+      "score": "14181",
+      "hero_name": "台球手",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "147",
+      "rn": "1"
+    },
+    {
+      "score": "12953",
+      "hero_name": "台球手",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "147",
+      "rn": "10"
+    },
+    {
+      "score": "12942",
+      "hero_name": "台球手",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "147",
+      "rn": "11"
+    },
+    {
+      "score": "11802",
+      "hero_name": "台球手",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "147",
+      "rn": "100"
+    },
+    {
+      "score": "11794",
+      "hero_name": "台球手",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "147",
+      "rn": "101"
+    },
+    {
+      "score": "10643",
+      "hero_name": "台球手",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "147",
+      "rn": "300"
+    },
+    {
+      "score": "10637",
+      "hero_name": "台球手",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "147",
+      "rn": "301"
+    },
+    {
+      "score": "10042",
+      "hero_name": "台球手",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "147",
+      "rn": "500"
+    },
+    {
+      "score": "12252",
+      "hero_name": "律师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "15",
+      "rn": "1"
+    },
+    {
+      "score": "11096",
+      "hero_name": "律师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "15",
+      "rn": "10"
+    },
+    {
+      "score": "10999",
+      "hero_name": "律师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "15",
+      "rn": "11"
+    },
+    {
+      "score": "9646",
+      "hero_name": "律师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "15",
+      "rn": "100"
+    },
+    {
+      "score": "9623",
+      "hero_name": "律师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "15",
+      "rn": "101"
+    },
+    {
+      "score": "8569",
+      "hero_name": "律师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "15",
+      "rn": "300"
+    },
+    {
+      "score": "8568",
+      "hero_name": "律师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "15",
+      "rn": "301"
+    },
+    {
+      "score": "7997",
+      "hero_name": "律师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "15",
+      "rn": "500"
+    },
+    {
+      "score": "14701",
+      "hero_name": "幻灯师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "150",
+      "rn": "1"
+    },
+    {
+      "score": "11857",
+      "hero_name": "幻灯师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "150",
+      "rn": "10"
+    },
+    {
+      "score": "11787",
+      "hero_name": "幻灯师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "150",
+      "rn": "11"
+    },
+    {
+      "score": "10270",
+      "hero_name": "幻灯师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "150",
+      "rn": "100"
+    },
+    {
+      "score": "10259",
+      "hero_name": "幻灯师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "150",
+      "rn": "101"
+    },
+    {
+      "score": "9301",
+      "hero_name": "幻灯师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "150",
+      "rn": "300"
+    },
+    {
+      "score": "9295",
+      "hero_name": "幻灯师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "150",
+      "rn": "301"
+    },
+    {
+      "score": "8673",
+      "hero_name": "幻灯师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "150",
+      "rn": "500"
+    },
+    {
+      "score": "13937",
+      "hero_name": "女王蜂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "151",
+      "rn": "1"
+    },
+    {
+      "score": "13270",
+      "hero_name": "女王蜂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "151",
+      "rn": "10"
+    },
+    {
+      "score": "13228",
+      "hero_name": "女王蜂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "151",
+      "rn": "11"
+    },
+    {
+      "score": "12081",
+      "hero_name": "女王蜂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "151",
+      "rn": "100"
+    },
+    {
+      "score": "12070",
+      "hero_name": "女王蜂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "151",
+      "rn": "101"
+    },
+    {
+      "score": "10640",
+      "hero_name": "女王蜂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "151",
+      "rn": "300"
+    },
+    {
+      "score": "10638",
+      "hero_name": "女王蜂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "151",
+      "rn": "301"
+    },
+    {
+      "score": "9939",
+      "hero_name": "女王蜂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "151",
+      "rn": "500"
+    },
+    {
+      "score": "15786",
+      "hero_name": "斗牛士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "152",
+      "rn": "1"
+    },
+    {
+      "score": "12533",
+      "hero_name": "斗牛士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "152",
+      "rn": "10"
+    },
+    {
+      "score": "12447",
+      "hero_name": "斗牛士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "152",
+      "rn": "11"
+    },
+    {
+      "score": "10375",
+      "hero_name": "斗牛士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "152",
+      "rn": "100"
+    },
+    {
+      "score": "10375",
+      "hero_name": "斗牛士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "152",
+      "rn": "101"
+    },
+    {
+      "score": "9532",
+      "hero_name": "斗牛士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "152",
+      "rn": "300"
+    },
+    {
+      "score": "9529",
+      "hero_name": "斗牛士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "152",
+      "rn": "301"
+    },
+    {
+      "score": "9128",
+      "hero_name": "斗牛士",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "152",
+      "rn": "500"
+    },
+    {
+      "score": "13365",
+      "hero_name": "牙医",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "153",
+      "rn": "1"
+    },
+    {
+      "score": "12483",
+      "hero_name": "牙医",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "153",
+      "rn": "10"
+    },
+    {
+      "score": "12413",
+      "hero_name": "牙医",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "153",
+      "rn": "11"
+    },
+    {
+      "score": "10722",
+      "hero_name": "牙医",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "153",
+      "rn": "100"
+    },
+    {
+      "score": "10720",
+      "hero_name": "牙医",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "153",
+      "rn": "101"
+    },
+    {
+      "score": "9006",
+      "hero_name": "牙医",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "153",
+      "rn": "300"
+    },
+    {
+      "score": "8994",
+      "hero_name": "牙医",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "153",
+      "rn": "301"
+    },
+    {
+      "score": "8066",
+      "hero_name": "牙医",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "153",
+      "rn": "500"
+    },
+    {
+      "score": "12597",
+      "hero_name": "默剧艺人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "154",
+      "rn": "1"
+    },
+    {
+      "score": "11506",
+      "hero_name": "默剧艺人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "154",
+      "rn": "10"
+    },
+    {
+      "score": "11505",
+      "hero_name": "默剧艺人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "154",
+      "rn": "11"
+    },
+    {
+      "score": "9823",
+      "hero_name": "默剧艺人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "154",
+      "rn": "100"
+    },
+    {
+      "score": "9812",
+      "hero_name": "默剧艺人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "154",
+      "rn": "101"
+    },
+    {
+      "score": "8294",
+      "hero_name": "默剧艺人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "154",
+      "rn": "300"
+    },
+    {
+      "score": "8288",
+      "hero_name": "默剧艺人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "154",
+      "rn": "301"
+    },
+    {
+      "score": "7636",
+      "hero_name": "默剧艺人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "154",
+      "rn": "500"
+    },
+    {
+      "score": "15399",
+      "hero_name": "慈善家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "16",
+      "rn": "1"
+    },
+    {
+      "score": "11455",
+      "hero_name": "慈善家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "16",
+      "rn": "10"
+    },
+    {
+      "score": "11414",
+      "hero_name": "慈善家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "16",
+      "rn": "11"
+    },
+    {
+      "score": "9491",
+      "hero_name": "慈善家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "16",
+      "rn": "100"
+    },
+    {
+      "score": "9472",
+      "hero_name": "慈善家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "16",
+      "rn": "101"
+    },
+    {
+      "score": "7409",
+      "hero_name": "慈善家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "16",
+      "rn": "300"
+    },
+    {
+      "score": "7377",
+      "hero_name": "慈善家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "16",
+      "rn": "301"
+    },
+    {
+      "score": "6039",
+      "hero_name": "慈善家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "16",
+      "rn": "500"
+    },
+    {
+      "score": "16275",
+      "hero_name": "园丁",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "17",
+      "rn": "1"
+    },
+    {
+      "score": "11922",
+      "hero_name": "园丁",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "17",
+      "rn": "10"
+    },
+    {
+      "score": "11844",
+      "hero_name": "园丁",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "17",
+      "rn": "11"
+    },
+    {
+      "score": "10425",
+      "hero_name": "园丁",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "17",
+      "rn": "100"
+    },
+    {
+      "score": "10420",
+      "hero_name": "园丁",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "17",
+      "rn": "101"
+    },
+    {
+      "score": "9287",
+      "hero_name": "园丁",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "17",
+      "rn": "300"
+    },
+    {
+      "score": "9273",
+      "hero_name": "园丁",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "17",
+      "rn": "301"
+    },
+    {
+      "score": "8594",
+      "hero_name": "园丁",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "17",
+      "rn": "500"
+    },
+    {
+      "score": "13964",
+      "hero_name": "鹿头",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "19",
+      "rn": "1"
+    },
+    {
+      "score": "13223",
+      "hero_name": "鹿头",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "19",
+      "rn": "10"
+    },
+    {
+      "score": "13200",
+      "hero_name": "鹿头",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "19",
+      "rn": "11"
+    },
+    {
+      "score": "12225",
+      "hero_name": "鹿头",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "19",
+      "rn": "100"
+    },
+    {
+      "score": "12224",
+      "hero_name": "鹿头",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "19",
+      "rn": "101"
+    },
+    {
+      "score": "10780",
+      "hero_name": "鹿头",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "19",
+      "rn": "300"
+    },
+    {
+      "score": "10779",
+      "hero_name": "鹿头",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "19",
+      "rn": "301"
+    },
+    {
+      "score": "9848",
+      "hero_name": "鹿头",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "19",
+      "rn": "500"
+    },
+    {
+      "score": "13860",
+      "hero_name": "小丑",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "2",
+      "rn": "1"
+    },
+    {
+      "score": "13187",
+      "hero_name": "小丑",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "2",
+      "rn": "10"
+    },
+    {
+      "score": "13165",
+      "hero_name": "小丑",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "2",
+      "rn": "11"
+    },
+    {
+      "score": "12190",
+      "hero_name": "小丑",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "2",
+      "rn": "100"
+    },
+    {
+      "score": "12173",
+      "hero_name": "小丑",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "2",
+      "rn": "101"
+    },
+    {
+      "score": "11151",
+      "hero_name": "小丑",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "2",
+      "rn": "300"
+    },
+    {
+      "score": "11150",
+      "hero_name": "小丑",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "2",
+      "rn": "301"
+    },
+    {
+      "score": "10481",
+      "hero_name": "小丑",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "2",
+      "rn": "500"
+    },
+    {
+      "score": "12114",
+      "hero_name": "魔术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "21",
+      "rn": "1"
+    },
+    {
+      "score": "11082",
+      "hero_name": "魔术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "21",
+      "rn": "10"
+    },
+    {
+      "score": "11080",
+      "hero_name": "魔术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "21",
+      "rn": "11"
+    },
+    {
+      "score": "9857",
+      "hero_name": "魔术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "21",
+      "rn": "100"
+    },
+    {
+      "score": "9855",
+      "hero_name": "魔术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "21",
+      "rn": "101"
+    },
+    {
+      "score": "8967",
+      "hero_name": "魔术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "21",
+      "rn": "300"
+    },
+    {
+      "score": "8961",
+      "hero_name": "魔术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "21",
+      "rn": "301"
+    },
+    {
+      "score": "8378",
+      "hero_name": "魔术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "21",
+      "rn": "500"
+    },
+    {
+      "score": "11742",
+      "hero_name": "冒险家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "23",
+      "rn": "1"
+    },
+    {
+      "score": "10648",
+      "hero_name": "冒险家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "23",
+      "rn": "10"
+    },
+    {
+      "score": "10637",
+      "hero_name": "冒险家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "23",
+      "rn": "11"
+    },
+    {
+      "score": "8814",
+      "hero_name": "冒险家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "23",
+      "rn": "100"
+    },
+    {
+      "score": "8795",
+      "hero_name": "冒险家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "23",
+      "rn": "101"
+    },
+    {
+      "score": "7024",
+      "hero_name": "冒险家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "23",
+      "rn": "300"
+    },
+    {
+      "score": "7021",
+      "hero_name": "冒险家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "23",
+      "rn": "301"
+    },
+    {
+      "score": "6060",
+      "hero_name": "冒险家",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "23",
+      "rn": "500"
+    },
+    {
+      "score": "15667",
+      "hero_name": "佣兵",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "25",
+      "rn": "1"
+    },
+    {
+      "score": "11970",
+      "hero_name": "佣兵",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "25",
+      "rn": "10"
+    },
+    {
+      "score": "11866",
+      "hero_name": "佣兵",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "25",
+      "rn": "11"
+    },
+    {
+      "score": "10323",
+      "hero_name": "佣兵",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "25",
+      "rn": "100"
+    },
+    {
+      "score": "10320",
+      "hero_name": "佣兵",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "25",
+      "rn": "101"
+    },
+    {
+      "score": "9349",
+      "hero_name": "佣兵",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "25",
+      "rn": "300"
+    },
+    {
+      "score": "9348",
+      "hero_name": "佣兵",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "25",
+      "rn": "301"
+    },
+    {
+      "score": "8757",
+      "hero_name": "佣兵",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "25",
+      "rn": "500"
+    },
+    {
+      "score": "13688",
+      "hero_name": "幸运儿",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "3",
+      "rn": "1"
+    },
+    {
+      "score": "11799",
+      "hero_name": "幸运儿",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "3",
+      "rn": "10"
+    },
+    {
+      "score": "11634",
+      "hero_name": "幸运儿",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "3",
+      "rn": "11"
+    },
+    {
+      "score": "10413",
+      "hero_name": "幸运儿",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "3",
+      "rn": "100"
+    },
+    {
+      "score": "10407",
+      "hero_name": "幸运儿",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "3",
+      "rn": "101"
+    },
+    {
+      "score": "9425",
+      "hero_name": "幸运儿",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "3",
+      "rn": "300"
+    },
+    {
+      "score": "9420",
+      "hero_name": "幸运儿",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "3",
+      "rn": "301"
+    },
+    {
+      "score": "8799",
+      "hero_name": "幸运儿",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "3",
+      "rn": "500"
+    },
+    {
+      "score": "14100",
+      "hero_name": "杰克",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "30",
+      "rn": "1"
+    },
+    {
+      "score": "13481",
+      "hero_name": "杰克",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "30",
+      "rn": "10"
+    },
+    {
+      "score": "13373",
+      "hero_name": "杰克",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "30",
+      "rn": "11"
+    },
+    {
+      "score": "12541",
+      "hero_name": "杰克",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "30",
+      "rn": "100"
+    },
+    {
+      "score": "12536",
+      "hero_name": "杰克",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "30",
+      "rn": "101"
+    },
+    {
+      "score": "11636",
+      "hero_name": "杰克",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "30",
+      "rn": "300"
+    },
+    {
+      "score": "11636",
+      "hero_name": "杰克",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "30",
+      "rn": "301"
+    },
+    {
+      "score": "11146",
+      "hero_name": "杰克",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "30",
+      "rn": "500"
+    },
+    {
+      "score": "12464",
+      "hero_name": "空军",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "32",
+      "rn": "1"
+    },
+    {
+      "score": "11366",
+      "hero_name": "空军",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "32",
+      "rn": "10"
+    },
+    {
+      "score": "11356",
+      "hero_name": "空军",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "32",
+      "rn": "11"
+    },
+    {
+      "score": "10022",
+      "hero_name": "空军",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "32",
+      "rn": "100"
+    },
+    {
+      "score": "10018",
+      "hero_name": "空军",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "32",
+      "rn": "101"
+    },
+    {
+      "score": "8448",
+      "hero_name": "空军",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "32",
+      "rn": "300"
+    },
+    {
+      "score": "8446",
+      "hero_name": "空军",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "32",
+      "rn": "301"
+    },
+    {
+      "score": "7793",
+      "hero_name": "空军",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "32",
+      "rn": "500"
+    },
+    {
+      "score": "17615",
+      "hero_name": "机械师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "34",
+      "rn": "1"
+    },
+    {
+      "score": "11548",
+      "hero_name": "机械师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "34",
+      "rn": "10"
+    },
+    {
+      "score": "11354",
+      "hero_name": "机械师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "34",
+      "rn": "11"
+    },
+    {
+      "score": "10003",
+      "hero_name": "机械师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "34",
+      "rn": "100"
+    },
+    {
+      "score": "10001",
+      "hero_name": "机械师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "34",
+      "rn": "101"
+    },
+    {
+      "score": "8974",
+      "hero_name": "机械师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "34",
+      "rn": "300"
+    },
+    {
+      "score": "8971",
+      "hero_name": "机械师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "34",
+      "rn": "301"
+    },
+    {
+      "score": "8375",
+      "hero_name": "机械师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "34",
+      "rn": "500"
+    },
+    {
+      "score": "17984",
+      "hero_name": "舞女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "36",
+      "rn": "1"
+    },
+    {
+      "score": "12058",
+      "hero_name": "舞女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "36",
+      "rn": "10"
+    },
+    {
+      "score": "12045",
+      "hero_name": "舞女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "36",
+      "rn": "11"
+    },
+    {
+      "score": "10031",
+      "hero_name": "舞女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "36",
+      "rn": "100"
+    },
+    {
+      "score": "10025",
+      "hero_name": "舞女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "36",
+      "rn": "101"
+    },
+    {
+      "score": "8651",
+      "hero_name": "舞女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "36",
+      "rn": "300"
+    },
+    {
+      "score": "8650",
+      "hero_name": "舞女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "36",
+      "rn": "301"
+    },
+    {
+      "score": "7880",
+      "hero_name": "舞女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "36",
+      "rn": "500"
+    },
+    {
+      "score": "16454",
+      "hero_name": "前锋",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "59",
+      "rn": "1"
+    },
+    {
+      "score": "12430",
+      "hero_name": "前锋",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "59",
+      "rn": "10"
+    },
+    {
+      "score": "12367",
+      "hero_name": "前锋",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "59",
+      "rn": "11"
+    },
+    {
+      "score": "10195",
+      "hero_name": "前锋",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "59",
+      "rn": "100"
+    },
+    {
+      "score": "10189",
+      "hero_name": "前锋",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "59",
+      "rn": "101"
+    },
+    {
+      "score": "9331",
+      "hero_name": "前锋",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "59",
+      "rn": "300"
+    },
+    {
+      "score": "9328",
+      "hero_name": "前锋",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "59",
+      "rn": "301"
+    },
+    {
+      "score": "8718",
+      "hero_name": "前锋",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "59",
+      "rn": "500"
+    },
+    {
+      "score": "14320",
+      "hero_name": "蜘蛛",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "60",
+      "rn": "1"
+    },
+    {
+      "score": "13169",
+      "hero_name": "蜘蛛",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "60",
+      "rn": "10"
+    },
+    {
+      "score": "13109",
+      "hero_name": "蜘蛛",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "60",
+      "rn": "11"
+    },
+    {
+      "score": "11308",
+      "hero_name": "蜘蛛",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "60",
+      "rn": "100"
+    },
+    {
+      "score": "11283",
+      "hero_name": "蜘蛛",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "60",
+      "rn": "101"
+    },
+    {
+      "score": "9049",
+      "hero_name": "蜘蛛",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "60",
+      "rn": "300"
+    },
+    {
+      "score": "9049",
+      "hero_name": "蜘蛛",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "60",
+      "rn": "301"
+    },
+    {
+      "score": "8085",
+      "hero_name": "蜘蛛",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "60",
+      "rn": "500"
+    },
+    {
+      "score": "12229",
+      "hero_name": "盲女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "62",
+      "rn": "1"
+    },
+    {
+      "score": "11378",
+      "hero_name": "盲女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "62",
+      "rn": "10"
+    },
+    {
+      "score": "11375",
+      "hero_name": "盲女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "62",
+      "rn": "11"
+    },
+    {
+      "score": "10221",
+      "hero_name": "盲女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "62",
+      "rn": "100"
+    },
+    {
+      "score": "10217",
+      "hero_name": "盲女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "62",
+      "rn": "101"
+    },
+    {
+      "score": "8798",
+      "hero_name": "盲女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "62",
+      "rn": "300"
+    },
+    {
+      "score": "8795",
+      "hero_name": "盲女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "62",
+      "rn": "301"
+    },
+    {
+      "score": "7959",
+      "hero_name": "盲女",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "62",
+      "rn": "500"
+    },
+    {
+      "score": "14117",
+      "hero_name": "红蝶",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "63",
+      "rn": "1"
+    },
+    {
+      "score": "13385",
+      "hero_name": "红蝶",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "63",
+      "rn": "10"
+    },
+    {
+      "score": "13376",
+      "hero_name": "红蝶",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "63",
+      "rn": "11"
+    },
+    {
+      "score": "12642",
+      "hero_name": "红蝶",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "63",
+      "rn": "100"
+    },
+    {
+      "score": "12635",
+      "hero_name": "红蝶",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "63",
+      "rn": "101"
+    },
+    {
+      "score": "12058",
+      "hero_name": "红蝶",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "63",
+      "rn": "300"
+    },
+    {
+      "score": "12058",
+      "hero_name": "红蝶",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "63",
+      "rn": "301"
+    },
+    {
+      "score": "11626",
+      "hero_name": "红蝶",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "63",
+      "rn": "500"
+    },
+    {
+      "score": "13686",
+      "hero_name": "黄衣之主",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "64",
+      "rn": "1"
+    },
+    {
+      "score": "13155",
+      "hero_name": "黄衣之主",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "64",
+      "rn": "10"
+    },
+    {
+      "score": "13142",
+      "hero_name": "黄衣之主",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "64",
+      "rn": "11"
+    },
+    {
+      "score": "11867",
+      "hero_name": "黄衣之主",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "64",
+      "rn": "100"
+    },
+    {
+      "score": "11860",
+      "hero_name": "黄衣之主",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "64",
+      "rn": "101"
+    },
+    {
+      "score": "10343",
+      "hero_name": "黄衣之主",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "64",
+      "rn": "300"
+    },
+    {
+      "score": "10331",
+      "hero_name": "黄衣之主",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "64",
+      "rn": "301"
+    },
+    {
+      "score": "9439",
+      "hero_name": "黄衣之主",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "64",
+      "rn": "500"
+    },
+    {
+      "score": "13663",
+      "hero_name": "宿伞之魂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "66",
+      "rn": "1"
+    },
+    {
+      "score": "13368",
+      "hero_name": "宿伞之魂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "66",
+      "rn": "10"
+    },
+    {
+      "score": "13362",
+      "hero_name": "宿伞之魂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "66",
+      "rn": "11"
+    },
+    {
+      "score": "12704",
+      "hero_name": "宿伞之魂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "66",
+      "rn": "100"
+    },
+    {
+      "score": "12702",
+      "hero_name": "宿伞之魂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "66",
+      "rn": "101"
+    },
+    {
+      "score": "11897",
+      "hero_name": "宿伞之魂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "66",
+      "rn": "300"
+    },
+    {
+      "score": "11892",
+      "hero_name": "宿伞之魂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "66",
+      "rn": "301"
+    },
+    {
+      "score": "11436",
+      "hero_name": "宿伞之魂",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "66",
+      "rn": "500"
+    },
+    {
+      "score": "13691",
+      "hero_name": "祭司",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "68",
+      "rn": "1"
+    },
+    {
+      "score": "11316",
+      "hero_name": "祭司",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "68",
+      "rn": "10"
+    },
+    {
+      "score": "11277",
+      "hero_name": "祭司",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "68",
+      "rn": "11"
+    },
+    {
+      "score": "9136",
+      "hero_name": "祭司",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "68",
+      "rn": "100"
+    },
+    {
+      "score": "9126",
+      "hero_name": "祭司",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "68",
+      "rn": "101"
+    },
+    {
+      "score": "7730",
+      "hero_name": "祭司",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "68",
+      "rn": "300"
+    },
+    {
+      "score": "7723",
+      "hero_name": "祭司",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "68",
+      "rn": "301"
+    },
+    {
+      "score": "6915",
+      "hero_name": "祭司",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "68",
+      "rn": "500"
+    },
+    {
+      "score": "16452",
+      "hero_name": "调香师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "72",
+      "rn": "1"
+    },
+    {
+      "score": "13400",
+      "hero_name": "调香师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "72",
+      "rn": "10"
+    },
+    {
+      "score": "13167",
+      "hero_name": "调香师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "72",
+      "rn": "11"
+    },
+    {
+      "score": "10655",
+      "hero_name": "调香师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "72",
+      "rn": "100"
+    },
+    {
+      "score": "10652",
+      "hero_name": "调香师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "72",
+      "rn": "101"
+    },
+    {
+      "score": "9887",
+      "hero_name": "调香师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "72",
+      "rn": "300"
+    },
+    {
+      "score": "9886",
+      "hero_name": "调香师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "72",
+      "rn": "301"
+    },
+    {
+      "score": "9462",
+      "hero_name": "调香师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "72",
+      "rn": "500"
+    },
+    {
+      "score": "17167",
+      "hero_name": "牛仔",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "73",
+      "rn": "1"
+    },
+    {
+      "score": "11834",
+      "hero_name": "牛仔",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "73",
+      "rn": "10"
+    },
+    {
+      "score": "11827",
+      "hero_name": "牛仔",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "73",
+      "rn": "11"
+    },
+    {
+      "score": "10406",
+      "hero_name": "牛仔",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "73",
+      "rn": "100"
+    },
+    {
+      "score": "10388",
+      "hero_name": "牛仔",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "73",
+      "rn": "101"
+    },
+    {
+      "score": "9465",
+      "hero_name": "牛仔",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "73",
+      "rn": "300"
+    },
+    {
+      "score": "9459",
+      "hero_name": "牛仔",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "73",
+      "rn": "301"
+    },
+    {
+      "score": "8736",
+      "hero_name": "牛仔",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "73",
+      "rn": "500"
+    },
+    {
+      "score": "13770",
+      "hero_name": "摄影师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "74",
+      "rn": "1"
+    },
+    {
+      "score": "13504",
+      "hero_name": "摄影师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "74",
+      "rn": "10"
+    },
+    {
+      "score": "13487",
+      "hero_name": "摄影师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "74",
+      "rn": "11"
+    },
+    {
+      "score": "12420",
+      "hero_name": "摄影师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "74",
+      "rn": "100"
+    },
+    {
+      "score": "12397",
+      "hero_name": "摄影师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "74",
+      "rn": "101"
+    },
+    {
+      "score": "11090",
+      "hero_name": "摄影师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "74",
+      "rn": "300"
+    },
+    {
+      "score": "11080",
+      "hero_name": "摄影师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "74",
+      "rn": "301"
+    },
+    {
+      "score": "10449",
+      "hero_name": "摄影师",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "74",
+      "rn": "500"
+    },
+    {
+      "score": "13458",
+      "hero_name": "先知",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "78",
+      "rn": "1"
+    },
+    {
+      "score": "11958",
+      "hero_name": "先知",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "78",
+      "rn": "10"
+    },
+    {
+      "score": "11935",
+      "hero_name": "先知",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "78",
+      "rn": "11"
+    },
+    {
+      "score": "10314",
+      "hero_name": "先知",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "78",
+      "rn": "100"
+    },
+    {
+      "score": "10306",
+      "hero_name": "先知",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "78",
+      "rn": "101"
+    },
+    {
+      "score": "9181",
+      "hero_name": "先知",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "78",
+      "rn": "300"
+    },
+    {
+      "score": "9179",
+      "hero_name": "先知",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "78",
+      "rn": "301"
+    },
+    {
+      "score": "8434",
+      "hero_name": "先知",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "78",
+      "rn": "500"
+    },
+    {
+      "score": "13118",
+      "hero_name": "入殓师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "79",
+      "rn": "1"
+    },
+    {
+      "score": "11088",
+      "hero_name": "入殓师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "79",
+      "rn": "10"
+    },
+    {
+      "score": "11036",
+      "hero_name": "入殓师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "79",
+      "rn": "11"
+    },
+    {
+      "score": "8889",
+      "hero_name": "入殓师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "79",
+      "rn": "100"
+    },
+    {
+      "score": "8884",
+      "hero_name": "入殓师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "79",
+      "rn": "101"
+    },
+    {
+      "score": "7378",
+      "hero_name": "入殓师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "79",
+      "rn": "300"
+    },
+    {
+      "score": "7374",
+      "hero_name": "入殓师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "79",
+      "rn": "301"
+    },
+    {
+      "score": "6687",
+      "hero_name": "入殓师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "79",
+      "rn": "500"
+    },
+    {
+      "score": "14089",
+      "hero_name": "疯眼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "80",
+      "rn": "1"
+    },
+    {
+      "score": "12953",
+      "hero_name": "疯眼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "80",
+      "rn": "10"
+    },
+    {
+      "score": "12947",
+      "hero_name": "疯眼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "80",
+      "rn": "11"
+    },
+    {
+      "score": "11200",
+      "hero_name": "疯眼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "80",
+      "rn": "100"
+    },
+    {
+      "score": "11198",
+      "hero_name": "疯眼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "80",
+      "rn": "101"
+    },
+    {
+      "score": "8980",
+      "hero_name": "疯眼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "80",
+      "rn": "300"
+    },
+    {
+      "score": "8957",
+      "hero_name": "疯眼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "80",
+      "rn": "301"
+    },
+    {
+      "score": "7497",
+      "hero_name": "疯眼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "80",
+      "rn": "500"
+    },
+    {
+      "score": "13375",
+      "hero_name": "梦之女巫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "81",
+      "rn": "1"
+    },
+    {
+      "score": "12447",
+      "hero_name": "梦之女巫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "81",
+      "rn": "10"
+    },
+    {
+      "score": "12439",
+      "hero_name": "梦之女巫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "81",
+      "rn": "11"
+    },
+    {
+      "score": "11500",
+      "hero_name": "梦之女巫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "81",
+      "rn": "100"
+    },
+    {
+      "score": "11487",
+      "hero_name": "梦之女巫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "81",
+      "rn": "101"
+    },
+    {
+      "score": "10403",
+      "hero_name": "梦之女巫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "81",
+      "rn": "300"
+    },
+    {
+      "score": "10399",
+      "hero_name": "梦之女巫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "81",
+      "rn": "301"
+    },
+    {
+      "score": "9647",
+      "hero_name": "梦之女巫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "81",
+      "rn": "500"
+    },
+    {
+      "score": "15460",
+      "hero_name": "咒术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "83",
+      "rn": "1"
+    },
+    {
+      "score": "12021",
+      "hero_name": "咒术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "83",
+      "rn": "10"
+    },
+    {
+      "score": "11848",
+      "hero_name": "咒术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "83",
+      "rn": "11"
+    },
+    {
+      "score": "10310",
+      "hero_name": "咒术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "83",
+      "rn": "100"
+    },
+    {
+      "score": "10279",
+      "hero_name": "咒术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "83",
+      "rn": "101"
+    },
+    {
+      "score": "9184",
+      "hero_name": "咒术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "83",
+      "rn": "300"
+    },
+    {
+      "score": "9172",
+      "hero_name": "咒术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "83",
+      "rn": "301"
+    },
+    {
+      "score": "8561",
+      "hero_name": "咒术师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "83",
+      "rn": "500"
+    },
+    {
+      "score": "13693",
+      "hero_name": "爱哭鬼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "84",
+      "rn": "1"
+    },
+    {
+      "score": "13266",
+      "hero_name": "爱哭鬼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "84",
+      "rn": "10"
+    },
+    {
+      "score": "13224",
+      "hero_name": "爱哭鬼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "84",
+      "rn": "11"
+    },
+    {
+      "score": "12408",
+      "hero_name": "爱哭鬼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "84",
+      "rn": "100"
+    },
+    {
+      "score": "12408",
+      "hero_name": "爱哭鬼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "84",
+      "rn": "101"
+    },
+    {
+      "score": "11373",
+      "hero_name": "爱哭鬼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "84",
+      "rn": "300"
+    },
+    {
+      "score": "11371",
+      "hero_name": "爱哭鬼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "84",
+      "rn": "301"
+    },
+    {
+      "score": "10707",
+      "hero_name": "爱哭鬼",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "84",
+      "rn": "500"
+    },
+    {
+      "score": "14293",
+      "hero_name": "红夫人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "85",
+      "rn": "1"
+    },
+    {
+      "score": "13309",
+      "hero_name": "红夫人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "85",
+      "rn": "10"
+    },
+    {
+      "score": "13232",
+      "hero_name": "红夫人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "85",
+      "rn": "11"
+    },
+    {
+      "score": "12326",
+      "hero_name": "红夫人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "85",
+      "rn": "100"
+    },
+    {
+      "score": "12325",
+      "hero_name": "红夫人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "85",
+      "rn": "101"
+    },
+    {
+      "score": "11328",
+      "hero_name": "红夫人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "85",
+      "rn": "300"
+    },
+    {
+      "score": "11322",
+      "hero_name": "红夫人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "85",
+      "rn": "301"
+    },
+    {
+      "score": "10755",
+      "hero_name": "红夫人",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "85",
+      "rn": "500"
+    },
+    {
+      "score": "13885",
+      "hero_name": "孽蜥",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "86",
+      "rn": "1"
+    },
+    {
+      "score": "13270",
+      "hero_name": "孽蜥",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "86",
+      "rn": "10"
+    },
+    {
+      "score": "13256",
+      "hero_name": "孽蜥",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "86",
+      "rn": "11"
+    },
+    {
+      "score": "12298",
+      "hero_name": "孽蜥",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "86",
+      "rn": "100"
+    },
+    {
+      "score": "12290",
+      "hero_name": "孽蜥",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "86",
+      "rn": "101"
+    },
+    {
+      "score": "11345",
+      "hero_name": "孽蜥",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "86",
+      "rn": "300"
+    },
+    {
+      "score": "11341",
+      "hero_name": "孽蜥",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "86",
+      "rn": "301"
+    },
+    {
+      "score": "10744",
+      "hero_name": "孽蜥",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "86",
+      "rn": "500"
+    },
+    {
+      "score": "18060",
+      "hero_name": "勘探员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "87",
+      "rn": "1"
+    },
+    {
+      "score": "14031",
+      "hero_name": "勘探员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "87",
+      "rn": "10"
+    },
+    {
+      "score": "13973",
+      "hero_name": "勘探员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "87",
+      "rn": "11"
+    },
+    {
+      "score": "11022",
+      "hero_name": "勘探员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "87",
+      "rn": "100"
+    },
+    {
+      "score": "11016",
+      "hero_name": "勘探员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "87",
+      "rn": "101"
+    },
+    {
+      "score": "10267",
+      "hero_name": "勘探员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "87",
+      "rn": "300"
+    },
+    {
+      "score": "10254",
+      "hero_name": "勘探员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "87",
+      "rn": "301"
+    },
+    {
+      "score": "9768",
+      "hero_name": "勘探员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "87",
+      "rn": "500"
+    },
+    {
+      "score": "14445",
+      "hero_name": "野人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "88",
+      "rn": "1"
+    },
+    {
+      "score": "10941",
+      "hero_name": "野人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "88",
+      "rn": "10"
+    },
+    {
+      "score": "10940",
+      "hero_name": "野人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "88",
+      "rn": "11"
+    },
+    {
+      "score": "9738",
+      "hero_name": "野人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "88",
+      "rn": "100"
+    },
+    {
+      "score": "9732",
+      "hero_name": "野人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "88",
+      "rn": "101"
+    },
+    {
+      "score": "8323",
+      "hero_name": "野人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "88",
+      "rn": "300"
+    },
+    {
+      "score": "8314",
+      "hero_name": "野人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "88",
+      "rn": "301"
+    },
+    {
+      "score": "7625",
+      "hero_name": "野人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "88",
+      "rn": "500"
+    },
+    {
+      "score": "12642",
+      "hero_name": "杂技演员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "89",
+      "rn": "1"
+    },
+    {
+      "score": "11529",
+      "hero_name": "杂技演员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "89",
+      "rn": "10"
+    },
+    {
+      "score": "11501",
+      "hero_name": "杂技演员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "89",
+      "rn": "11"
+    },
+    {
+      "score": "9600",
+      "hero_name": "杂技演员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "89",
+      "rn": "100"
+    },
+    {
+      "score": "9586",
+      "hero_name": "杂技演员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "89",
+      "rn": "101"
+    },
+    {
+      "score": "8312",
+      "hero_name": "杂技演员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "89",
+      "rn": "300"
+    },
+    {
+      "score": "8295",
+      "hero_name": "杂技演员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "89",
+      "rn": "301"
+    },
+    {
+      "score": "7756",
+      "hero_name": "杂技演员",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "89",
+      "rn": "500"
+    },
+    {
+      "score": "12673",
+      "hero_name": "大副",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "90",
+      "rn": "1"
+    },
+    {
+      "score": "11014",
+      "hero_name": "大副",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "90",
+      "rn": "10"
+    },
+    {
+      "score": "10990",
+      "hero_name": "大副",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "90",
+      "rn": "11"
+    },
+    {
+      "score": "9691",
+      "hero_name": "大副",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "90",
+      "rn": "100"
+    },
+    {
+      "score": "9677",
+      "hero_name": "大副",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "90",
+      "rn": "101"
+    },
+    {
+      "score": "8462",
+      "hero_name": "大副",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "90",
+      "rn": "300"
+    },
+    {
+      "score": "8456",
+      "hero_name": "大副",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "90",
+      "rn": "301"
+    },
+    {
+      "score": "7840",
+      "hero_name": "大副",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "90",
+      "rn": "500"
+    },
+    {
+      "score": "16667",
+      "hero_name": "调酒师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "91",
+      "rn": "1"
+    },
+    {
+      "score": "11304",
+      "hero_name": "调酒师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "91",
+      "rn": "10"
+    },
+    {
+      "score": "11259",
+      "hero_name": "调酒师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "91",
+      "rn": "11"
+    },
+    {
+      "score": "9901",
+      "hero_name": "调酒师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "91",
+      "rn": "100"
+    },
+    {
+      "score": "9895",
+      "hero_name": "调酒师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "91",
+      "rn": "101"
+    },
+    {
+      "score": "8733",
+      "hero_name": "调酒师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "91",
+      "rn": "300"
+    },
+    {
+      "score": "8731",
+      "hero_name": "调酒师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "91",
+      "rn": "301"
+    },
+    {
+      "score": "8081",
+      "hero_name": "调酒师",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "91",
+      "rn": "500"
+    },
+    {
+      "score": "13787",
+      "hero_name": "26号守卫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "93",
+      "rn": "1"
+    },
+    {
+      "score": "13114",
+      "hero_name": "26号守卫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "93",
+      "rn": "10"
+    },
+    {
+      "score": "13112",
+      "hero_name": "26号守卫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "93",
+      "rn": "11"
+    },
+    {
+      "score": "11529",
+      "hero_name": "26号守卫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "93",
+      "rn": "100"
+    },
+    {
+      "score": "11468",
+      "hero_name": "26号守卫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "93",
+      "rn": "101"
+    },
+    {
+      "score": "9509",
+      "hero_name": "26号守卫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "93",
+      "rn": "300"
+    },
+    {
+      "score": "9508",
+      "hero_name": "26号守卫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "93",
+      "rn": "301"
+    },
+    {
+      "score": "8444",
+      "hero_name": "26号守卫",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "93",
+      "rn": "500"
+    },
+    {
+      "score": "16345",
+      "hero_name": "邮差",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "94",
+      "rn": "1"
+    },
+    {
+      "score": "11746",
+      "hero_name": "邮差",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "94",
+      "rn": "10"
+    },
+    {
+      "score": "11735",
+      "hero_name": "邮差",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "94",
+      "rn": "11"
+    },
+    {
+      "score": "10143",
+      "hero_name": "邮差",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "94",
+      "rn": "100"
+    },
+    {
+      "score": "10136",
+      "hero_name": "邮差",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "94",
+      "rn": "101"
+    },
+    {
+      "score": "8994",
+      "hero_name": "邮差",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "94",
+      "rn": "300"
+    },
+    {
+      "score": "8990",
+      "hero_name": "邮差",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "94",
+      "rn": "301"
+    },
+    {
+      "score": "8106",
+      "hero_name": "邮差",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "94",
+      "rn": "500"
+    },
+    {
+      "score": "14515",
+      "hero_name": "使徒",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "95",
+      "rn": "1"
+    },
+    {
+      "score": "13163",
+      "hero_name": "使徒",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "95",
+      "rn": "10"
+    },
+    {
+      "score": "13059",
+      "hero_name": "使徒",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "95",
+      "rn": "11"
+    },
+    {
+      "score": "12126",
+      "hero_name": "使徒",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "95",
+      "rn": "100"
+    },
+    {
+      "score": "12116",
+      "hero_name": "使徒",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "95",
+      "rn": "101"
+    },
+    {
+      "score": "11086",
+      "hero_name": "使徒",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "95",
+      "rn": "300"
+    },
+    {
+      "score": "11083",
+      "hero_name": "使徒",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "95",
+      "rn": "301"
+    },
+    {
+      "score": "10431",
+      "hero_name": "使徒",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "95",
+      "rn": "500"
+    },
+    {
+      "score": "15910",
+      "hero_name": "守墓人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "96",
+      "rn": "1"
+    },
+    {
+      "score": "11842",
+      "hero_name": "守墓人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "96",
+      "rn": "10"
+    },
+    {
+      "score": "11770",
+      "hero_name": "守墓人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "96",
+      "rn": "11"
+    },
+    {
+      "score": "10149",
+      "hero_name": "守墓人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "96",
+      "rn": "100"
+    },
+    {
+      "score": "10138",
+      "hero_name": "守墓人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "96",
+      "rn": "101"
+    },
+    {
+      "score": "9128",
+      "hero_name": "守墓人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "96",
+      "rn": "300"
+    },
+    {
+      "score": "9125",
+      "hero_name": "守墓人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "96",
+      "rn": "301"
+    },
+    {
+      "score": "8521",
+      "hero_name": "守墓人",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "96",
+      "rn": "500"
+    },
+    {
+      "score": "14677",
+      "hero_name": "囚徒",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "97",
+      "rn": "1"
+    },
+    {
+      "score": "12168",
+      "hero_name": "囚徒",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "97",
+      "rn": "10"
+    },
+    {
+      "score": "12097",
+      "hero_name": "囚徒",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "97",
+      "rn": "11"
+    },
+    {
+      "score": "10248",
+      "hero_name": "囚徒",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "97",
+      "rn": "100"
+    },
+    {
+      "score": "10238",
+      "hero_name": "囚徒",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "97",
+      "rn": "101"
+    },
+    {
+      "score": "9278",
+      "hero_name": "囚徒",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "97",
+      "rn": "300"
+    },
+    {
+      "score": "9277",
+      "hero_name": "囚徒",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "97",
+      "rn": "301"
+    },
+    {
+      "score": "8588",
+      "hero_name": "囚徒",
+      "dateid": "20260804",
+      "camp_id": "2",
+      "hero_id": "97",
+      "rn": "500"
+    },
+    {
+      "score": "13957",
+      "hero_name": "小提琴家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "98",
+      "rn": "1"
+    },
+    {
+      "score": "13077",
+      "hero_name": "小提琴家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "98",
+      "rn": "10"
+    },
+    {
+      "score": "13068",
+      "hero_name": "小提琴家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "98",
+      "rn": "11"
+    },
+    {
+      "score": "12117",
+      "hero_name": "小提琴家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "98",
+      "rn": "100"
+    },
+    {
+      "score": "12105",
+      "hero_name": "小提琴家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "98",
+      "rn": "101"
+    },
+    {
+      "score": "10896",
+      "hero_name": "小提琴家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "98",
+      "rn": "300"
+    },
+    {
+      "score": "10895",
+      "hero_name": "小提琴家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "98",
+      "rn": "301"
+    },
+    {
+      "score": "10200",
+      "hero_name": "小提琴家",
+      "dateid": "20260804",
+      "camp_id": "1",
+      "hero_id": "98",
+      "rn": "500"
+    }
+  ]
+}
