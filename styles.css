@@ -394,6 +394,26 @@ pre {
   background: rgba(255, 255, 255, 0.04);
 }
 
+.github-star {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  background: #24292e;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.github-star:hover {
+  background: #2f363d;
+  transform: translateY(-1px);
+}
+
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 150px));
